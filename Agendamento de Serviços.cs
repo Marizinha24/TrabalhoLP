@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TrabalhoLP.Properties.Model;
 
 namespace TrabalhoLP
 {
@@ -46,72 +47,58 @@ namespace TrabalhoLP
         }
 
 
+
+
         private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
-
-
             try
             {
                 var servico = ObterServicoSelecionado();
-
-
-                lblTotal.Text = $"Total: R$ {servico.total:F2}";
 
                 var itemSelecionado = cbHorario.SelectedItem as string;
 
                 if (string.IsNullOrEmpty(itemSelecionado))
                 {
                     MessageBox.Show("Selecione um horário!");
+                    return;
                 }
-                else
-                {
 
-                    string dataFormatada = dtDisponibilidade.Value.ToString("dd/MM/yyyy");
-                    string horario = itemSelecionado;
-                    lblTotal.Text = $"Total: R$ {servico.total:F2}";
+                Agendamento agendamento = new Agendamento();
 
-                    string resumo =
+                agendamento.Data = dtDisponibilidade.Value;
+                agendamento.Horario = itemSelecionado;
+                agendamento.Servicos = servico.nomes;
+                agendamento.Total = servico.total;
+
+                lblTotal.Text = $"Total: R$ {agendamento.Total:F2}";
+
+                string resumo =
                     $"Confirme seu agendamento:{Environment.NewLine}{Environment.NewLine}" +
-                    $"Data: {dataFormatada}{Environment.NewLine}" +
-                    $"Horário: {horario}{Environment.NewLine}" +
-                    $"Serviços: {servico.nomes}{Environment.NewLine}" +
-                    $"Total: R$ {servico.total:F2}{Environment.NewLine}";
+                    agendamento.GerarResumo();
 
-                    DialogResult resposta = MessageBox.Show(
-                        resumo,
-                        "Confirmar Agendamento",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question
-                    );
+                DialogResult resposta = MessageBox.Show(
+                    resumo,
+                    "Confirmar Agendamento",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
-
-                    if (resposta != DialogResult.Yes)
-                    {
-                        return;
-                    }
-
-
-
-
-
-                    string agendamento =
-                    $" {Environment.NewLine}" +
-                    $" {Environment.NewLine}" +
-                    $"Data: {dataFormatada}{Environment.NewLine}" +
-                    $"Horário: {horario}{Environment.NewLine}" +
-                    $"Serviços: {servico.nomes}{Environment.NewLine}" +
-                    $"Total: R$ {servico.total:F2}{Environment.NewLine}" +
-                    "-------------------------" + Environment.NewLine;
-
-                    txtAgendamentos.AppendText(agendamento);
-
-
+                if (resposta != DialogResult.Yes)
+                {
+                    return;
                 }
+
+                txtAgendamentos.AppendText(
+                    agendamento.GerarResumo() +
+                    Environment.NewLine +
+                    "-------------------------" +
+                    Environment.NewLine +
+                    Environment.NewLine 
+                );
             }
             catch (InvalidOperationException ex)
             {
                 MessageBox.Show(ex.Message);
-                return;
             }
         }
 
