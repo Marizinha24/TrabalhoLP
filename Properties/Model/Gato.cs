@@ -15,33 +15,67 @@ namespace TrabalhoLP.Properties.Model
 
         public int height { get; set; }
 
-        public List<RacaG> breeds { get; set; }
+        public List<RacaGato> breeds { get; set; }
 
 
-        private string URLAPI { get; } = "https://api.thecatapi.com/v1/images/search";
+        private const string APIKEY =
+            "live_AKMfFk8qpYf16buuqcdHfPZI96eLn6qPJ6MinfHuv5OKecU71M3l02FhVxbgSx2v";
+
+        private string URLImagem =
+            "https://api.thecatapi.com/v1/images/search";
+
+        private string URLRacas =
+            "https://api.thecatapi.com/v1/breeds";
 
 
-        public async Task<Gato> getGato()
+        private HttpClient CriarClient()
         {
-            Gato gato = new Gato();
-
             HttpClient client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync(URLAPI);
+            client.DefaultRequestHeaders.Add(
+                "x-api-key",
+                APIKEY
+            );
 
-            string responseBody = await response.Content.ReadAsStringAsync();
+            return client;
+        }
+
+
+        // Buscar imagem aleatória
+        public async Task<Gato> GetGato()
+        {
+            HttpClient client = CriarClient();
+
+            HttpResponseMessage response =
+                await client.GetAsync(URLImagem);
+
+            string responseBody =
+                await response.Content.ReadAsStringAsync();
 
             List<Gato> lista =
                 JsonConvert.DeserializeObject<List<Gato>>(responseBody);
 
-            gato = lista[0];
+            return lista[0];
+        }
 
-            return gato;
+
+        // Buscar lista de raças
+        public async Task<List<string>> GetRacas()
+        {
+            HttpClient client = CriarClient();
+
+            string response =
+                await client.GetStringAsync(URLRacas);
+
+            List<RacaGato> lista =
+                JsonConvert.DeserializeObject<List<RacaGato>>(response);
+
+            return lista.Select(r => r.name).ToList();
         }
     }
 
 
-    public class RacaG
+    public class RacaGato
     {
         public string name { get; set; }
 
@@ -49,35 +83,6 @@ namespace TrabalhoLP.Properties.Model
 
         public string life_span { get; set; }
 
-        public string bred_for { get; set; }
-    }
-
-    public class CatApi
-    {
-        private string URLAPI = "https://api.thecatapi.com/v1/breeds";
-
-        private string APIKEY = "live_AKMfFk8qpYf16buuqcdHfPZI96eLn6qPJ6MinfHuv5OKecU71M3l02FhVxbgSx2v";
-
-
-        public async Task<List<string>> GetRacas()
-        {
-            HttpClient client = new HttpClient();
-
-            client.DefaultRequestHeaders.Add("x-api-key", APIKEY);
-
-            string response =
-                await client.GetStringAsync(URLAPI);
-
-            List<RacaCat> lista =
-                JsonConvert.DeserializeObject<List<RacaCat>>(response);
-
-            return lista.Select(r => r.name).ToList();
-        }
-    }
-
-
-    public class RacaCat
-    {
-        public string name { get; set; }
+        public string origin { get; set; }
     }
 }

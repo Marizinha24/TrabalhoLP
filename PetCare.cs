@@ -55,7 +55,7 @@ namespace TrabalhoLP
 
             if (cbEspecie.Text == "Cachorro")
             {
-                DogApi api = new DogApi();
+                Cachorro api = new Cachorro();
 
                 List<string> racas = await api.GetRacas();
 
@@ -63,7 +63,7 @@ namespace TrabalhoLP
             }
             else if (cbEspecie.Text == "Gato")
             {
-                CatApi api = new CatApi();
+                Gato api = new Gato();
 
                 List<string> racas = await api.GetRacas();
 

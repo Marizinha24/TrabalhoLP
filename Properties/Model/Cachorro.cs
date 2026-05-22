@@ -7,7 +7,6 @@ namespace TrabalhoLP.Properties.Model
 {
     public class Cachorro
     {
-        
         public string id { get; set; }
 
         public string url { get; set; }
@@ -16,33 +15,67 @@ namespace TrabalhoLP.Properties.Model
 
         public int height { get; set; }
 
-        public List<RacaC> breeds { get; set; }
+        public List<RacaCachorro> breeds { get; set; }
 
 
-        private string URLAPI { get; } = "https://api.thedogapi.com/v1/images/search";
+        private const string APIKEY =
+            "live_98a9p26vts2XQaiFteKAEaoTlSlv0izXMetJZT09rNDmPRVBRLmntEAIbHAwoZcD";
+
+        private string URLImagem =
+            "https://api.thedogapi.com/v1/images/search";
+
+        private string URLRacas =
+            "https://api.thedogapi.com/v1/breeds";
 
 
-        public async Task<Cachorro> getCachorro()
+        private HttpClient CriarClient()
         {
-            Cachorro cachorro = new Cachorro();
-
             HttpClient client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync(URLAPI);
+            client.DefaultRequestHeaders.Add(
+                "x-api-key",
+                APIKEY
+            );
 
-            string responseBody = await response.Content.ReadAsStringAsync();
+            return client;
+        }
+
+
+        // Buscar imagem aleatória
+        public async Task<Cachorro> GetCachorro()
+        {
+            HttpClient client = CriarClient();
+
+            HttpResponseMessage response =
+                await client.GetAsync(URLImagem);
+
+            string responseBody =
+                await response.Content.ReadAsStringAsync();
 
             List<Cachorro> lista =
                 JsonConvert.DeserializeObject<List<Cachorro>>(responseBody);
 
-            cachorro = lista[0];
+            return lista[0];
+        }
 
-            return cachorro;
+
+        // Buscar lista de raças
+        public async Task<List<string>> GetRacas()
+        {
+            HttpClient client = CriarClient();
+
+            string response =
+                await client.GetStringAsync(URLRacas);
+
+            List<RacaCachorro> lista =
+                JsonConvert.DeserializeObject<List<RacaCachorro>>(response);
+
+            return lista.Select(r => r.name).ToList();
         }
     }
 
 
-    public class RacaC
+    public class RacaCachorro
     {
         public string name { get; set; }
 
@@ -52,34 +85,6 @@ namespace TrabalhoLP.Properties.Model
 
         public string bred_for { get; set; }
     }
-
-
-    public class DogApi
-    {
-        private string URLAPI = "https://api.thedogapi.com/v1/breeds";
-        private string APIKEY = "live_98a9p26vts2XQaiFteKAEaoTlSlv0izXMetJZT09rNDmPRVBRLmntEAIbHAwoZcD";
-
-        public async Task<List<string>> GetRacas()
-        {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("x-api-key", APIKEY);
-
-            string response =
-                await client.GetStringAsync(URLAPI);
-
-            List<RacaDog> lista =
-                JsonConvert.DeserializeObject<List<RacaDog>>(response);
-
-            return lista.Select(r => r.name).ToList();
-        }
-    }
-
-    public class RacaDog
-    {
-        public string name { get; set; }
-    }
-
-
 }
 
 
