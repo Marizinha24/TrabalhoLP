@@ -95,7 +95,7 @@ namespace TrabalhoLP
 
             pet2.Especie = "Gato";
 
-            pet2.Raca = "Siamês";
+            pet2.Raca = "Siamese";
 
             pet2.Usuario = usuario1;
 

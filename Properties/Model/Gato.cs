@@ -103,30 +103,31 @@ namespace TrabalhoLP.Properties.Model
         {
             HttpClient client = CriarClient();
 
-            // busca todas as raças
-            string responseRacas =
-                await client.GetStringAsync(URLRacas);
+            // procura raça
+            string urlBusca =
+                $"https://api.thecatapi.com/v1/breeds/search?q={raca}";
+
+            string respostaBusca =
+                await client.GetStringAsync(urlBusca);
 
             List<RacaGato> racas =
-                JsonConvert.DeserializeObject<List<RacaGato>>(responseRacas);
+                JsonConvert.DeserializeObject<List<RacaGato>>(respostaBusca);
 
-            // procura raça digitada
-            RacaGato racaEncontrada =
-                racas.FirstOrDefault(r =>
-                    r.name.ToLower().Contains(raca.ToLower()));
-
-            if (racaEncontrada == null)
+            if (racas == null || racas.Count == 0)
                 return "";
 
-            string breedId = racaEncontrada.id;
+            string breedId =
+                racas[0].id;
 
-            // busca imagem da raça
-            string responseImg =
-                await client.GetStringAsync(
-                    $"https://api.thecatapi.com/v1/images/search?breed_ids={breedId}");
+            // busca imagem
+            string urlImagem =
+                $"https://api.thecatapi.com/v1/images/search?breed_ids={breedId}";
+
+            string respostaImagem =
+                await client.GetStringAsync(urlImagem);
 
             List<ImagemGato> imagens =
-                JsonConvert.DeserializeObject<List<ImagemGato>>(responseImg);
+                JsonConvert.DeserializeObject<List<ImagemGato>>(respostaImagem);
 
             if (imagens == null || imagens.Count == 0)
                 return "";

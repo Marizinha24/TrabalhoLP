@@ -23,7 +23,7 @@ namespace TrabalhoLP
 
         }
 
-        private void CarregarTela()
+        private async void CarregarTela()
         {
             lblNomePet.Text =
                 petAtual.Nome;
@@ -38,8 +38,40 @@ namespace TrabalhoLP
                 petAtual.Especie;
 
 
-            pbPet.Load(
-                petAtual.ImagemURL);
+            string imagem = "";
+
+
+            // CACHORRO
+            if (petAtual.Especie == "Cachorro")
+            {
+                Cachorro api =
+                    new Cachorro();
+
+                imagem =
+                    await api.GetImagemPorRaca(
+                        petAtual.Raca);
+            }
+
+
+            // GATO
+            else if (petAtual.Especie == "Gato")
+            {
+                Gato api =
+                    new Gato();
+
+                imagem =
+                    await api.GetImagemPorRaca(
+                        petAtual.Raca);
+            }
+
+
+            if (!string.IsNullOrEmpty(imagem))
+            {
+                pbPet.SizeMode =
+                    PictureBoxSizeMode.Zoom;
+
+                pbPet.Load(imagem);
+            }
 
 
             lvHistorico.View =
