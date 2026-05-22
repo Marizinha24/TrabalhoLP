@@ -38,9 +38,7 @@ namespace TrabalhoLP
             {
                 MessageBox.Show("Cadastro realizado com sucesso!");
 
-                Agendamento_de_Serviços hp = new Agendamento_de_Serviços();
-                hp.Show();
-                this.Hide();
+                
             }
             else
             {

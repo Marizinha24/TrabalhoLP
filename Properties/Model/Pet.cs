@@ -8,10 +8,13 @@ namespace TrabalhoLP.Properties.Model
     {
         public string Nome { get; set; }
 
-        public string Tipo { get; set; } // Gato ou Cachorro
+        public string Especie { get; set; }
 
         public string Raca { get; set; }
 
         public string ImagemURL { get; set; }
+
+        public List<Agendamento> Agendamentos { get; set; }
+            = new List<Agendamento>();
     }
 }

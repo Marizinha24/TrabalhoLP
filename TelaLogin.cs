@@ -13,7 +13,7 @@ namespace TrabalhoLP
             string Senha = "123";
             if (txbNome.Text == Nome && txbSenha.Text == Senha)
             {
-                PetCare hp = new PetCare();
+                HomePage hp = new HomePage();
                 hp.Show();
                 this.Hide();
             }
