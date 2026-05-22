@@ -23,6 +23,8 @@ namespace TrabalhoLP
 
             rdbBanhoTosa.Tag = 80;
             rdbBanhoHidratacaoUnha.Tag = 75;
+
+            
         }
 
 
@@ -93,7 +95,7 @@ namespace TrabalhoLP
                     Environment.NewLine +
                     "-------------------------" +
                     Environment.NewLine +
-                    Environment.NewLine 
+                    Environment.NewLine
                 );
             }
             catch (InvalidOperationException ex)
@@ -186,5 +188,7 @@ namespace TrabalhoLP
 
             lblTotal.Text = "Total: R$ 0,00";
         }
+
+
     }
 }

@@ -41,9 +41,11 @@
             label4 = new Label();
             label5 = new Label();
             txtObservacao = new TextBox();
-            txtEspecie = new TextBox();
             label6 = new Label();
             groupBox1 = new GroupBox();
+            label12 = new Label();
+            cbRacas = new ComboBox();
+            cbEspecie = new ComboBox();
             pictureBox12 = new PictureBox();
             label10 = new Label();
             label9 = new Label();
@@ -206,14 +208,6 @@
             txtObservacao.Size = new Size(250, 69);
             txtObservacao.TabIndex = 12;
             // 
-            // txtEspecie
-            // 
-            txtEspecie.Location = new Point(31, 155);
-            txtEspecie.Multiline = true;
-            txtEspecie.Name = "txtEspecie";
-            txtEspecie.Size = new Size(250, 23);
-            txtEspecie.TabIndex = 13;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -228,6 +222,9 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 130, 179);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(cbRacas);
+            groupBox1.Controls.Add(cbEspecie);
             groupBox1.Controls.Add(pictureBox12);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
@@ -239,7 +236,6 @@
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(txtEspecie);
             groupBox1.Controls.Add(cmbPorte);
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(pictureBox5);
@@ -251,6 +247,35 @@
             groupBox1.Size = new Size(566, 303);
             groupBox1.TabIndex = 15;
             groupBox1.TabStop = false;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.SaddleBrown;
+            label12.Location = new Point(31, 172);
+            label12.Name = "label12";
+            label12.Size = new Size(75, 24);
+            label12.TabIndex = 25;
+            label12.Text = "Raças:";
+            // 
+            // cbRacas
+            // 
+            cbRacas.FormattingEnabled = true;
+            cbRacas.Location = new Point(31, 199);
+            cbRacas.Name = "cbRacas";
+            cbRacas.Size = new Size(250, 23);
+            cbRacas.TabIndex = 24;
+            // 
+            // cbEspecie
+            // 
+            cbEspecie.FormattingEnabled = true;
+            cbEspecie.Items.AddRange(new object[] { "Gato", "Cachorro" });
+            cbEspecie.Location = new Point(31, 146);
+            cbEspecie.Name = "cbEspecie";
+            cbEspecie.Size = new Size(250, 23);
+            cbEspecie.TabIndex = 23;
+            cbEspecie.SelectedIndexChanged += cbespecie_SelectedIndexChanged;
             // 
             // pictureBox12
             // 
@@ -268,7 +293,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.SaddleBrown;
-            label10.Location = new Point(31, 199);
+            label10.Location = new Point(31, 230);
             label10.Name = "label10";
             label10.Size = new Size(159, 24);
             label10.TabIndex = 19;
@@ -316,7 +341,7 @@
             // 
             // txtTemperamento
             // 
-            txtTemperamento.Location = new Point(31, 243);
+            txtTemperamento.Location = new Point(31, 274);
             txtTemperamento.Multiline = true;
             txtTemperamento.Name = "txtTemperamento";
             txtTemperamento.Size = new Size(250, 23);
@@ -359,7 +384,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(185, 199);
+            pictureBox6.Location = new Point(185, 230);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(41, 42);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -570,7 +595,6 @@
         private Label label4;
         private Label label5;
         private TextBox txtCPF;
-        private TextBox txtEspecie;
         private Label label6;
         private GroupBox groupBox1;
         private Label label10;
@@ -597,5 +621,8 @@
         private PictureBox pictureBox12;
         private PictureBox pictureBox14;
         private PictureBox pictureBox13;
+        private ComboBox cbEspecie;
+        private Label label12;
+        private ComboBox cbRacas;
     }
 }

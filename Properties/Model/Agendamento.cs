@@ -4,8 +4,10 @@ using System.Text;
 
 namespace TrabalhoLP.Properties.Model
 {
-    internal class Agendamento
+    public class Agendamento
     {
+        public Pet Pet { get; set; }
+
         public DateTime? Data { get; set; }
 
         public string Horario { get; set; }
@@ -19,11 +21,13 @@ namespace TrabalhoLP.Properties.Model
         {
             return
                 $"     {Environment.NewLine}" +
+                $"Pet: {Pet.Nome}{Environment.NewLine}" +
+                $"Tipo: {Pet.Tipo}{Environment.NewLine}" +
+                $"Raça: {Pet.Raca}{Environment.NewLine}" +
                 $"Data: {Data:dd/MM/yyyy}{Environment.NewLine}" +
                 $"Horário: {Horario}{Environment.NewLine}" +
                 $"Serviços: {Servicos}{Environment.NewLine}" +
                 $"Total: R$ {Total:F2}";
-
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TrabalhoLP.Properties.Model;
 
 namespace TrabalhoLP
 {
@@ -14,6 +15,7 @@ namespace TrabalhoLP
         {
             InitializeComponent();
         }
+
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -45,6 +47,31 @@ namespace TrabalhoLP
                 MessageBox.Show("Ops! Não foi possível realizar o cadastro. Todos os campos devem ser preenchidos antes de continuar!");
             }
         }
+
+        public async void cbespecie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            cbRacas.Items.Clear();
+
+            if (cbEspecie.Text == "Cachorro")
+            {
+                DogApi api = new DogApi();
+
+                List<string> racas = await api.GetRacas();
+
+                cbRacas.Items.AddRange(racas.ToArray());
+            }
+            else if (cbEspecie.Text == "Gato")
+            {
+                CatApi api = new CatApi();
+
+                List<string> racas = await api.GetRacas();
+
+                cbRacas.Items.AddRange(racas.ToArray());
+            
+        }
+
+    }
     }
 }
 
