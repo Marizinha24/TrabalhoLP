@@ -14,7 +14,11 @@ namespace TrabalhoLP.Properties.Model
 
         public string ImagemURL { get; set; }
 
+        public Usuario Usuario { get; set; }
+
         public List<Agendamento> Agendamentos { get; set; }
             = new List<Agendamento>();
+
+     
     }
 }

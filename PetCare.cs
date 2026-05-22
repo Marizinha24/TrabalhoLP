@@ -38,7 +38,7 @@ namespace TrabalhoLP
             {
                 MessageBox.Show("Cadastro realizado com sucesso!");
 
-                
+
             }
             else
             {
@@ -48,28 +48,102 @@ namespace TrabalhoLP
 
         public async void cbespecie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            cbRacas.Items.Clear();
 
+            cbRacas.DataSource = null;
+
+            // CACHORRO
             if (cbEspecie.Text == "Cachorro")
             {
-                Cachorro api = new Cachorro();
+                Cachorro api =
+                    new Cachorro();
 
-                List<string> racas = await api.GetRacas();
+                List<string> racas =
+                    await api.GetRacas();
 
-                cbRacas.Items.AddRange(racas.ToArray());
+                cbRacas.DataSource = racas;
             }
+
+            // GATO
             else if (cbEspecie.Text == "Gato")
             {
-                Gato api = new Gato();
+                Gato api =
+                    new Gato();
 
-                List<string> racas = await api.GetRacas();
+                List<string> racas =
+                    await api.GetRacas();
 
-                cbRacas.Items.AddRange(racas.ToArray());
-            
+                cbRacas.DataSource = racas;
+            }
+
         }
 
-    }
+        private async void UsuarioPet_Load(object sender, EventArgs e)
+        {
+            Cachorro apic = new Cachorro();
+
+            List<string> racas = await apic.GetRacas();
+
+            cbRacas.DataSource = racas;
+
+
+            Gato apig = new Gato();
+
+            string imagem =
+                await apig.GetImagemPorRaca(cbRacas.Text);
+
+            pbPet.Load(imagem);
+        }
+
+        private async void cbRacas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbRacas.SelectedItem == null)
+                    return;
+
+                string raca =
+                    cbRacas.SelectedItem.ToString();
+
+                string imagem = "";
+
+
+                // CACHORRO
+                if (cbEspecie.Text == "Cachorro")
+                {
+                    Cachorro api =
+                        new Cachorro();
+
+                    imagem =
+                        await api.GetImagemPorRaca(raca);
+                }
+
+
+                // GATO
+                else if (cbEspecie.Text == "Gato")
+                {
+                    Gato api =
+                        new Gato();
+
+                    imagem =
+                        await api.GetImagemPorRaca(raca);
+                }
+
+
+                if (!string.IsNullOrEmpty(imagem))
+                {
+                    pbPet.SizeMode =
+                        PictureBoxSizeMode.Zoom;
+
+                    pbPet.Load(imagem);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Erro ao carregar imagem: "
+                    + ex.Message);
+            }
+        }
     }
 }
 

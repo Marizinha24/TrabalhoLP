@@ -32,9 +32,8 @@
             btnHomePage = new Button();
             btnAgendamentos = new Button();
             btnAtualizarUsuario = new Button();
-            btnImportar = new Button();
-            btnExportar = new Button();
             btnDeletar = new Button();
+            btnAgendamentosVer = new Button();
             SuspendLayout();
             // 
             // lvUsuariosPets
@@ -45,6 +44,7 @@
             lvUsuariosPets.Size = new Size(1146, 652);
             lvUsuariosPets.TabIndex = 0;
             lvUsuariosPets.UseCompatibleStateImageBehavior = false;
+            lvUsuariosPets.DoubleClick += lvUsuariosPets_DoubleClick;
             // 
             // btnHomePage
             // 
@@ -54,7 +54,6 @@
             btnHomePage.TabIndex = 1;
             btnHomePage.Text = "Home page";
             btnHomePage.UseVisualStyleBackColor = true;
-            btnHomePage.Click += this.button1_Click;
             // 
             // btnAgendamentos
             // 
@@ -67,48 +66,38 @@
             // 
             // btnAtualizarUsuario
             // 
-            btnAtualizarUsuario.Location = new Point(307, 12);
+            btnAtualizarUsuario.Location = new Point(877, 12);
             btnAtualizarUsuario.Name = "btnAtualizarUsuario";
             btnAtualizarUsuario.Size = new Size(105, 59);
             btnAtualizarUsuario.TabIndex = 3;
             btnAtualizarUsuario.Text = "Atualizar Usuario";
             btnAtualizarUsuario.UseVisualStyleBackColor = true;
             // 
-            // btnImportar
-            // 
-            btnImportar.Location = new Point(954, 27);
-            btnImportar.Name = "btnImportar";
-            btnImportar.Size = new Size(94, 29);
-            btnImportar.TabIndex = 4;
-            btnImportar.Text = "Importar";
-            btnImportar.UseVisualStyleBackColor = true;
-            // 
-            // btnExportar
-            // 
-            btnExportar.Location = new Point(1087, 27);
-            btnExportar.Name = "btnExportar";
-            btnExportar.Size = new Size(94, 29);
-            btnExportar.TabIndex = 5;
-            btnExportar.Text = "Exportar";
-            btnExportar.UseVisualStyleBackColor = true;
-            // 
             // btnDeletar
             // 
-            btnDeletar.Location = new Point(430, 12);
+            btnDeletar.Location = new Point(1016, 12);
             btnDeletar.Name = "btnDeletar";
             btnDeletar.Size = new Size(119, 59);
             btnDeletar.TabIndex = 6;
             btnDeletar.Text = "Deletar Usuario";
             btnDeletar.UseVisualStyleBackColor = true;
             // 
+            // btnAgendamentosVer
+            // 
+            btnAgendamentosVer.Location = new Point(294, 12);
+            btnAgendamentosVer.Name = "btnAgendamentosVer";
+            btnAgendamentosVer.Size = new Size(115, 59);
+            btnAgendamentosVer.TabIndex = 7;
+            btnAgendamentosVer.Text = "Ver agendamentos";
+            btnAgendamentosVer.UseVisualStyleBackColor = true;
+            // 
             // UsuarioPet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1208, 757);
+            Controls.Add(btnAgendamentosVer);
             Controls.Add(btnDeletar);
-            Controls.Add(btnExportar);
-            Controls.Add(btnImportar);
             Controls.Add(btnAtualizarUsuario);
             Controls.Add(btnAgendamentos);
             Controls.Add(btnHomePage);
@@ -125,8 +114,7 @@
         private Button btnHomePage;
         private Button btnAgendamentos;
         private Button btnAtualizarUsuario;
-        private Button btnImportar;
-        private Button btnExportar;
         private Button btnDeletar;
+        private Button btnAgendamentosVer;
     }
 }
