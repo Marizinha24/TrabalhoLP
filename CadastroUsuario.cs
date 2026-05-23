@@ -9,20 +9,25 @@ using TrabalhoLP.Properties.Model;
 
 namespace TrabalhoLP
 {
-    public partial class PetCare : Form
+    public partial class CadastroUsuario : Form
     {
-        public PetCare()
+        Endereco endereco = new Endereco();
+        public bool isUpdate = false;
+        int idPessoa = 0;
+        public CadastroUsuario()
         {
             InitializeComponent();
+
+            tbxNumero.TextChanged += TbNumero_TextChanged;
+            tbxComplemento.TextChanged += TbComplemento_TextChanged;
         }
 
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            string sexo = cmbSexo.Text;
-            string castrado = cmbCastrado.Text;
+            
 
-            string[] dados = { txtNomeTutor.Text, txtNomePet.Text, sexo, castrado };
+            string[] dados = { txtNomeTutor.Text, txtCPF.Text, txtEndereco.Text, txtTelefone.Text };
 
             int camposValidos = 0;
 
@@ -37,6 +42,9 @@ namespace TrabalhoLP
             if (camposValidos == dados.Length)
             {
                 MessageBox.Show("Cadastro realizado com sucesso!");
+                CadastroPet pc = new CadastroPet();
+                pc.Show();
+                this.Hide();
 
 
             }
@@ -143,6 +151,40 @@ namespace TrabalhoLP
                     "Erro ao carregar imagem: "
                     + ex.Message);
             }
+        }
+
+
+
+
+        private void TbNumero_TextChanged(object sender, EventArgs e)
+        {
+            MontarEndereco();
+        }
+
+        private void TbComplemento_TextChanged(object sender, EventArgs e)
+        {
+            MontarEndereco();
+        }
+
+
+        private async void btnEndereco_Click(object sender, EventArgs e)
+        {
+
+            endereco = await endereco.getEndereco(tbxCEP.Text);
+
+            MontarEndereco();
+
+        }
+
+        private void MontarEndereco()
+        {
+                txtEndereco.Text =
+                endereco.Logradouro + " ," +
+                tbxNumero.Text + " " +
+                tbxComplemento.Text + " - " +
+                endereco.Bairro + " - " +
+                endereco.Cidade + " - " +
+                endereco.UF;
         }
     }
 }

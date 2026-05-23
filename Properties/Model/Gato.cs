@@ -18,7 +18,7 @@ namespace TrabalhoLP.Properties.Model
 
         public List<RacaGato> breeds { get; set; }
 
-
+        // nada abre sem isso, se for mudar pega a chave
         private const string APIKEY =
             "live_AKMfFk8qpYf16buuqcdHfPZI96eLn6qPJ6MinfHuv5OKecU71M3l02FhVxbgSx2v";
 
@@ -97,7 +97,7 @@ namespace TrabalhoLP.Properties.Model
             return lista.Select(r => r.name).ToList();
         }
 
-        //🔥 IMAGEM POR RAÇA (AQUI ESTÁ O IMPORTANTE)
+        //IMAGEM POR RAÇA (não mexe)
 
         public async Task<string> GetImagemPorRaca(string raca)
         {

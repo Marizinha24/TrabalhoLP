@@ -1,6 +1,6 @@
 ﻿namespace TrabalhoLP
 {
-    partial class PetCare
+    partial class CadastroUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PetCare));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             txtNomeTutor = new TextBox();
-            txtNomePet = new TextBox();
-            cmbPorte = new ComboBox();
             btnEntrar = new Button();
             blbNome = new Label();
             label1 = new Label();
@@ -40,19 +38,14 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            txtObservacao = new TextBox();
+            txtEndereco = new TextBox();
             label6 = new Label();
             groupBox1 = new GroupBox();
-            label12 = new Label();
-            cbRacas = new ComboBox();
-            cbEspecie = new ComboBox();
+            btnEndereco = new Button();
+            tbxNumero = new TextBox();
             pictureBox12 = new PictureBox();
-            label10 = new Label();
-            label9 = new Label();
-            cmbCastrado = new ComboBox();
-            label8 = new Label();
-            cmbSexo = new ComboBox();
-            txtTemperamento = new TextBox();
+            tbxComplemento = new TextBox();
+            tbxCEP = new TextBox();
             label7 = new Label();
             pictureBox2 = new PictureBox();
             pictureBox5 = new PictureBox();
@@ -70,7 +63,7 @@
             label11 = new Label();
             pictureBox8 = new PictureBox();
             pictureBox13 = new PictureBox();
-            pbPet = new PictureBox();
+            label15 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -87,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbPet).BeginInit();
             SuspendLayout();
             // 
             // txtNomeTutor
@@ -98,25 +90,6 @@
             txtNomeTutor.Name = "txtNomeTutor";
             txtNomeTutor.Size = new Size(285, 29);
             txtNomeTutor.TabIndex = 0;
-            // 
-            // txtNomePet
-            // 
-            txtNomePet.Location = new Point(35, 89);
-            txtNomePet.Margin = new Padding(3, 4, 3, 4);
-            txtNomePet.Multiline = true;
-            txtNomePet.Name = "txtNomePet";
-            txtNomePet.Size = new Size(285, 29);
-            txtNomePet.TabIndex = 1;
-            // 
-            // cmbPorte
-            // 
-            cmbPorte.FormattingEnabled = true;
-            cmbPorte.Items.AddRange(new object[] { "Pequeno", "Médio", "Grande" });
-            cmbPorte.Location = new Point(351, 96);
-            cmbPorte.Margin = new Padding(3, 4, 3, 4);
-            cmbPorte.Name = "cmbPorte";
-            cmbPorte.Size = new Size(247, 28);
-            cmbPorte.TabIndex = 3;
             // 
             // btnEntrar
             // 
@@ -190,111 +163,97 @@
             label4.AutoSize = true;
             label4.Font = new Font("Snap ITC", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.SaddleBrown;
-            label4.Location = new Point(38, 345);
+            label4.Location = new Point(35, 66);
             label4.Name = "label4";
-            label4.Size = new Size(231, 25);
+            label4.Size = new Size(66, 25);
             label4.TabIndex = 10;
-            label4.Text = "Observações gerais:";
+            label4.Text = "CEP:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.SaddleBrown;
-            label5.Location = new Point(35, 144);
+            label5.Location = new Point(34, 154);
             label5.Name = "label5";
-            label5.Size = new Size(118, 29);
+            label5.Size = new Size(116, 29);
             label5.TabIndex = 11;
-            label5.Text = "Espécie:";
+            label5.Text = "Número:";
             // 
-            // txtObservacao
+            // txtEndereco
             // 
-            txtObservacao.Location = new Point(38, 379);
-            txtObservacao.Margin = new Padding(3, 4, 3, 4);
-            txtObservacao.Multiline = true;
-            txtObservacao.Name = "txtObservacao";
-            txtObservacao.Size = new Size(285, 91);
-            txtObservacao.TabIndex = 12;
+            txtEndereco.Location = new Point(343, 266);
+            txtEndereco.Margin = new Padding(3, 4, 3, 4);
+            txtEndereco.Multiline = true;
+            txtEndereco.Name = "txtEndereco";
+            txtEndereco.ReadOnly = true;
+            txtEndereco.Size = new Size(285, 91);
+            txtEndereco.TabIndex = 12;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.SaddleBrown;
-            label6.Location = new Point(35, 43);
+            label6.Location = new Point(343, 215);
             label6.Name = "label6";
-            label6.Size = new Size(180, 29);
+            label6.Size = new Size(126, 29);
             label6.TabIndex = 14;
-            label6.Text = "Nome do Pet:";
+            label6.Text = "Endereço";
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 130, 179);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(cbRacas);
-            groupBox1.Controls.Add(cbEspecie);
+            groupBox1.Controls.Add(btnEndereco);
+            groupBox1.Controls.Add(tbxNumero);
             groupBox1.Controls.Add(pictureBox12);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(cmbCastrado);
-            groupBox1.Controls.Add(txtNomePet);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(cmbSexo);
-            groupBox1.Controls.Add(txtTemperamento);
+            groupBox1.Controls.Add(tbxComplemento);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(tbxCEP);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(txtEndereco);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(cmbPorte);
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(pictureBox5);
             groupBox1.Controls.Add(pictureBox6);
             groupBox1.Controls.Add(pictureBox11);
             groupBox1.ForeColor = Color.FromArgb(255, 130, 179);
-            groupBox1.Location = new Point(437, 206);
+            groupBox1.Location = new Point(436, 201);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(647, 404);
+            groupBox1.Size = new Size(695, 404);
             groupBox1.TabIndex = 15;
             groupBox1.TabStop = false;
             // 
-            // label12
+            // btnEndereco
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.SaddleBrown;
-            label12.Location = new Point(35, 229);
-            label12.Name = "label12";
-            label12.Size = new Size(94, 29);
-            label12.TabIndex = 25;
-            label12.Text = "Raças:";
+            btnEndereco.BackColor = Color.FromArgb(255, 130, 179);
+            btnEndereco.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEndereco.ForeColor = Color.SaddleBrown;
+            btnEndereco.Location = new Point(396, 118);
+            btnEndereco.Margin = new Padding(3, 4, 3, 4);
+            btnEndereco.Name = "btnEndereco";
+            btnEndereco.Size = new Size(148, 71);
+            btnEndereco.TabIndex = 33;
+            btnEndereco.Text = "Buscar Endereço";
+            btnEndereco.UseVisualStyleBackColor = false;
+            btnEndereco.Click += btnEndereco_Click;
             // 
-            // cbRacas
+            // tbxNumero
             // 
-            cbRacas.FormattingEnabled = true;
-            cbRacas.Location = new Point(35, 265);
-            cbRacas.Margin = new Padding(3, 4, 3, 4);
-            cbRacas.Name = "cbRacas";
-            cbRacas.Size = new Size(285, 28);
-            cbRacas.TabIndex = 24;
-            cbRacas.SelectedIndexChanged += cbRacas_SelectedIndexChanged;
-            // 
-            // cbEspecie
-            // 
-            cbEspecie.FormattingEnabled = true;
-            cbEspecie.Items.AddRange(new object[] { "Gato", "Cachorro" });
-            cbEspecie.Location = new Point(35, 195);
-            cbEspecie.Margin = new Padding(3, 4, 3, 4);
-            cbEspecie.Name = "cbEspecie";
-            cbEspecie.Size = new Size(285, 28);
-            cbEspecie.TabIndex = 23;
-            cbEspecie.SelectedIndexChanged += cbespecie_SelectedIndexChanged;
+            tbxNumero.Location = new Point(35, 196);
+            tbxNumero.Margin = new Padding(3, 4, 3, 4);
+            tbxNumero.Name = "tbxNumero";
+            tbxNumero.Size = new Size(247, 27);
+            tbxNumero.TabIndex = 32;
             // 
             // pictureBox12
             // 
             pictureBox12.BackColor = Color.Transparent;
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(266, 131);
+            pictureBox12.Location = new Point(265, 141);
             pictureBox12.Margin = new Padding(3, 4, 3, 4);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(55, 45);
@@ -302,84 +261,38 @@
             pictureBox12.TabIndex = 22;
             pictureBox12.TabStop = false;
             // 
-            // label10
+            // tbxComplemento
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.SaddleBrown;
-            label10.Location = new Point(35, 307);
-            label10.Name = "label10";
-            label10.Size = new Size(197, 29);
-            label10.TabIndex = 19;
-            label10.Text = "Temperamento:";
+            tbxComplemento.Location = new Point(35, 288);
+            tbxComplemento.Margin = new Padding(3, 4, 3, 4);
+            tbxComplemento.Name = "tbxComplemento";
+            tbxComplemento.Size = new Size(247, 27);
+            tbxComplemento.TabIndex = 30;
             // 
-            // label9
+            // tbxCEP
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.SaddleBrown;
-            label9.Location = new Point(351, 265);
-            label9.Name = "label9";
-            label9.Size = new Size(133, 29);
-            label9.TabIndex = 20;
-            label9.Text = "Castrado:";
-            // 
-            // cmbCastrado
-            // 
-            cmbCastrado.FormattingEnabled = true;
-            cmbCastrado.Items.AddRange(new object[] { "Sim", "Não" });
-            cmbCastrado.Location = new Point(351, 324);
-            cmbCastrado.Margin = new Padding(3, 4, 3, 4);
-            cmbCastrado.Name = "cmbCastrado";
-            cmbCastrado.Size = new Size(247, 28);
-            cmbCastrado.TabIndex = 19;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.SaddleBrown;
-            label8.Location = new Point(351, 144);
-            label8.Name = "label8";
-            label8.Size = new Size(84, 29);
-            label8.TabIndex = 18;
-            label8.Text = "Sexo:";
-            // 
-            // cmbSexo
-            // 
-            cmbSexo.FormattingEnabled = true;
-            cmbSexo.Items.AddRange(new object[] { "Fêmea", "Macho" });
-            cmbSexo.Location = new Point(351, 201);
-            cmbSexo.Margin = new Padding(3, 4, 3, 4);
-            cmbSexo.Name = "cmbSexo";
-            cmbSexo.Size = new Size(247, 28);
-            cmbSexo.TabIndex = 17;
-            // 
-            // txtTemperamento
-            // 
-            txtTemperamento.Location = new Point(35, 365);
-            txtTemperamento.Margin = new Padding(3, 4, 3, 4);
-            txtTemperamento.Multiline = true;
-            txtTemperamento.Name = "txtTemperamento";
-            txtTemperamento.Size = new Size(285, 29);
-            txtTemperamento.TabIndex = 16;
+            tbxCEP.Location = new Point(35, 103);
+            tbxCEP.Margin = new Padding(3, 4, 3, 4);
+            tbxCEP.Name = "tbxCEP";
+            tbxCEP.Size = new Size(285, 27);
+            tbxCEP.TabIndex = 31;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.SaddleBrown;
-            label7.Location = new Point(351, 43);
+            label7.Location = new Point(34, 248);
             label7.Name = "label7";
-            label7.Size = new Size(93, 29);
+            label7.Size = new Size(179, 29);
             label7.TabIndex = 15;
-            label7.Text = "Porte:";
+            label7.Text = "Complemento:";
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(6, 9);
+            pictureBox2.Location = new Point(0, 15);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(62, 67);
@@ -391,7 +304,7 @@
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(567, 332);
+            pictureBox5.Location = new Point(610, 340);
             pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(73, 64);
@@ -403,7 +316,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(211, 307);
+            pictureBox6.Location = new Point(265, 302);
             pictureBox6.Margin = new Padding(3, 4, 3, 4);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(47, 56);
@@ -415,7 +328,7 @@
             // 
             pictureBox11.BackColor = Color.Transparent;
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(579, 52);
+            pictureBox11.Location = new Point(530, 75);
             pictureBox11.Margin = new Padding(3, 4, 3, 4);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(61, 68);
@@ -429,21 +342,19 @@
             groupBox2.Controls.Add(txtTelefone);
             groupBox2.Controls.Add(txtNomeTutor);
             groupBox2.Controls.Add(blbNome);
-            groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(txtCPF);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(pictureBox1);
-            groupBox2.Controls.Add(txtObservacao);
             groupBox2.Controls.Add(pictureBox9);
             groupBox2.Controls.Add(pictureBox10);
             groupBox2.Controls.Add(pictureBox3);
             groupBox2.Controls.Add(pictureBox14);
-            groupBox2.Location = new Point(22, 162);
+            groupBox2.Location = new Point(8, 172);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(408, 503);
+            groupBox2.Size = new Size(408, 433);
             groupBox2.TabIndex = 16;
             groupBox2.TabStop = false;
             // 
@@ -484,7 +395,7 @@
             // 
             pictureBox10.BackColor = Color.Transparent;
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(0, 317);
+            pictureBox10.Location = new Point(17, 310);
             pictureBox10.Margin = new Padding(3, 4, 3, 4);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(61, 53);
@@ -496,7 +407,7 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(294, 452);
+            pictureBox3.Location = new Point(315, 350);
             pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(69, 51);
@@ -575,32 +486,33 @@
             pictureBox13.TabIndex = 23;
             pictureBox13.TabStop = false;
             // 
-            // pbPet
+            // label15
             // 
-            pbPet.Location = new Point(48, 12);
-            pbPet.Name = "pbPet";
-            pbPet.Size = new Size(157, 129);
-            pbPet.TabIndex = 24;
-            pbPet.TabStop = false;
+            label15.AutoSize = true;
+            label15.Location = new Point(604, 556);
+            label15.Name = "label15";
+            label15.Size = new Size(71, 20);
+            label15.TabIndex = 26;
+            label15.Text = "Endereço";
             // 
-            // PetCare
+            // CadastroUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleTurquoise;
             ClientSize = new Size(1152, 682);
-            Controls.Add(pbPet);
             Controls.Add(pictureBox13);
             Controls.Add(label11);
             Controls.Add(pictureBox7);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Controls.Add(label15);
             Controls.Add(label2);
             Controls.Add(btnEntrar);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox8);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "PetCare";
+            Name = "CadastroUsuario";
             Text = "PetCare";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -620,7 +532,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbPet).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -628,8 +539,6 @@
         #endregion
 
         private TextBox txtNomeTutor;
-        private TextBox txtNomePet;
-        private ComboBox cmbPorte;
         private Button btnEntrar;
         private Label blbNome;
         private Label label1;
@@ -641,15 +550,12 @@
         private TextBox txtCPF;
         private Label label6;
         private GroupBox groupBox1;
-        private Label label10;
-        private Label label9;
         private ComboBox cmbCastrado;
-        private Label label8;
         private ComboBox cmbSexo;
         private TextBox txtTemperamento;
         private Label label7;
         private GroupBox groupBox2;
-        private TextBox txtObservacao;
+        private TextBox txtEndereco;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox4;
@@ -666,7 +572,11 @@
         private PictureBox pictureBox14;
         private PictureBox pictureBox13;
         private ComboBox cbEspecie;
-        private Label label12;
+        private TextBox tbxNumero;
+        private TextBox tbxCEP;
+        private TextBox tbxComplemento;
+        private Label label15;
+        private Button btnEndereco;
         private ComboBox cbRacas;
         private PictureBox pbPet;
     }

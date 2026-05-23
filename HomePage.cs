@@ -17,7 +17,7 @@ namespace TrabalhoLP
 
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
-            PetCare pc = new PetCare();
+            CadastroUsuario pc = new CadastroUsuario();
             pc.Show();
             this.Hide();
         }

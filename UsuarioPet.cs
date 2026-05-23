@@ -61,7 +61,7 @@ namespace TrabalhoLP
 
             pet1.Especie = "Cachorro";
 
-            pet1.Raca = "Labrador";
+            pet1.Raca = "Labrador Retriever";
 
             pet1.Usuario = usuario1;
 
@@ -168,33 +168,11 @@ namespace TrabalhoLP
                 .Tag;
 
 
-            DialogResult resposta =
-                MessageBox.Show(
-                    "Sim = Novo Agendamento\n" +
-                    "Não = Ver Agendamentos",
-                    "Escolha uma opção",
-                    MessageBoxButtons.YesNoCancel,
-                    MessageBoxIcon.Question
-                );
+            CustomizadoBox tela =
+                new CustomizadoBox(pet);
 
-
-            // NOVO AGENDAMENTO
-            if (resposta == DialogResult.Yes)
-            {
-                Agendamento_de_Serviços tela =
-                    new Agendamento_de_Serviços(pet);
-
-                tela.ShowDialog();
-            }
-
-
-            // VER AGENDAMENTOS
-            else if (resposta == DialogResult.No)
-            {
-                AgendamentosPet tela = new AgendamentosPet(pet);
-
-                tela.ShowDialog();
-            }
+            tela.ShowDialog();
         }
     }
+    
 }

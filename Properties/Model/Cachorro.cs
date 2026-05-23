@@ -17,7 +17,7 @@ namespace TrabalhoLP.Properties.Model
 
         public List<RacaCachorro> breeds { get; set; }
 
-
+        // nada abre sem isso, se for mudar pega a chave
         private const string APIKEY =
             "live_98a9p26vts2XQaiFteKAEaoTlSlv0izXMetJZT09rNDmPRVBRLmntEAIbHAwoZcD";
 
@@ -93,39 +93,51 @@ namespace TrabalhoLP.Properties.Model
         }
 
 
-        // 🔥 IMAGEM POR RAÇA (AQUI ESTÁ O IMPORTANTE)
-        public async Task<string> GetImagemPorRaca(string raca)
+        //  IMAGEM POR RAÇA (não mexe)
+        public async Task<string>GetImagemPorRaca(string raca)
         {
             HttpClient client = CriarClient();
 
-            string urlBusca =
-                $"https://api.thedogapi.com/v1/breeds/search?q={raca}";
 
-            string respostaBusca =
-                await client.GetStringAsync(urlBusca);
+            // BUSCA RAÇAS
+            string respostaRacas = await client.GetStringAsync( URLRacas);
 
-            List<RacaCachorro> racas =
-                JsonConvert.DeserializeObject<List<RacaCachorro>>(respostaBusca);
 
-            if (racas == null || racas.Count == 0)
+            List<RacaCachorro> racas = JsonConvert.DeserializeObject  <List<RacaCachorro>>(  respostaRacas);
+
+
+            // procura raça exata
+            RacaCachorro racaEncontrada =  racas.FirstOrDefault(r =>  r.name.Trim().ToLower()   == raca.Trim().ToLower());
+
+
+            if (racaEncontrada == null)
+            {
                 return "";
+            }
 
-            int breedId = racas[0].id;
 
+            // imagem pela raça
             string urlImagem =
-                $"https://api.thedogapi.com/v1/images/search?breed_ids={breedId}";
+                $"https://api.thedogapi.com/v1/images/search?breed_ids={racaEncontrada.id}";
+
 
             string respostaImagem =
-                await client.GetStringAsync(urlImagem);
+                await client.GetStringAsync(
+                    urlImagem);
 
-            List<ImagemDog> imagens =
-                JsonConvert.DeserializeObject<List<ImagemDog>>(respostaImagem);
 
-            if (imagens == null || imagens.Count == 0)
+            List<ImagemDog> imagens = JsonConvert.DeserializeObject <List<ImagemDog>>( respostaImagem);
+
+
+            if (imagens == null ||
+                imagens.Count == 0)
+            {
                 return "";
+            }
+
 
             return imagens[0].url;
         }
-       
+
     }
 }
