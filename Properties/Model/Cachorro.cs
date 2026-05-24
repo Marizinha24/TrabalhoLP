@@ -7,137 +7,49 @@ namespace TrabalhoLP.Properties.Model
 {
     public class Cachorro
     {
-        public string id { get; set; }
-
-        public string url { get; set; }
-
-        public int width { get; set; }
-
-        public int height { get; set; }
-
-        public List<RacaCachorro> breeds { get; set; }
-
-        // nada abre sem isso, se for mudar pega a chave
-        private const string APIKEY =
-            "live_98a9p26vts2XQaiFteKAEaoTlSlv0izXMetJZT09rNDmPRVBRLmntEAIbHAwoZcD";
-
-        private string URLImagem =
-            "https://api.thedogapi.com/v1/images/search";
-
-        private string URLRacas =
-            "https://api.thedogapi.com/v1/breeds";
-
-        // CLASSES AUXILIARES
-        public class RacaCachorro
+        public class DogResponse
         {
-            public int id { get; set; }
+            public string message { get; set; }
 
-            public string name { get; set; }
-
-            public string temperament { get; set; }
-
-            public string life_span { get; set; }
-
-            public string bred_for { get; set; }
+            public string status { get; set; }
         }
 
-        public class ImagemDog
+        public class ListaRacas
         {
-            public string url { get; set; }
+            public Dictionary<string, List<string>> message { get; set; }
+
+            public string status { get; set; }
         }
 
 
-        private HttpClient CriarClient()
+        // LISTAR RAÇAS
+        public async Task<List<string>> GetRacas()
         {
             HttpClient client = new HttpClient();
 
-            client.DefaultRequestHeaders.Add(
-                "x-api-key",
-                APIKEY
-            );
+            string response = await client.GetStringAsync("https://dog.ceo/api/breeds/list/all");
 
-            return client;
+            ListaRacas lista = JsonConvert.DeserializeObject<ListaRacas>(response);
+
+            return lista.message.Keys.ToList();
         }
 
 
-        // IMAGEM ALEATÓRIA
-        public async Task<Cachorro> GetCachorro()
+
+        // IMAGEM POR RAÇA
+        public async Task<string> GetImagemPorRaca(string raca)
         {
-            HttpClient client = CriarClient();
+            HttpClient client = new HttpClient();
 
-            HttpResponseMessage response =
-                await client.GetAsync(URLImagem);
+            raca = raca.ToLower();
 
-            string responseBody =
-                await response.Content.ReadAsStringAsync();
+            string url = $"https://dog.ceo/api/breed/{raca}/images/random";
 
-            List<Cachorro> lista =
-                JsonConvert.DeserializeObject<List<Cachorro>>(responseBody);
+            string response = await client.GetStringAsync(url);
 
-            return lista[0];
+            DogResponse dog = JsonConvert.DeserializeObject<DogResponse>(response);
+
+            return dog.message;
         }
-
-
-        // LISTA DE RAÇAS
-        public async Task<List<string>> GetRacas()
-        {
-            HttpClient client = CriarClient();
-
-            string response =
-                await client.GetStringAsync(URLRacas);
-
-            List<RacaCachorro> lista =
-                JsonConvert.DeserializeObject<List<RacaCachorro>>(response);
-
-            return lista.Select(r => r.name).ToList();
-        }
-
-
-        //  IMAGEM POR RAÇA (não mexe)
-        public async Task<string>GetImagemPorRaca(string raca)
-        {
-            HttpClient client = CriarClient();
-
-
-            // BUSCA RAÇAS
-            string respostaRacas = await client.GetStringAsync( URLRacas);
-
-
-            List<RacaCachorro> racas = JsonConvert.DeserializeObject  <List<RacaCachorro>>(  respostaRacas);
-
-
-            // procura raça exata
-            RacaCachorro racaEncontrada =  racas.FirstOrDefault(r =>  r.name.Trim().ToLower()   == raca.Trim().ToLower());
-
-
-            if (racaEncontrada == null)
-            {
-                return "";
-            }
-
-
-            // imagem pela raça
-            string urlImagem =
-                $"https://api.thedogapi.com/v1/images/search?breed_ids={racaEncontrada.id}";
-
-
-            string respostaImagem =
-                await client.GetStringAsync(
-                    urlImagem);
-
-
-            List<ImagemDog> imagens = JsonConvert.DeserializeObject <List<ImagemDog>>( respostaImagem);
-
-
-            if (imagens == null ||
-                imagens.Count == 0)
-            {
-                return "";
-            }
-
-
-            return imagens[0].url;
-        }
-
     }
 }
