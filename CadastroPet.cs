@@ -11,14 +11,26 @@ namespace TrabalhoLP
 {
     public partial class CadastroPet : Form
     {
-        public CadastroPet()
+        private Usuario usuarioAtual;
+
+        public CadastroPet(Usuario usuario)
         {
             InitializeComponent();
+
+            usuarioAtual = usuario;
+
+            if (usuarioAtual != null)
+            {
+                txtNomeTutor.Text = usuarioAtual.Nome;
+            }
+
         }
 
 
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+
+
+        private async void btnEntrar_Click(object sender, EventArgs e)
         {
             string sexo = cmbSexo.Text;
             string castrado = cmbCastrado.Text;
@@ -37,6 +49,42 @@ namespace TrabalhoLP
 
             if (camposValidos == dados.Length)
             {
+                Pet pet = new Pet();
+
+                pet.Nome = txtNomePet.Text;
+
+                pet.Especie = cbEspecie.Text;
+
+                pet.Raca = cbRacas.Text;
+
+
+                // FK
+                pet.Usuario_ID = usuarioAtual.Usuario_ID;
+
+                pet.Usuario = usuarioAtual;
+
+
+                // IMAGEM
+                if (pet.Especie == "Cachorro")
+                {
+                    Cachorro dog = new Cachorro();
+
+                    pet.ImagemURL = await dog.GetImagemPorRaca(pet.Raca);
+                }
+
+                else
+                {
+                    Gato gato = new Gato();
+
+                    pet.ImagemURL = await gato.GetImagemPorRaca(pet.Raca);
+                }
+
+
+
+                pet.InsertPet(pet);
+
+
+                // MESSAGE BOX
                 DialogResult resposta =
                 MessageBox.Show(
                     "Cadastro realizado com sucesso!\nDeseja cadastrar um novo pet?",
@@ -46,52 +94,38 @@ namespace TrabalhoLP
                 );
 
 
-                // NOVO AGENDAMENTO
+                // NOVO PET
                 if (resposta == DialogResult.Yes)
                 {
                     CadastroPet tela =
-                        new CadastroPet();
+                        new CadastroPet(usuarioAtual);
 
                     tela.ShowDialog();
+
                     this.Close();
                 }
 
 
-                // VER AGENDAMENTOS
+                // HOME
                 else if (resposta == DialogResult.No)
                 {
-                    HomePage tela = new HomePage();
+                    HomePage tela =
+                        new HomePage();
 
                     tela.ShowDialog();
+
                     this.Close();
                 }
-
-
             }
+
             else
             {
-                MessageBox.Show("Ops! Não foi possível realizar o cadastro. Todos os campos devem ser preenchidos antes de continuar!");
+                MessageBox.Show(
+                    "Ops! Não foi possível realizar o cadastro. Todos os campos devem ser preenchidos antes de continuar!");
             }
         }
 
 
-
-        private async void UsuarioPet_Load(object sender, EventArgs e)
-        {
-            Cachorro apic = new Cachorro();
-
-            List<string> racas = await apic.GetRacas();
-
-            cbRacas.DataSource = racas;
-
-
-            Gato apig = new Gato();
-
-            string imagem =
-                await apig.GetImagemPorRaca(cbRacas.Text);
-
-            pbPet.Load(imagem);
-        }
 
         private async void cbRacas_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -100,8 +134,7 @@ namespace TrabalhoLP
                 if (cbRacas.SelectedItem == null)
                     return;
 
-                string raca =
-                    cbRacas.SelectedItem.ToString();
+                string raca = cbRacas.SelectedItem.ToString();
 
                 string imagem = "";
 
@@ -112,19 +145,16 @@ namespace TrabalhoLP
                     Cachorro api =
                         new Cachorro();
 
-                    imagem =
-                        await api.GetImagemPorRaca(raca);
+                    imagem = await api.GetImagemPorRaca(raca);
                 }
 
 
                 // GATO
                 else if (cbEspecie.Text == "Gato")
                 {
-                    Gato api =
-                        new Gato();
+                    Gato api = new Gato();
 
-                    imagem =
-                        await api.GetImagemPorRaca(raca);
+                    imagem = await api.GetImagemPorRaca(raca);
                 }
 
 
@@ -151,29 +181,24 @@ namespace TrabalhoLP
             // CACHORRO
             if (cbEspecie.Text == "Cachorro")
             {
-                Cachorro api =
-                    new Cachorro();
+                Cachorro api = new Cachorro();
 
-                List<string> racas =
-                    await api.GetRacas();
+                List<string> racas = await api.GetRacas();
 
                 cbRacas.DataSource = racas;
+                cbRacas.SelectedIndex = -1;
             }
 
             // GATO
             else if (cbEspecie.Text == "Gato")
             {
-                Gato api =
-                    new Gato();
+                Gato api = new Gato();
 
-                List<string> racas =
-                    await api.GetRacas();
+                List<string> racas = await api.GetRacas();
 
                 cbRacas.DataSource = racas;
+                cbRacas.SelectedIndex = -1;
             }
         }
-
-
     }
 }
-

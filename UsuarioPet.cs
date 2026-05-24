@@ -12,15 +12,12 @@ namespace TrabalhoLP
 {
     public partial class UsuarioPet : Form
     {
-        private List<Usuario> usuarios =
-            new List<Usuario>();
+        private List<Usuario> usuarios = new List<Usuario>();
 
 
         public UsuarioPet()
         {
             InitializeComponent();
-
-            //teste depois que colocar o sql tira ******************************
 
             lvUsuariosPets.View = View.Details;
 
@@ -39,120 +36,37 @@ namespace TrabalhoLP
             lvUsuariosPets.Columns.Add("Raça", 150);
 
 
-            CriarDadosTeste();
+            CarregarPetsBanco();
 
-            CarregarPets(usuarios);
         }
 
 
-        private void CriarDadosTeste()
-        {
-
-            Usuario usuario1 =
-                new Usuario();
-
-            usuario1.Nome = "Laura";
-
-
-            Pet pet1 =
-                new Pet();
-
-            pet1.Nome = "Thor";
-
-            pet1.Especie = "Cachorro";
-
-            pet1.Raca = "Labrador Retriever";
-
-            pet1.Usuario = usuario1;
-
-
-            Agendamento ag1 =
-                new Agendamento();
-
-            ag1.Pet = pet1;
-
-            ag1.Data = DateTime.Now;
-
-            ag1.Horario = "14:00";
-
-            ag1.Servicos = "Banho";
-
-            ag1.Total = 30;
-
-            ag1.Status =
-                StatusAgendamento.Pendente;
-
-
-            pet1.Agendamentos.Add(ag1);
-
-            usuario1.Pets.Add(pet1);
-
-
-            Pet pet2 =
-                new Pet();
-
-            pet2.Nome = "Mimi";
-
-            pet2.Especie = "Gato";
-
-            pet2.Raca = "Siamese";
-
-            pet2.Usuario = usuario1;
-
-
-            Agendamento ag2 =
-                new Agendamento();
-
-            ag2.Pet = pet2;
-
-            ag2.Data =
-                DateTime.Now.AddDays(1);
-
-            ag2.Horario = "10:30";
-
-            ag2.Servicos = "Tosa";
-
-            ag2.Total = 60;
-
-            ag2.Status =
-                StatusAgendamento.Concluido;
-
-
-            pet2.Agendamentos.Add(ag2);
-
-            usuario1.Pets.Add(pet2);
-
-
-            usuarios.Add(usuario1);
-
-            // termina aqui o teste *************************
-        }
-
-
-        private void CarregarPets(
-           List<Usuario> usuariosLista)
+        private void CarregarPetsBanco()
         {
             lvUsuariosPets.Items.Clear();
 
-            foreach (Usuario usuario in usuariosLista)
+            Pet p = new Pet();
+
+            List<Pet> lista = p.GetPets();
+
+            foreach (Pet pet in lista)
             {
-                foreach (Pet pet in usuario.Pets)
-                {
-                    ListViewItem item =
-                        new ListViewItem(usuario.Nome);
+                ListViewItem item = new ListViewItem(pet.Usuario.Nome);
 
-                    item.SubItems.Add(pet.Nome);
+                item.SubItems.Add(pet.Nome);
 
-                    item.SubItems.Add(pet.Especie);
+                item.SubItems.Add(pet.Especie);
 
-                    item.SubItems.Add(pet.Raca);
+                item.SubItems.Add(pet.Raca);
 
-                    item.Tag = pet;
+                item.Tag = pet;
 
-                    lvUsuariosPets.Items.Add(item);
-                }
+                lvUsuariosPets.Items.Add(item);
             }
         }
+
+
+
 
 
         private void lvUsuariosPets_DoubleClick(object sender, EventArgs e)
@@ -162,17 +76,77 @@ namespace TrabalhoLP
                 return;
             }
 
-            Pet pet =
-                (Pet)lvUsuariosPets
-                .SelectedItems[0]
-                .Tag;
+
+            Pet pet = (Pet)lvUsuariosPets.SelectedItems[0].Tag;
 
 
-            CustomizadoBox tela =
-                new CustomizadoBox(pet);
+            CustomizadoBox tela = new CustomizadoBox(pet);
 
             tela.ShowDialog();
+            this.Close();
         }
+
+        private void btnHomePage_Click(object sender, EventArgs e)
+        {
+            HomePage hp = new HomePage();
+            hp.Show();
+            this.Close();
+        }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Arquivo CSV| *.csv";
+            sfd.Title = "Salvar como csv";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                {
+
+
+                    for (int i = 0; i < lvUsuariosPets.Columns.Count; i++)
+                    {
+                        sw.Write(lvUsuariosPets.Columns[i].Text);
+
+                        if (i < lvUsuariosPets.Columns.Count - 1)
+                            sw.Write(';');
+                    }
+                    sw.WriteLine();
+
+                    foreach (ListViewItem item in lvUsuariosPets.Items)
+                    {
+                        for (int i = 0; i < lvUsuariosPets.Columns.Count; i++)
+                        {
+                            string valor = (i == 0)
+                                ? item.Text
+                                : item.SubItems[i].Text;
+
+                            sw.Write(valor);
+
+                            if (i < lvUsuariosPets.Columns.Count - 1)
+                                sw.Write(';');
+                        }
+
+                        sw.WriteLine();
+                    }
+
+                    MessageBox.Show("Arquivo salvo em" + sfd.FileName);
+                }
+            }
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
-    
 }

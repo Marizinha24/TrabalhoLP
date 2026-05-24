@@ -13,7 +13,7 @@ namespace TrabalhoLP
     {
         Endereco endereco = new Endereco();
         public bool isUpdate = false;
-        int idPessoa = 0;
+
         public CadastroUsuario()
         {
             InitializeComponent();
@@ -23,11 +23,13 @@ namespace TrabalhoLP
         }
 
 
+
+
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            
 
-            string[] dados = { txtNomeTutor.Text, txtCPF.Text, txtEndereco.Text, txtTelefone.Text };
+
+            string[] dados = { txtNomeTutor.Text, txtCPF.Text, txtEndereco.Text, txtTelefone.Text, txtEmail.Text };
 
             int camposValidos = 0;
 
@@ -39,10 +41,33 @@ namespace TrabalhoLP
                 }
             }
 
+
+
             if (camposValidos == dados.Length)
             {
+                Usuario usuario = new Usuario();
+
+                usuario.Nome = txtNomeTutor.Text;
+
+                usuario.CPF = txtCPF.Text;
+
+                usuario.Telefone = txtTelefone.Text;
+
+                usuario.Email = txtEmail.Text;
+
+                usuario.Endereco = txtEndereco.Text;
+
+
+                // salva no banco
+                int idGerado =
+                    usuario.InsertUsuario(usuario);
+
+
+                // guarda ID no objeto
+                usuario.Usuario_ID = idGerado;
+
                 MessageBox.Show("Cadastro realizado com sucesso!");
-                CadastroPet pc = new CadastroPet();
+                CadastroPet pc = new CadastroPet(usuario);
                 pc.Show();
                 this.Hide();
 
@@ -53,106 +78,6 @@ namespace TrabalhoLP
                 MessageBox.Show("Ops! Não foi possível realizar o cadastro. Todos os campos devem ser preenchidos antes de continuar!");
             }
         }
-
-        public async void cbespecie_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            cbRacas.DataSource = null;
-
-            // CACHORRO
-            if (cbEspecie.Text == "Cachorro")
-            {
-                Cachorro api =
-                    new Cachorro();
-
-                List<string> racas =
-                    await api.GetRacas();
-
-                cbRacas.DataSource = racas;
-            }
-
-            // GATO
-            else if (cbEspecie.Text == "Gato")
-            {
-                Gato api =
-                    new Gato();
-
-                List<string> racas =
-                    await api.GetRacas();
-
-                cbRacas.DataSource = racas;
-            }
-
-        }
-
-        private async void UsuarioPet_Load(object sender, EventArgs e)
-        {
-            Cachorro apic = new Cachorro();
-
-            List<string> racas = await apic.GetRacas();
-
-            cbRacas.DataSource = racas;
-
-
-            Gato apig = new Gato();
-
-            string imagem =
-                await apig.GetImagemPorRaca(cbRacas.Text);
-
-            pbPet.Load(imagem);
-        }
-
-        private async void cbRacas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cbRacas.SelectedItem == null)
-                    return;
-
-                string raca =
-                    cbRacas.SelectedItem.ToString();
-
-                string imagem = "";
-
-
-                // CACHORRO
-                if (cbEspecie.Text == "Cachorro")
-                {
-                    Cachorro api =
-                        new Cachorro();
-
-                    imagem =
-                        await api.GetImagemPorRaca(raca);
-                }
-
-
-                // GATO
-                else if (cbEspecie.Text == "Gato")
-                {
-                    Gato api =
-                        new Gato();
-
-                    imagem =
-                        await api.GetImagemPorRaca(raca);
-                }
-
-
-                if (!string.IsNullOrEmpty(imagem))
-                {
-                    pbPet.SizeMode =
-                        PictureBoxSizeMode.Zoom;
-
-                    pbPet.Load(imagem);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Erro ao carregar imagem: "
-                    + ex.Message);
-            }
-        }
-
 
 
 
@@ -178,14 +103,21 @@ namespace TrabalhoLP
 
         private void MontarEndereco()
         {
-                txtEndereco.Text =
-                endereco.Logradouro + " ," +
-                tbxNumero.Text + " " +
-                tbxComplemento.Text + " - " +
-                endereco.Bairro + " - " +
-                endereco.Cidade + " - " +
-                endereco.UF;
+            txtEndereco.Text =
+            endereco.Logradouro + " ," +
+            tbxNumero.Text + " " +
+            tbxComplemento.Text + " - " +
+            endereco.Bairro + " - " +
+            endereco.Cidade + " - " +
+            endereco.UF;
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+
+            HomePage hp = new HomePage();
+            hp.Show();
+            this.Close();
         }
     }
 }
-

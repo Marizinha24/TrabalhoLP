@@ -18,13 +18,14 @@ namespace TrabalhoLP
         {
             InitializeComponent();
             this.petAtual = petAtual;
+
         }
 
-        private void btnAddPet_Click( object sender, EventArgs e)
+        private void btnAddPet_Click(object sender, EventArgs e)
         {
-            CadastroPet pc =  new CadastroPet();
+            CadastroPet tela = new CadastroPet(petAtual.Usuario);
 
-            pc.Show();
+            tela.ShowDialog();
 
             this.Close();
         }
@@ -32,9 +33,7 @@ namespace TrabalhoLP
 
         private void btnNovoAgendamento_Click(object sender, EventArgs e)
         {
-            Agendamento_de_Serviços ads =
-                new Agendamento_de_Serviços(
-                    petAtual);
+            Agendamento_de_Serviços ads =new Agendamento_de_Serviços(petAtual);
 
             ads.Show();
 
@@ -42,9 +41,9 @@ namespace TrabalhoLP
         }
 
 
-        private void btnVerAgendamentos_Click( object sender,   EventArgs e)
+        private void btnVerAgendamentos_Click(object sender, EventArgs e)
         {
-            AgendamentosPet tela =  new AgendamentosPet( petAtual);
+            AgendamentosPet tela = new AgendamentosPet(petAtual);
 
             tela.Show();
 

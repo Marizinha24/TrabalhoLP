@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             btnCadastroCliente = new Button();
-            btnAgendamento = new Button();
             btnListaUsuarios = new Button();
             SuspendLayout();
             // 
@@ -53,16 +52,6 @@
             btnCadastroCliente.UseVisualStyleBackColor = true;
             btnCadastroCliente.Click += btnCadastroCliente_Click;
             // 
-            // btnAgendamento
-            // 
-            btnAgendamento.Location = new Point(412, 200);
-            btnAgendamento.Name = "btnAgendamento";
-            btnAgendamento.Size = new Size(165, 111);
-            btnAgendamento.TabIndex = 2;
-            btnAgendamento.Text = "Agendamento de Serviços";
-            btnAgendamento.UseVisualStyleBackColor = true;
-            btnAgendamento.Click += btnAgendamento_Click;
-            // 
             // btnListaUsuarios
             // 
             btnListaUsuarios.Location = new Point(682, 209);
@@ -79,7 +68,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(985, 628);
             Controls.Add(btnListaUsuarios);
-            Controls.Add(btnAgendamento);
             Controls.Add(btnCadastroCliente);
             Controls.Add(label1);
             Name = "HomePage";
@@ -92,7 +80,6 @@
 
         private Label label1;
         private Button btnCadastroCliente;
-        private Button btnAgendamento;
         private Button btnListaUsuarios;
     }
 }

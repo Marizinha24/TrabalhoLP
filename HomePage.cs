@@ -22,13 +22,7 @@ namespace TrabalhoLP
             this.Hide();
         }
 
-        private void btnAgendamento_Click(object sender, EventArgs e)
-        {
-            Agendamento_de_Serviços ads = new Agendamento_de_Serviços(null);
-            ads.Show();
-            this.Hide();
 
-        }
 
         private void btnListaUsuarios_Click(object sender, EventArgs e)
         {

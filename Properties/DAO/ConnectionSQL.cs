@@ -5,26 +5,28 @@ namespace TrabalhoLP.Properties.DAO
 {
     public class ConnectionSQL
     {
-        private string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=PetCare;Integrated Security=True;";
+        private static string connectionSTRING = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=PetCare;Integrated Security=True;";
 
-        public SqlCommand MountQuery(string sql)
+
+        public SqlConnection conn = new SqlConnection(connectionSTRING);
+
+        public SqlCommand MountQuery(string query)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = query;
+            conn.Close();
+            return cmd;
+        }
 
-            try
-            {
-                connection.Open();
-                return command;
-            }
-            catch (Exception ex)
-            {
-                if (connection.State == System.Data.ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-                throw new Exception("Erro ao conectar ao banco: " + ex.Message);
-            }
+        public SqlDataAdapter MountQueryDataTable(string query)
+        {
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = query;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd.CommandText, conn);
+            conn.Close();
+            return dataAdapter;
         }
     }
 }

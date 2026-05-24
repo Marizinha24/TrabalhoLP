@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TrabalhoLP.Properties.Model
 {
-    public class Agendamento
+     public class Agendamento
     {
         public Pet Pet { get; set; }
 

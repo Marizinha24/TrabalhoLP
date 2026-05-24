@@ -25,119 +25,65 @@ namespace TrabalhoLP
 
         private async void CarregarTela()
         {
-            lblNomePet.Text =
-                petAtual.Nome;
+            lblNomePet.Text = petAtual.Nome;
 
-            lblUsuario.Text =
-                petAtual.Usuario.Nome;
+            lblUsuario.Text = petAtual.Usuario.Nome;
 
-            lblRaca.Text =
-                petAtual.Raca;
+            lblRaca.Text = petAtual.Raca;
 
-            lblEspecie.Text =
-                petAtual.Especie;
+            lblEspecie.Text = petAtual.Especie;
 
+            pbPet.SizeMode = PictureBoxSizeMode.Zoom;
 
-            string imagem = "";
+            pbPet.Load(petAtual.ImagemURL);
 
 
-            // CACHORRO
-            if (petAtual.Especie == "Cachorro")
-            {
-                Cachorro api =
-                    new Cachorro();
 
-                imagem =
-                    await api.GetImagemPorRaca(
-                        petAtual.Raca);
-            }
+            lvHistorico.View = View.Details;
 
+            lvHistorico.FullRowSelect = true;
 
-            // GATO
-            else if (petAtual.Especie == "Gato")
-            {
-                Gato api =
-                    new Gato();
+            lvHistorico.GridLines = true;
 
-                imagem =
-                    await api.GetImagemPorRaca(
-                        petAtual.Raca);
-            }
+            lvHistorico.Columns.Add("Data", 100);
 
+            lvHistorico.Columns.Add("Horário", 100);
 
-            if (!string.IsNullOrEmpty(imagem))
-            {
-                pbPet.SizeMode =
-                    PictureBoxSizeMode.Zoom;
+            lvHistorico.Columns.Add("Serviço", 180);
 
-                pbPet.Load(imagem);
-            }
+            lvHistorico.Columns.Add("Valor", 100);
 
-
-            lvHistorico.View =
-                View.Details;
-
-            lvHistorico.FullRowSelect =
-                true;
-
-            lvHistorico.GridLines =
-                true;
-
-            lvHistorico.Columns.Add(
-                "Data", 100);
-
-            lvHistorico.Columns.Add(
-                "Horário", 100);
-
-            lvHistorico.Columns.Add(
-                "Serviço", 180);
-
-            lvHistorico.Columns.Add(
-                "Valor", 100);
-
-            lvHistorico.Columns.Add(
-                "Status", 120);
+            lvHistorico.Columns.Add("Status", 120);
 
 
             foreach (Agendamento agendamento
                 in petAtual.Agendamentos)
             {
                 ListViewItem item =
-                    new ListViewItem(
-                        agendamento.Data?
-                        .ToString("dd/MM/yyyy"));
+                    new ListViewItem(agendamento.Data?.ToString("dd/MM/yyyy"));
 
-                item.SubItems.Add(
-                    agendamento.Horario);
+                item.SubItems.Add(agendamento.Horario);
 
-                item.SubItems.Add(
-                    agendamento.Servicos);
+                item.SubItems.Add(agendamento.Servicos);
 
-                item.SubItems.Add(
-                    $"R$ {agendamento.Total:F2}");
+                item.SubItems.Add($"R$ {agendamento.Total:F2}");
 
-                item.SubItems.Add(
-                    agendamento.Status.ToString());
+                item.SubItems.Add(agendamento.Status.ToString());
 
 
-                if (agendamento.Status
-                    == StatusAgendamento.Cancelado)
+                if (agendamento.Status == StatusAgendamento.Cancelado)
                 {
-                    item.BackColor =
-                        Color.LightCoral;
+                    item.BackColor = Color.LightCoral;
                 }
 
-                else if (agendamento.Status
-                    == StatusAgendamento.Concluido)
+                else if (agendamento.Status == StatusAgendamento.Concluido)
                 {
-                    item.BackColor =
-                        Color.LightGreen;
+                    item.BackColor = Color.LightGreen;
                 }
 
                 else
                 {
-                    item.BackColor =
-                        Color.LightYellow;
+                    item.BackColor = Color.LightYellow;
                 }
 
                 lvHistorico.Items.Add(item);
@@ -148,45 +94,34 @@ namespace TrabalhoLP
             foreach (Agendamento agendamento
              in petAtual.Agendamentos)
             {
-                ListViewItem item =
-                    new ListViewItem(
-                        agendamento.Data?
-                        .ToString("dd/MM/yyyy"));
+                ListViewItem item = new ListViewItem(
+                        agendamento.Data?.ToString("dd/MM/yyyy"));
 
-                item.SubItems.Add(
-                    agendamento.Horario);
+                item.SubItems.Add(agendamento.Horario);
 
-                item.SubItems.Add(
-                    agendamento.Servicos);
+                item.SubItems.Add(agendamento.Servicos);
 
-                item.SubItems.Add(
-                    $"R$ {agendamento.Total:F2}");
+                item.SubItems.Add($"R$ {agendamento.Total:F2}");
 
-                item.SubItems.Add(
-                    agendamento.Status.ToString());
+                item.SubItems.Add(agendamento.Status.ToString());
 
 
                 // CORES
 
-                if (agendamento.Status
-                    == StatusAgendamento.Cancelado)
+                if (agendamento.Status == StatusAgendamento.Cancelado)
                 {
-                    item.BackColor =
-                        Color.LightCoral;
+                    item.BackColor = Color.LightCoral;
                 }
 
-                else if (agendamento.Status
-                    == StatusAgendamento.Concluido)
+                else if (agendamento.Status == StatusAgendamento.Concluido)
                 {
                     item.BackColor =
                         Color.LightGreen;
                 }
 
-                else if (agendamento.Status
-                    == StatusAgendamento.Pendente)
+                else if (agendamento.Status == StatusAgendamento.Pendente)
                 {
-                    item.BackColor =
-                        Color.LightYellow;
+                    item.BackColor = Color.LightYellow;
                 }
 
 
