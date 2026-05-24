@@ -128,5 +128,12 @@ namespace TrabalhoLP
                 lvHistorico.Items.Add(item);
             }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            HomePage hp = new HomePage();
+            hp.Show();
+            this.Close();
+        }
     }
 }

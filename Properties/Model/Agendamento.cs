@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text;
+using TrabalhoLP.Properties.DAO;
 
 namespace TrabalhoLP.Properties.Model
 {
@@ -15,6 +18,8 @@ namespace TrabalhoLP.Properties.Model
         public string Servicos { get; set; }
 
         public double Total { get; set; }
+
+        public int Pet_ID { get; set; }
 
         public StatusAgendamento Status { get; set; }
 
@@ -38,6 +43,66 @@ namespace TrabalhoLP.Properties.Model
             $"Serviços: {Servicos}{Environment.NewLine}" +
             $"Total: R$ {Total:F2}{Environment.NewLine}" +
             $"Status: {Status}";
+        }
+
+        public List<Agendamento> GetAgendamentos()
+        {
+            SqlDataAdapter dataAdapter =new ConnectionSQL().MountQueryDataTable("SELECT * FROM Agendamentos");
+
+            DataSet oDataSet =new DataSet();
+
+            dataAdapter.Fill(oDataSet);
+
+            DataTable oDataTable =oDataSet.Tables[0];
+
+            List<Agendamento> lista =oDataTable.AsEnumerable().Select(row => new Agendamento
+                {
+                    Pet_ID =row.Field<int>("PetId"),
+
+                    Data =row.Field<DateTime?>("Data"),
+
+                    Horario = row.Field<string>("Horario"),
+
+                    Servicos = row.Field<string>("Servicos"),
+
+                    Total = Convert.ToDouble(row["Total"]),
+
+                    Status =(StatusAgendamento)Enum.Parse(typeof(StatusAgendamento),row["Status"].ToString())
+                })
+                .ToList();
+
+            return lista;
+        }
+
+        public string InsertAgendamento(Agendamento agendamento)
+        {
+            ConnectionSQL conn = new ConnectionSQL();
+
+            SqlCommand cmd = conn.MountQuery(
+                @"INSERT INTO Agendamentos
+        (PetId, Data, Horario, Servicos, Total, Status)
+        VALUES
+        (@P1,@P2,@P3,@P4,@P5,@P6)");
+
+            cmd.Parameters.AddWithValue("@P1", agendamento.Pet.Pet_ID);
+
+            cmd.Parameters.AddWithValue("@P2",agendamento.Data);
+
+            cmd.Parameters.AddWithValue("@P3", agendamento.Horario);
+
+            cmd.Parameters.AddWithValue("@P4",agendamento.Servicos);
+
+            cmd.Parameters.AddWithValue("@P5", agendamento.Total);
+
+            cmd.Parameters.AddWithValue("@P6",agendamento.Status.ToString());
+
+            conn.conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            conn.conn.Close();
+
+            return "Agendamento cadastrado";
         }
     }
 }

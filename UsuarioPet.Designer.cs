@@ -40,7 +40,7 @@
             lvUsuariosPets.Location = new Point(35, 78);
             lvUsuariosPets.Margin = new Padding(3, 4, 3, 4);
             lvUsuariosPets.Name = "lvUsuariosPets";
-            lvUsuariosPets.Size = new Size(1146, 617);
+            lvUsuariosPets.Size = new Size(1270, 617);
             lvUsuariosPets.TabIndex = 0;
             lvUsuariosPets.UseCompatibleStateImageBehavior = false;
             lvUsuariosPets.DoubleClick += lvUsuariosPets_DoubleClick;
@@ -56,7 +56,7 @@
             // 
             // btnDeletar
             // 
-            btnDeletar.Location = new Point(1016, 12);
+            btnDeletar.Location = new Point(1175, 12);
             btnDeletar.Name = "btnDeletar";
             btnDeletar.Size = new Size(119, 59);
             btnDeletar.TabIndex = 6;
@@ -88,7 +88,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1208, 757);
+            ClientSize = new Size(1342, 757);
             Controls.Add(btnExportar);
             Controls.Add(btnImportar);
             Controls.Add(btnDeletar);

@@ -112,12 +112,16 @@ namespace TrabalhoLP
             endereco.UF;
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
+       
+
+        private void btnVoltar_Click_1(object sender, EventArgs e)
         {
 
             HomePage hp = new HomePage();
             hp.Show();
             this.Close();
         }
+
     }
+    
 }

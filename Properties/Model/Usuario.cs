@@ -38,7 +38,7 @@ namespace TrabalhoLP.Properties.Model
                 oDataTable.AsEnumerable()
                 .Select(row => new Usuario
                 {
-                    Usuario_ID = row.Field<int>("UsuarioId"),
+                    Usuario_ID = row.Field<int>("Id"),
                     Nome = row.Field<string>("Nome"),
                     CPF = row.Field<string>("CPF"),
                     Telefone = row.Field<string>("Telefone"),

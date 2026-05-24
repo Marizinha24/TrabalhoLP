@@ -55,8 +55,6 @@
             txtTelefone = new TextBox();
             pictureBox1 = new PictureBox();
             pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
-            pictureBox3 = new PictureBox();
             pictureBox14 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -64,6 +62,11 @@
             pictureBox8 = new PictureBox();
             pictureBox13 = new PictureBox();
             label15 = new Label();
+            txtEmail = new TextBox();
+            label8 = new Label();
+            pictureBox10 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            btnVoltar = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -73,13 +76,13 @@
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // txtNomeTutor
@@ -140,7 +143,7 @@
             // 
             // txtCPF
             // 
-            txtCPF.Location = new Point(38, 189);
+            txtCPF.Location = new Point(38, 177);
             txtCPF.Margin = new Padding(3, 4, 3, 4);
             txtCPF.Multiline = true;
             txtCPF.Name = "txtCPF";
@@ -152,7 +155,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Snap ITC", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SaddleBrown;
-            label3.Location = new Point(38, 244);
+            label3.Location = new Point(38, 232);
             label3.Name = "label3";
             label3.Size = new Size(114, 25);
             label3.TabIndex = 9;
@@ -339,6 +342,10 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.FromArgb(255, 130, 179);
+            groupBox2.Controls.Add(txtEmail);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(pictureBox10);
+            groupBox2.Controls.Add(pictureBox3);
             groupBox2.Controls.Add(txtTelefone);
             groupBox2.Controls.Add(txtNomeTutor);
             groupBox2.Controls.Add(blbNome);
@@ -347,8 +354,6 @@
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(pictureBox1);
             groupBox2.Controls.Add(pictureBox9);
-            groupBox2.Controls.Add(pictureBox10);
-            groupBox2.Controls.Add(pictureBox3);
             groupBox2.Controls.Add(pictureBox14);
             groupBox2.Location = new Point(8, 172);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
@@ -360,7 +365,7 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(38, 277);
+            txtTelefone.Location = new Point(38, 265);
             txtTelefone.Margin = new Padding(3, 4, 3, 4);
             txtTelefone.Multiline = true;
             txtTelefone.Name = "txtTelefone";
@@ -383,37 +388,13 @@
             // 
             pictureBox9.BackColor = Color.Transparent;
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(315, 196);
+            pictureBox9.Location = new Point(315, 184);
             pictureBox9.Margin = new Padding(3, 4, 3, 4);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(47, 56);
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox9.TabIndex = 21;
             pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.BackColor = Color.Transparent;
-            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(17, 310);
-            pictureBox10.Margin = new Padding(3, 4, 3, 4);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(61, 53);
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox10.TabIndex = 21;
-            pictureBox10.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(315, 350);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(69, 51);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 21;
-            pictureBox3.TabStop = false;
             // 
             // pictureBox14
             // 
@@ -495,12 +476,71 @@
             label15.TabIndex = 26;
             label15.Text = "Endereço";
             // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(38, 356);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
+            txtEmail.Multiline = true;
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(285, 31);
+            txtEmail.TabIndex = 29;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Snap ITC", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.SaddleBrown;
+            label8.Location = new Point(38, 313);
+            label8.Name = "label8";
+            label8.Size = new Size(79, 25);
+            label8.TabIndex = 28;
+            label8.Text = "Email:";
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.BackColor = Color.Transparent;
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(0, 334);
+            pictureBox10.Margin = new Padding(3, 4, 3, 4);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(50, 46);
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox10.TabIndex = 26;
+            pictureBox10.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(293, 368);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(69, 51);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 27;
+            pictureBox3.TabStop = false;
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.BackColor = Color.FromArgb(255, 130, 179);
+            btnVoltar.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnVoltar.ForeColor = Color.SaddleBrown;
+            btnVoltar.Image = (Image)resources.GetObject("btnVoltar.Image");
+            btnVoltar.Location = new Point(-3, 2);
+            btnVoltar.Margin = new Padding(3, 4, 3, 4);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(47, 46);
+            btnVoltar.TabIndex = 30;
+            btnVoltar.UseVisualStyleBackColor = false;
+            btnVoltar.Click += btnVoltar_Click_1;
+            // 
             // CadastroUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleTurquoise;
             ClientSize = new Size(1152, 682);
+            Controls.Add(btnVoltar);
             Controls.Add(pictureBox13);
             Controls.Add(label11);
             Controls.Add(pictureBox7);
@@ -525,13 +565,13 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -561,10 +601,8 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
-        private PictureBox pictureBox3;
         private PictureBox pictureBox7;
         private PictureBox pictureBox9;
-        private PictureBox pictureBox10;
         private Label label11;
         private PictureBox pictureBox8;
         private PictureBox pictureBox11;
@@ -579,5 +617,10 @@
         private Button btnEndereco;
         private ComboBox cbRacas;
         private PictureBox pbPet;
+        private TextBox txtEmail;
+        private Label label8;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox3;
+        private Button btnVoltar;
     }
 }

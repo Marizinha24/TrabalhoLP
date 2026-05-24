@@ -95,11 +95,16 @@ namespace TrabalhoLP
                 }
 
 
-                petAtual.Agendamentos
-                    .Add(agendamento);
+                agendamento.InsertAgendamento(agendamento);
+
+                petAtual.Agendamentos.Add(agendamento);
+
 
 
                 MessageBox.Show("Agendamento realizado!");
+                HomePage hp = new HomePage();
+                hp.Show();
+                this.Hide();
             }
             catch (InvalidOperationException ex)
             {

@@ -38,6 +38,7 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
+            btnHome = new Button();
             ((System.ComponentModel.ISupportInitialize)pbPet).BeginInit();
             SuspendLayout();
             // 
@@ -130,11 +131,22 @@
             label8.TabIndex = 9;
             label8.Text = "Raça";
             // 
+            // btnHome
+            // 
+            btnHome.Location = new Point(887, 21);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(130, 67);
+            btnHome.TabIndex = 10;
+            btnHome.Text = "Home Page";
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
+            // 
             // AgendamentosPet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1051, 639);
+            Controls.Add(btnHome);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -164,5 +176,6 @@
         private Label label6;
         private Label label7;
         private Label label8;
+        private Button btnHome;
     }
 }
