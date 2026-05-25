@@ -75,19 +75,46 @@ namespace TrabalhoLP.Properties.Model
         }
 
 
-        // DELETE
-        public string DeleteUsuario(
-            int ID)
+        public string DeleteUsuario(int ID)
         {
             ConnectionSQL conn = new ConnectionSQL();
-            SqlCommand cmd = conn.MountQuery(
-             @"DELETE FROM Usuarios WHERE Usuario_ID = @P1");
-            cmd.Parameters.AddWithValue("P1", ID);
+
             conn.conn.Open();
-            cmd.ExecuteNonQuery();
+
+
+            // DELETA AGENDAMENTOS
+            SqlCommand cmdAg = conn.MountQuery(
+            @"DELETE FROM Agendamentos WHERE PetId IN
+            (SELECT Id FROM Pets WHERE UsuarioId = @P1)");
+
+            cmdAg.Parameters.AddWithValue("@P1", ID);
+
+            cmdAg.ExecuteNonQuery();
+
+
+
+            // DELETA PETS
+            SqlCommand cmdPets = conn.MountQuery(
+            @"DELETE FROM Pets WHERE UsuarioId = @P1");
+
+            cmdPets.Parameters.AddWithValue("@P1", ID);
+
+            cmdPets.ExecuteNonQuery();
+
+
+
+            // DELETA USUÁRIO
+            SqlCommand cmdUsuario = conn.MountQuery(
+            @"DELETE FROM Usuarios WHERE Id = @P1");
+
+            cmdUsuario.Parameters.AddWithValue("@P1", ID);
+
+            cmdUsuario.ExecuteNonQuery();
+
+
             conn.conn.Close();
 
-            return "Registro Deletado do Sistema";
+            return "Registro deletado do sistema";
         }
     }
 }

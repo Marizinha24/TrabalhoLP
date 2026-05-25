@@ -97,7 +97,7 @@ namespace TrabalhoLP.Properties.Model
 
             cmd.Parameters.AddWithValue("@P3", pet.Raca);
 
-            cmd.Parameters.AddWithValue("@P4", pet.ImagemURL);
+            cmd.Parameters.AddWithValue("@P4",(object)pet.ImagemURL ?? DBNull.Value);
 
             cmd.Parameters.AddWithValue("@P5", pet.Usuario_ID);
 

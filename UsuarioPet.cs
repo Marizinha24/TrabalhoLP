@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TrabalhoLP.Properties.DAO;
 using TrabalhoLP.Properties.Model;
 using static TrabalhoLP.Properties.Model.Agendamento;
 
@@ -50,10 +52,10 @@ namespace TrabalhoLP
             lvUsuariosPets.Items.Clear();
 
             // USUÁRIOS
-            List<Usuario> usuarios =new Usuario().GetUsuarios();
+            List<Usuario> usuarios = new Usuario().GetUsuarios();
 
             // PETS
-            List<Pet> pets =new Pet().GetPets();
+            List<Pet> pets = new Pet().GetPets();
 
             // AGENDAMENTOS
             List<Agendamento> agendamentos = new Agendamento().GetAgendamentos();
@@ -63,14 +65,14 @@ namespace TrabalhoLP
             foreach (Usuario usuario in usuarios)
             {
                 usuario.Pets =
-                    pets.Where(p =>p.Usuario_ID == usuario.Usuario_ID).ToList();
+                    pets.Where(p => p.Usuario_ID == usuario.Usuario_ID).ToList();
             }
 
 
             // RELACIONA AGENDAMENTOS AOS PETS
             foreach (Pet pet in pets)
             {
-                pet.Agendamentos =agendamentos.Where(a =>a.Pet_ID == pet.Pet_ID).ToList();
+                pet.Agendamentos = agendamentos.Where(a => a.Pet_ID == pet.Pet_ID).ToList();
             }
 
 
@@ -78,8 +80,7 @@ namespace TrabalhoLP
             foreach (Usuario usuario in usuarios)
             {
                 // LINHA DO USUÁRIO
-                ListViewItem usuarioItem =
-                    new ListViewItem(usuario.Nome);
+                ListViewItem usuarioItem = new ListViewItem(usuario.Nome);
 
                 usuarioItem.SubItems.Add(usuario.CPF);
                 usuarioItem.SubItems.Add(usuario.Telefone);
@@ -92,6 +93,8 @@ namespace TrabalhoLP
                 usuarioItem.SubItems.Add("");
                 usuarioItem.SubItems.Add("");
                 usuarioItem.SubItems.Add("");
+
+                usuarioItem.Tag = usuario;
 
                 lvUsuariosPets.Items.Add(usuarioItem);
 
@@ -186,9 +189,74 @@ namespace TrabalhoLP
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Filter = "Arquivo CSV|*.csv";
+
+            ofd.Title = "Importar arquivo csv";
 
 
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string[] linhasArquivo = File.ReadAllLines(ofd.FileName);
+
+
+                foreach (string linha in linhasArquivo)
+                {
+                    // pula cabeçalho
+                    if (!linha.Contains("Usuário"))
+                    {
+                        string[] colunas = linha.Split(';');
+
+
+                        // USUARIO
+                        Usuario usuario = new Usuario();
+
+                        usuario.Nome = colunas[0];
+
+                        usuario.CPF = colunas[1];
+
+                        usuario.Telefone = colunas[2];
+
+                        usuario.Email = colunas[3];
+
+                        usuario.Endereco = colunas[4];
+
+
+                        int idUsuario = usuario.InsertUsuario(usuario);
+
+                        usuario.Usuario_ID = idUsuario;
+
+
+
+                        // PET
+                        if (colunas[5] != "")
+                        {
+                            Pet pet = new Pet();
+
+                            pet.Nome = colunas[5];
+
+                            pet.Especie = colunas[6];
+
+                            pet.Raca = colunas[7];
+
+                            pet.Usuario_ID =
+                                usuario.Usuario_ID;
+
+                            pet.InsertPet(pet);
+                        }
+                    }
+                }
+
+
+                CarregarPetsBanco();
+
+                MessageBox.Show(
+                    "Arquivo importado com sucesso!");
+            }
         }
+
+
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
@@ -235,9 +303,27 @@ namespace TrabalhoLP
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
+            if (lvUsuariosPets.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione um usuário.");
+                return;
+            }
 
+            Usuario usuario =(Usuario)lvUsuariosPets.SelectedItems[0].Tag;
+
+            DialogResult resposta =
+                MessageBox.Show( $"Deseja deletar {usuario.Nome}?","Confirmar",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (resposta != DialogResult.Yes)
+                return;
+
+
+            usuario.DeleteUsuario(usuario.Usuario_ID);
+
+            MessageBox.Show("Usuário removido!");
+
+            CarregarPetsBanco();
         }
-
-
     }
 }
+

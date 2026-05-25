@@ -35,9 +35,29 @@ namespace TrabalhoLP
 
             pbPet.SizeMode = PictureBoxSizeMode.Zoom;
 
-            pbPet.Load(petAtual.ImagemURL);
+            // SE NÃO TEM IMAGEM
+            if (string.IsNullOrEmpty(petAtual.ImagemURL))
+            {
+                if (petAtual.Especie == "Cachorro")
+                {
+                    Cachorro dog = new Cachorro();
+
+                    petAtual.ImagemURL = await dog.GetImagemPorRaca(petAtual.Raca);
+                }
+                else
+                {
+                    Gato gato = new Gato();
+
+                    petAtual.ImagemURL = await gato.GetImagemPorRaca(petAtual.Raca);
+                }
+            }
 
 
+            // CARREGA IMAGEM
+            if (!string.IsNullOrEmpty(petAtual.ImagemURL))
+            {
+                pbPet.Load(petAtual.ImagemURL);
+            }
 
             lvHistorico.View = View.Details;
 
