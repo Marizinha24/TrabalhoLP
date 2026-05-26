@@ -163,8 +163,6 @@ namespace TrabalhoLP
             CustomizadoBox tela = new CustomizadoBox(pet, home);
 
             tela.ShowDialog();
-
-            this.Close();
         }
 
         private void btnHomePage_Click(object sender, EventArgs e)

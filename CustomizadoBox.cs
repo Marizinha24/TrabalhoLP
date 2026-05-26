@@ -27,6 +27,7 @@ namespace TrabalhoLP
         {
 
             home.AbrirTela(new CadastroPet(petAtual.Usuario, home));
+            this.Close();
 
         }
 
@@ -34,12 +35,14 @@ namespace TrabalhoLP
         private void btnNovoAgendamento_Click(object sender, EventArgs e)
         {
             home.AbrirTela(new Agendamento_de_Serviços(petAtual, home));
+            this.Close();
         }
 
 
         private void btnVerAgendamentos_Click(object sender, EventArgs e)
         {
             home.AbrirTela(new AgendamentosPet(petAtual, home));
+            this.Close();
         }
     }
 }
