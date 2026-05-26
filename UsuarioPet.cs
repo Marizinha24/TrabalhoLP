@@ -21,6 +21,9 @@ namespace TrabalhoLP
         {
             InitializeComponent();
 
+
+            lvUsuariosPets.Clear();
+
             lvUsuariosPets.View = View.Details;
 
             lvUsuariosPets.FullRowSelect = true;
@@ -29,6 +32,7 @@ namespace TrabalhoLP
 
             lvUsuariosPets.MultiSelect = false;
 
+            // COLUNAS
             lvUsuariosPets.Columns.Add("Usuário", 150);
             lvUsuariosPets.Columns.Add("CPF", 120);
             lvUsuariosPets.Columns.Add("Telefone", 100);
@@ -41,9 +45,7 @@ namespace TrabalhoLP
             lvUsuariosPets.Columns.Add("Status", 100);
             lvUsuariosPets.Columns.Add("Data", 120);
 
-
             CarregarPetsBanco();
-
         }
 
 
@@ -64,8 +66,7 @@ namespace TrabalhoLP
             // RELACIONA PETS AOS USUÁRIOS
             foreach (Usuario usuario in usuarios)
             {
-                usuario.Pets =
-                    pets.Where(p => p.Usuario_ID == usuario.Usuario_ID).ToList();
+                usuario.Pets = pets.Where(p => p.Usuario_ID == usuario.Usuario_ID).ToList();
             }
 
 
@@ -79,83 +80,66 @@ namespace TrabalhoLP
             // LISTVIEW
             foreach (Usuario usuario in usuarios)
             {
-                // LINHA DO USUÁRIO
-                ListViewItem usuarioItem = new ListViewItem(usuario.Nome);
-
-                usuarioItem.SubItems.Add(usuario.CPF);
-                usuarioItem.SubItems.Add(usuario.Telefone);
-                usuarioItem.SubItems.Add(usuario.Email);
-                usuarioItem.SubItems.Add(usuario.Endereco);
-
-                usuarioItem.SubItems.Add("");
-                usuarioItem.SubItems.Add("");
-                usuarioItem.SubItems.Add("");
-                usuarioItem.SubItems.Add("");
-                usuarioItem.SubItems.Add("");
-                usuarioItem.SubItems.Add("");
-
-                usuarioItem.Tag = usuario;
-
-                lvUsuariosPets.Items.Add(usuarioItem);
-
-
-
-                // PETS DO USUÁRIO
                 foreach (Pet pet in usuario.Pets)
                 {
                     // PET SEM AGENDAMENTO
                     if (pet.Agendamentos.Count == 0)
                     {
-                        ListViewItem petItem =
-                            new ListViewItem("");
+                        ListViewItem item = new ListViewItem(usuario.Nome);
 
-                        petItem.SubItems.Add("");
-                        petItem.SubItems.Add("");
-                        petItem.SubItems.Add("");
-                        petItem.SubItems.Add("");
+                        // USUÁRIO
+                        item.SubItems.Add(usuario.CPF);
+                        item.SubItems.Add(usuario.Telefone);
+                        item.SubItems.Add(usuario.Email);
+                        item.SubItems.Add(usuario.Endereco);
 
-                        petItem.SubItems.Add(pet.Nome);
-                        petItem.SubItems.Add(pet.Especie);
-                        petItem.SubItems.Add(pet.Raca);
+                        // PET
+                        item.SubItems.Add(pet.Nome);
+                        item.SubItems.Add(pet.Especie);
+                        item.SubItems.Add(pet.Raca);
 
-                        petItem.SubItems.Add("");
-                        petItem.SubItems.Add("");
-                        petItem.SubItems.Add("");
+                        // AGENDAMENTO VAZIO
+                        item.SubItems.Add("");
+                        item.SubItems.Add("");
+                        item.SubItems.Add("");
 
-                        petItem.Tag = pet;
+                        item.Tag = pet;
 
-                        lvUsuariosPets.Items.Add(petItem);
+                        lvUsuariosPets.Items.Add(item);
+
                     }
 
-
-                    // PET COM AGENDAMENTOS
+                    // PET COM AGENDAMENTO
                     else
                     {
                         foreach (Agendamento ag in pet.Agendamentos)
                         {
-                            ListViewItem item =
-                                new ListViewItem("");
+                            ListViewItem item = new ListViewItem(usuario.Nome);
 
-                            item.SubItems.Add("");
-                            item.SubItems.Add("");
-                            item.SubItems.Add("");
-                            item.SubItems.Add("");
+                            // USUÁRIO
+                            item.SubItems.Add(usuario.CPF);
+                            item.SubItems.Add(usuario.Telefone);
+                            item.SubItems.Add(usuario.Email);
+                            item.SubItems.Add(usuario.Endereco);
 
+                            // PET
                             item.SubItems.Add(pet.Nome);
                             item.SubItems.Add(pet.Especie);
                             item.SubItems.Add(pet.Raca);
 
+                            // AGENDAMENTO
                             item.SubItems.Add(ag.Servicos);
-
+                            item.SubItems.Add(ag.Status.ToString());
                             item.SubItems.Add(
-                                ag.Status.ToString());
-
-                            item.SubItems.Add(
-                                ag.Data?.ToShortDateString() ?? "");
+                                ag.Data?.ToShortDateString() ?? ""
+                            );
 
                             item.Tag = pet;
 
                             lvUsuariosPets.Items.Add(item);
+
+
+
                         }
                     }
                 }
