@@ -15,11 +15,13 @@ namespace TrabalhoLP
     public partial class UsuarioPet : Form
     {
         private List<Usuario> usuarios = new List<Usuario>();
+        private HomePage home;
 
 
-        public UsuarioPet()
+        public UsuarioPet(HomePage home)
         {
             InitializeComponent();
+            this.home = home;
 
 
             lvUsuariosPets.Clear();
@@ -46,6 +48,7 @@ namespace TrabalhoLP
             lvUsuariosPets.Columns.Add("Data", 120);
 
             CarregarPetsBanco();
+            
         }
 
 
@@ -157,7 +160,7 @@ namespace TrabalhoLP
 
             Pet pet = dados.Item2;
 
-            CustomizadoBox tela = new CustomizadoBox(pet);
+            CustomizadoBox tela = new CustomizadoBox(pet, null);
 
             tela.ShowDialog();
 

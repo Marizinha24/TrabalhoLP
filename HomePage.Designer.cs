@@ -31,12 +31,13 @@
             label1 = new Label();
             btnCadastroCliente = new Button();
             btnListaUsuarios = new Button();
+            formPanel = new Panel();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(374, 57);
+            label1.Location = new Point(57, 81);
             label1.Name = "label1";
             label1.Size = new Size(153, 20);
             label1.TabIndex = 0;
@@ -44,7 +45,7 @@
             // 
             // btnCadastroCliente
             // 
-            btnCadastroCliente.Location = new Point(118, 200);
+            btnCadastroCliente.Location = new Point(57, 151);
             btnCadastroCliente.Name = "btnCadastroCliente";
             btnCadastroCliente.Size = new Size(152, 111);
             btnCadastroCliente.TabIndex = 1;
@@ -54,19 +55,27 @@
             // 
             // btnListaUsuarios
             // 
-            btnListaUsuarios.Location = new Point(682, 209);
+            btnListaUsuarios.Location = new Point(57, 326);
             btnListaUsuarios.Name = "btnListaUsuarios";
-            btnListaUsuarios.Size = new Size(201, 102);
+            btnListaUsuarios.Size = new Size(152, 102);
             btnListaUsuarios.TabIndex = 3;
             btnListaUsuarios.Text = "Lista Usuarios";
             btnListaUsuarios.UseVisualStyleBackColor = true;
             btnListaUsuarios.Click += btnListaUsuarios_Click;
             // 
+            // formPanel
+            // 
+            formPanel.Location = new Point(215, 12);
+            formPanel.Name = "formPanel";
+            formPanel.Size = new Size(1126, 720);
+            formPanel.TabIndex = 4;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(985, 628);
+            ClientSize = new Size(1353, 731);
+            Controls.Add(formPanel);
             Controls.Add(btnListaUsuarios);
             Controls.Add(btnCadastroCliente);
             Controls.Add(label1);
@@ -81,5 +90,6 @@
         private Label label1;
         private Button btnCadastroCliente;
         private Button btnListaUsuarios;
+        private Panel formPanel;
     }
 }

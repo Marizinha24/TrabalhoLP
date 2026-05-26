@@ -12,12 +12,14 @@ namespace TrabalhoLP
     public partial class CadastroPet : Form
     {
         private Usuario usuarioAtual;
+        private HomePage home;
 
-        public CadastroPet(Usuario usuario)
+        public CadastroPet(Usuario usuario, HomePage home)
         {
             InitializeComponent();
 
             usuarioAtual = usuario;
+            this.home = home;
 
             if (usuarioAtual != null)
             {
@@ -92,7 +94,7 @@ namespace TrabalhoLP
                 // NOVO PET
                 if (resposta == DialogResult.Yes)
                 {
-                    CadastroPet tela = new CadastroPet(usuarioAtual);
+                    CadastroPet tela = new CadastroPet(usuarioAtual, null);
 
                     tela.ShowDialog();
 

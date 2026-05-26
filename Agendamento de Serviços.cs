@@ -13,8 +13,9 @@ namespace TrabalhoLP
     public partial class Agendamento_de_Serviços : Form
     {
         private Pet petAtual;
+        private HomePage home;
 
-        public Agendamento_de_Serviços(Pet pet)
+        public Agendamento_de_Serviços(Pet pet, HomePage home)
         {
             InitializeComponent();
 
@@ -28,6 +29,7 @@ namespace TrabalhoLP
             rdbBanhoHidratacaoUnha.Tag = 75;
 
             petAtual = pet;
+            this.home = home;
 
             foreach (var rb in this.Controls.OfType<GroupBox>().SelectMany(g => g.Controls.OfType<RadioButton>()))
             {

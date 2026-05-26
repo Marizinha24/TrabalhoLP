@@ -13,11 +13,14 @@ namespace TrabalhoLP
     public partial class AgendamentosPet : Form
     {
         private Pet petAtual;
-        public AgendamentosPet(Pet pet)
+        private HomePage home;
+        public AgendamentosPet(Pet pet, HomePage home)
         {
             InitializeComponent();
 
             petAtual = pet;
+            this.home = home;
+
 
             CarregarTela();
 

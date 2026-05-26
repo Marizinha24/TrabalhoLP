@@ -13,41 +13,33 @@ namespace TrabalhoLP
     {
 
         private Pet petAtual;
+        private HomePage home;
 
-        public CustomizadoBox(Pet petAtual)
+        public CustomizadoBox(Pet petAtual, HomePage home)
         {
             InitializeComponent();
             this.petAtual = petAtual;
 
+            this.home = home;
         }
 
         private void btnAddPet_Click(object sender, EventArgs e)
         {
-            CadastroPet tela = new CadastroPet(petAtual.Usuario);
 
-            tela.ShowDialog();
+            home.AbrirTela(new CadastroPet(petAtual.Usuario, home));
 
-            this.Close();
         }
 
 
         private void btnNovoAgendamento_Click(object sender, EventArgs e)
         {
-            Agendamento_de_Serviços ads =new Agendamento_de_Serviços(petAtual);
-
-            ads.Show();
-
-            this.Close();
+            home.AbrirTela(new Agendamento_de_Serviços(petAtual, home));
         }
 
 
         private void btnVerAgendamentos_Click(object sender, EventArgs e)
         {
-            AgendamentosPet tela = new AgendamentosPet(petAtual);
-
-            tela.Show();
-
-            this.Close();
+            home.AbrirTela(new AgendamentosPet(petAtual, home));
         }
     }
 }

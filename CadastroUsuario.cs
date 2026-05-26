@@ -14,9 +14,12 @@ namespace TrabalhoLP
         Endereco endereco = new Endereco();
         public bool isUpdate = false;
 
-        public CadastroUsuario()
+        private HomePage home;
+
+        public CadastroUsuario(HomePage homePage)
         {
             InitializeComponent();
+            this.home = home;
 
             tbxNumero.TextChanged += TbNumero_TextChanged;
             tbxComplemento.TextChanged += TbComplemento_TextChanged;
@@ -67,9 +70,9 @@ namespace TrabalhoLP
                 usuario.Usuario_ID = idGerado;
 
                 MessageBox.Show("Cadastro realizado com sucesso!");
-                CadastroPet pc = new CadastroPet(usuario);
-                pc.Show();
-                this.Hide();
+
+                home.AbrirTela(new CadastroPet(usuario, home));
+
 
 
             }
