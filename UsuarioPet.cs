@@ -103,8 +103,7 @@ namespace TrabalhoLP
                         item.SubItems.Add("");
                         item.SubItems.Add("");
 
-                        item.Tag = pet;
-
+                        item.Tag = new Tuple<Usuario, Pet>(usuario, pet);
                         lvUsuariosPets.Items.Add(item);
 
                     }
@@ -134,7 +133,7 @@ namespace TrabalhoLP
                                 ag.Data?.ToShortDateString() ?? ""
                             );
 
-                            item.Tag = pet;
+                            item.Tag = new Tuple<Usuario, Pet>(usuario, pet);
 
                             lvUsuariosPets.Items.Add(item);
 
@@ -154,13 +153,14 @@ namespace TrabalhoLP
                 return;
             }
 
+            var dados =(Tuple<Usuario, Pet>)lvUsuariosPets.SelectedItems[0].Tag;
 
-            Pet pet = (Pet)lvUsuariosPets.SelectedItems[0].Tag;
-
+            Pet pet = dados.Item2;
 
             CustomizadoBox tela = new CustomizadoBox(pet);
 
             tela.ShowDialog();
+
             this.Close();
         }
 
@@ -225,7 +225,7 @@ namespace TrabalhoLP
                             pet.Raca = colunas[7];
 
                             pet.Usuario_ID =
-                                usuario.Usuario_ID;
+                            usuario.Usuario_ID;
 
                             pet.InsertPet(pet);
                         }
@@ -235,8 +235,7 @@ namespace TrabalhoLP
 
                 CarregarPetsBanco();
 
-                MessageBox.Show(
-                    "Arquivo importado com sucesso!");
+                MessageBox.Show("Arquivo importado com sucesso!");
             }
         }
 
@@ -293,20 +292,22 @@ namespace TrabalhoLP
                 return;
             }
 
-            Usuario usuario =(Usuario)lvUsuariosPets.SelectedItems[0].Tag;
+            var dados =(Tuple<Usuario, Pet>)lvUsuariosPets.SelectedItems[0].Tag;
+
+            Usuario usuario = dados.Item1;
 
             DialogResult resposta =
-                MessageBox.Show( $"Deseja deletar {usuario.Nome}?","Confirmar",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MessageBox.Show($"Deseja deletar {usuario.Nome}?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
 
             if (resposta != DialogResult.Yes)
                 return;
-
 
             usuario.DeleteUsuario(usuario.Usuario_ID);
 
             MessageBox.Show("Usuário removido!");
 
             CarregarPetsBanco();
+        
         }
     }
 }

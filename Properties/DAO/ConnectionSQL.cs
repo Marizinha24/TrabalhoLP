@@ -7,25 +7,20 @@ namespace TrabalhoLP.Properties.DAO
     {
         private static string connectionSTRING = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=PetCare;Integrated Security=True;";
 
-
-        public SqlConnection conn = new SqlConnection(connectionSTRING);
+        public SqlConnection conn =new SqlConnection(connectionSTRING);
 
         public SqlCommand MountQuery(string query)
         {
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = query;
-            conn.Close();
+            SqlCommand cmd = new SqlCommand(query, conn);
+
             return cmd;
         }
 
         public SqlDataAdapter MountQueryDataTable(string query)
         {
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = query;
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd.CommandText, conn);
-            conn.Close();
+            SqlDataAdapter dataAdapter =
+                new SqlDataAdapter(query, conn);
+
             return dataAdapter;
         }
     }

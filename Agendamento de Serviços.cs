@@ -28,6 +28,18 @@ namespace TrabalhoLP
             rdbBanhoHidratacaoUnha.Tag = 75;
 
             petAtual = pet;
+
+            foreach (var rb in this.Controls.OfType<GroupBox>().SelectMany(g => g.Controls.OfType<RadioButton>()))
+            {
+                rb.CheckedChanged += AtualizarTotal;
+            }
+        }
+
+        private void AtualizarTotal(object sender, EventArgs e)
+        {
+            double total = this.Controls.OfType<GroupBox>().SelectMany(g => g.Controls.OfType<RadioButton>()).Where(rb => rb.Checked).Sum(rb => Convert.ToDouble(rb.Tag));
+
+            lblTotal.Text = $"Total: R$ {total:F2}";
         }
 
 

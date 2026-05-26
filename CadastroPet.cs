@@ -86,19 +86,13 @@ namespace TrabalhoLP
 
                 // MESSAGE BOX
                 DialogResult resposta =
-                MessageBox.Show(
-                    "Cadastro realizado com sucesso!\nDeseja cadastrar um novo pet?",
-                    "Cadastro",
-                    MessageBoxButtons.YesNoCancel,
-                    MessageBoxIcon.Question
-                );
+                MessageBox.Show( "Cadastro realizado com sucesso!\nDeseja cadastrar um novo pet?",  "Cadastro", MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question );
 
 
                 // NOVO PET
                 if (resposta == DialogResult.Yes)
                 {
-                    CadastroPet tela =
-                        new CadastroPet(usuarioAtual);
+                    CadastroPet tela = new CadastroPet(usuarioAtual);
 
                     tela.ShowDialog();
 
@@ -109,8 +103,7 @@ namespace TrabalhoLP
                 // HOME
                 else if (resposta == DialogResult.No)
                 {
-                    HomePage tela =
-                        new HomePage();
+                    HomePage tela =  new HomePage();
 
                     tela.ShowDialog();
 
@@ -120,8 +113,7 @@ namespace TrabalhoLP
 
             else
             {
-                MessageBox.Show(
-                    "Ops! Não foi possível realizar o cadastro. Todos os campos devem ser preenchidos antes de continuar!");
+                MessageBox.Show("Ops! Não foi possível realizar o cadastro. Todos os campos devem ser preenchidos antes de continuar!");
             }
         }
 
@@ -142,8 +134,7 @@ namespace TrabalhoLP
                 // CACHORRO
                 if (cbEspecie.Text == "Cachorro")
                 {
-                    Cachorro api =
-                        new Cachorro();
+                    Cachorro api = new Cachorro();
 
                     imagem = await api.GetImagemPorRaca(raca);
                 }
@@ -160,17 +151,14 @@ namespace TrabalhoLP
 
                 if (!string.IsNullOrEmpty(imagem))
                 {
-                    pbPet.SizeMode =
-                        PictureBoxSizeMode.Zoom;
+                    pbPet.SizeMode = PictureBoxSizeMode.Zoom;
 
                     pbPet.Load(imagem);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Erro ao carregar imagem: "
-                    + ex.Message);
+                MessageBox.Show( "Erro ao carregar imagem: " + ex.Message);
             }
         }
 

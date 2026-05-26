@@ -75,46 +75,26 @@ namespace TrabalhoLP.Properties.Model
         }
 
 
-        public string DeleteUsuario(int ID)
+        public void DeleteUsuario(int usuarioId)
         {
-            ConnectionSQL conn = new ConnectionSQL();
+            ConnectionSQL connection = new ConnectionSQL();
 
-            conn.conn.Open();
+            string sql = @"DELETE FROM Agendamentos WHERE PetId IN
+            (SELECT Pets.Id FROM Pets WHERE Pets.UsuarioId = @usuarioId);
 
+            DELETE FROM Pets WHERE Pets.UsuarioId = @usuarioId;
 
-            // DELETA AGENDAMENTOS
-            SqlCommand cmdAg = conn.MountQuery(
-            @"DELETE FROM Agendamentos WHERE PetId IN
-            (SELECT Id FROM Pets WHERE UsuarioId = @P1)");
+            DELETE FROM Usuarios WHERE Usuarios.Id = @usuarioId;";
 
-            cmdAg.Parameters.AddWithValue("@P1", ID);
+            SqlCommand cmd = new SqlCommand(sql, connection.conn);
 
-            cmdAg.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@usuarioId", usuarioId);
 
+            connection.conn.Open();
 
+            cmd.ExecuteNonQuery();
 
-            // DELETA PETS
-            SqlCommand cmdPets = conn.MountQuery(
-            @"DELETE FROM Pets WHERE UsuarioId = @P1");
-
-            cmdPets.Parameters.AddWithValue("@P1", ID);
-
-            cmdPets.ExecuteNonQuery();
-
-
-
-            // DELETA USUÁRIO
-            SqlCommand cmdUsuario = conn.MountQuery(
-            @"DELETE FROM Usuarios WHERE Id = @P1");
-
-            cmdUsuario.Parameters.AddWithValue("@P1", ID);
-
-            cmdUsuario.ExecuteNonQuery();
-
-
-            conn.conn.Close();
-
-            return "Registro deletado do sistema";
+            connection.conn.Close();
         }
     }
 }
