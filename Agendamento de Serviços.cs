@@ -116,9 +116,6 @@ namespace TrabalhoLP
 
 
                 MessageBox.Show("Agendamento realizado!");
-                HomePage hp = new HomePage();
-                hp.Show();
-                this.Hide();
             }
             catch (InvalidOperationException ex)
             {

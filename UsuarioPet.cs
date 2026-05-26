@@ -160,7 +160,7 @@ namespace TrabalhoLP
 
             Pet pet = dados.Item2;
 
-            CustomizadoBox tela = new CustomizadoBox(pet, null);
+            CustomizadoBox tela = new CustomizadoBox(pet, home);
 
             tela.ShowDialog();
 
