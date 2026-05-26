@@ -94,7 +94,7 @@ namespace TrabalhoLP
                 // NOVO PET
                 if (resposta == DialogResult.Yes)
                 {
-                    CadastroPet tela = new CadastroPet(usuarioAtual, null);
+                    CadastroPet tela = new CadastroPet(usuarioAtual, home);
 
                     tela.ShowDialog();
 

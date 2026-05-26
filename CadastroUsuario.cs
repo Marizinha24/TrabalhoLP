@@ -19,7 +19,8 @@ namespace TrabalhoLP
         public CadastroUsuario(HomePage homePage)
         {
             InitializeComponent();
-            this.home = home;
+            this.home = homePage;
+
 
             tbxNumero.TextChanged += TbNumero_TextChanged;
             tbxComplemento.TextChanged += TbComplemento_TextChanged;
