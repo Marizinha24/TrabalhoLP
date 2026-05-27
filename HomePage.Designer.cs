@@ -42,9 +42,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 20F);
             label1.ForeColor = Color.FromArgb(89, 50, 19);
-            label1.Location = new Point(-1, 171);
+            label1.Location = new Point(-1, 228);
             label1.Name = "label1";
-            label1.Size = new Size(183, 62);
+            label1.Size = new Size(230, 78);
             label1.TabIndex = 0;
             label1.Text = "O que deseja\r\nverificar";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -57,10 +57,9 @@
             btnCadastroCliente.ForeColor = Color.FromArgb(89, 50, 19);
             btnCadastroCliente.Image = (Image)resources.GetObject("btnCadastroCliente.Image");
             btnCadastroCliente.ImageAlign = ContentAlignment.TopCenter;
-            btnCadastroCliente.Location = new Point(12, 308);
-            btnCadastroCliente.Margin = new Padding(3, 2, 3, 2);
+            btnCadastroCliente.Location = new Point(14, 411);
             btnCadastroCliente.Name = "btnCadastroCliente";
-            btnCadastroCliente.Size = new Size(153, 101);
+            btnCadastroCliente.Size = new Size(195, 135);
             btnCadastroCliente.TabIndex = 1;
             btnCadastroCliente.Text = "Cadastro Cliente";
             btnCadastroCliente.TextAlign = ContentAlignment.BottomCenter;
@@ -75,10 +74,9 @@
             btnListaUsuarios.ForeColor = Color.FromArgb(89, 50, 19);
             btnListaUsuarios.Image = (Image)resources.GetObject("btnListaUsuarios.Image");
             btnListaUsuarios.ImageAlign = ContentAlignment.TopCenter;
-            btnListaUsuarios.Location = new Point(12, 487);
-            btnListaUsuarios.Margin = new Padding(3, 2, 3, 2);
+            btnListaUsuarios.Location = new Point(14, 649);
             btnListaUsuarios.Name = "btnListaUsuarios";
-            btnListaUsuarios.Size = new Size(153, 98);
+            btnListaUsuarios.Size = new Size(180, 131);
             btnListaUsuarios.TabIndex = 3;
             btnListaUsuarios.Text = "Lista Usuarios";
             btnListaUsuarios.TextAlign = ContentAlignment.BottomCenter;
@@ -87,34 +85,33 @@
             // 
             // formPanel
             // 
-            formPanel.Location = new Point(188, -1);
-            formPanel.Margin = new Padding(3, 2, 3, 2);
+            formPanel.Location = new Point(215, -1);
             formPanel.Name = "formPanel";
-            formPanel.Size = new Size(1184, 750);
+            formPanel.Size = new Size(1436, 1000);
             formPanel.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(-1, -1);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(188, 127);
+            pictureBox1.Size = new Size(215, 169);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
             // HomePage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(252, 218, 229);
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1663, 999);
             Controls.Add(pictureBox1);
             Controls.Add(formPanel);
             Controls.Add(btnListaUsuarios);
             Controls.Add(btnCadastroCliente);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "HomePage";
             Text = "HomePage";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

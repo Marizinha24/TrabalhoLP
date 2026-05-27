@@ -43,7 +43,6 @@
             rdbSimples = new RadioButton();
             lblServiços = new Label();
             btnConfirmar = new Button();
-            lbl = new Label();
             label3 = new Label();
             label4 = new Label();
             btnCancelar = new Button();
@@ -123,11 +122,12 @@
             // 
             // dtDisponibilidade
             // 
+            dtDisponibilidade.Font = new Font("Cooper Black", 13F);
             dtDisponibilidade.Format = DateTimePickerFormat.Short;
-            dtDisponibilidade.Location = new Point(434, 599);
+            dtDisponibilidade.Location = new Point(378, 599);
             dtDisponibilidade.Margin = new Padding(3, 4, 3, 4);
             dtDisponibilidade.Name = "dtDisponibilidade";
-            dtDisponibilidade.Size = new Size(111, 27);
+            dtDisponibilidade.Size = new Size(182, 32);
             dtDisponibilidade.TabIndex = 8;
             dtDisponibilidade.ValueChanged += dtDisponibilidade_ValueChanged_1;
             // 
@@ -136,20 +136,21 @@
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Cooper Black", 20F);
             lblTotal.ForeColor = Color.FromArgb(89, 50, 19);
-            lblTotal.Location = new Point(581, 777);
+            lblTotal.Location = new Point(488, 761);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(87, 39);
+            lblTotal.Size = new Size(197, 39);
             lblTotal.TabIndex = 9;
-            lblTotal.Text = "0,00";
+            lblTotal.Text = "Total: 0,00";
             lblTotal.Click += lblTotal_Click;
             // 
             // cbHorario
             // 
+            cbHorario.Font = new Font("Cooper Black", 13F);
             cbHorario.FormattingEnabled = true;
-            cbHorario.Location = new Point(673, 599);
+            cbHorario.Location = new Point(658, 598);
             cbHorario.Margin = new Padding(3, 4, 3, 4);
             cbHorario.Name = "cbHorario";
-            cbHorario.Size = new Size(138, 28);
+            cbHorario.Size = new Size(179, 33);
             cbHorario.TabIndex = 10;
             // 
             // gbPacotes
@@ -242,7 +243,7 @@
             btnConfirmar.BackColor = Color.FromArgb(255, 130, 179);
             btnConfirmar.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfirmar.ForeColor = Color.SaddleBrown;
-            btnConfirmar.Location = new Point(337, 883);
+            btnConfirmar.Location = new Point(378, 889);
             btnConfirmar.Margin = new Padding(3, 4, 3, 4);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(123, 39);
@@ -250,17 +251,6 @@
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = false;
             btnConfirmar.Click += btnConfirmar_Click_1;
-            // 
-            // lbl
-            // 
-            lbl.AutoSize = true;
-            lbl.Font = new Font("Cooper Black", 20F);
-            lbl.ForeColor = Color.FromArgb(89, 50, 19);
-            lbl.Location = new Point(443, 777);
-            lbl.Name = "lbl";
-            lbl.Size = new Size(108, 39);
-            lbl.TabIndex = 14;
-            lbl.Text = "Total";
             // 
             // label3
             // 
@@ -289,7 +279,7 @@
             btnCancelar.BackColor = Color.FromArgb(255, 130, 179);
             btnCancelar.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = Color.SaddleBrown;
-            btnCancelar.Location = new Point(673, 883);
+            btnCancelar.Location = new Point(714, 889);
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(123, 39);
@@ -307,7 +297,6 @@
             Controls.Add(btnCancelar);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(lbl);
             Controls.Add(btnConfirmar);
             Controls.Add(grbServicos);
             Controls.Add(gbPacotes);
@@ -338,7 +327,6 @@
         private GroupBox grbServicos;
         private Label lblServiços;
         private Button btnConfirmar;
-        private Label lbl;
         private Label label1;
         private Label label3;
         private Label label4;
