@@ -63,6 +63,7 @@
             // 
             // txtNomeTutor
             // 
+            txtNomeTutor.Font = new Font("Cooper Black", 12F);
             txtNomeTutor.Location = new Point(33, 176);
             txtNomeTutor.Multiline = true;
             txtNomeTutor.Name = "txtNomeTutor";
@@ -118,6 +119,7 @@
             // 
             // txtCPF
             // 
+            txtCPF.Font = new Font("Cooper Black", 12F);
             txtCPF.Location = new Point(33, 260);
             txtCPF.Multiline = true;
             txtCPF.Name = "txtCPF";
@@ -159,6 +161,7 @@
             // 
             // txtEndereco
             // 
+            txtEndereco.Font = new Font("Cooper Black", 12F);
             txtEndereco.Location = new Point(284, 324);
             txtEndereco.Multiline = true;
             txtEndereco.Name = "txtEndereco";
@@ -223,7 +226,7 @@
             // 
             // tbxNumero
             // 
-            tbxNumero.Font = new Font("Cooper Black", 8.25F);
+            tbxNumero.Font = new Font("Cooper Black", 12F);
             tbxNumero.ForeColor = Color.FromArgb(89, 50, 19);
             tbxNumero.Location = new Point(15, 223);
             tbxNumero.Multiline = true;
@@ -233,6 +236,7 @@
             // 
             // tbxComplemento
             // 
+            tbxComplemento.Font = new Font("Cooper Black", 12F);
             tbxComplemento.Location = new Point(15, 339);
             tbxComplemento.Multiline = true;
             tbxComplemento.Name = "tbxComplemento";
@@ -241,7 +245,7 @@
             // 
             // tbxCEP
             // 
-            tbxCEP.Font = new Font("Cooper Black", 8.25F);
+            tbxCEP.Font = new Font("Cooper Black", 12F);
             tbxCEP.ForeColor = Color.FromArgb(89, 50, 19);
             tbxCEP.Location = new Point(284, 222);
             tbxCEP.Multiline = true;
@@ -290,6 +294,7 @@
             // 
             // txtEmail
             // 
+            txtEmail.Font = new Font("Cooper Black", 12F);
             txtEmail.Location = new Point(33, 415);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
@@ -309,6 +314,7 @@
             // 
             // txtTelefone
             // 
+            txtTelefone.Font = new Font("Cooper Black", 12F);
             txtTelefone.Location = new Point(33, 339);
             txtTelefone.Multiline = true;
             txtTelefone.Name = "txtTelefone";
@@ -342,8 +348,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(250, 233, 215);
-            ClientSize = new Size(1370, 749);
+            BackColor = Color.FromArgb(255, 225, 235);
+            ClientSize = new Size(1379, 749);
             Controls.Add(pictureBox4);
             Controls.Add(btnVoltar);
             Controls.Add(groupBox2);

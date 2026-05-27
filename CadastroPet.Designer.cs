@@ -34,6 +34,8 @@
             label1 = new Label();
             txtNomeTutor = new TextBox();
             blbNome = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             label4 = new Label();
             txtObservacao = new TextBox();
             groupBox1 = new GroupBox();
@@ -51,19 +53,17 @@
             label5 = new Label();
             label6 = new Label();
             cmbPorte = new ComboBox();
+            pictureBox3 = new PictureBox();
             label2 = new Label();
             btnEntrar = new Button();
             pictureBox4 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbPet).BeginInit();
             groupBox2.SuspendLayout();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // pbPet
@@ -105,7 +105,7 @@
             // 
             // txtNomeTutor
             // 
-            txtNomeTutor.Font = new Font("Cooper Black", 18F);
+            txtNomeTutor.Font = new Font("Cooper Black", 12F);
             txtNomeTutor.Location = new Point(31, 441);
             txtNomeTutor.Multiline = true;
             txtNomeTutor.Name = "txtNomeTutor";
@@ -124,6 +124,26 @@
             blbNome.TabIndex = 5;
             blbNome.Text = "Nome do Tutor:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(312, 70);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(79, 58);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 36;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(31, 328);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(61, 49);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 37;
+            pictureBox2.TabStop = false;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -137,6 +157,7 @@
             // 
             // txtObservacao
             // 
+            txtObservacao.Font = new Font("Cooper Black", 12F);
             txtObservacao.Location = new Point(321, 458);
             txtObservacao.Multiline = true;
             txtObservacao.Name = "txtObservacao";
@@ -237,6 +258,7 @@
             // 
             // txtNomePet
             // 
+            txtNomePet.Font = new Font("Cooper Black", 12F);
             txtNomePet.Location = new Point(22, 193);
             txtNomePet.Multiline = true;
             txtNomePet.Name = "txtNomePet";
@@ -266,6 +288,7 @@
             // 
             // txtTemperamento
             // 
+            txtTemperamento.Font = new Font("Cooper Black", 12F);
             txtTemperamento.Location = new Point(22, 458);
             txtTemperamento.Multiline = true;
             txtTemperamento.Name = "txtTemperamento";
@@ -315,6 +338,16 @@
             cmbPorte.Size = new Size(321, 31);
             cmbPorte.TabIndex = 3;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(190, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(267, 182);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 38;
+            pictureBox3.TabStop = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -351,41 +384,11 @@
             pictureBox4.TabIndex = 29;
             pictureBox4.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(312, 70);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(79, 58);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 36;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(31, 328);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(61, 49);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 37;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(167, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(299, 182);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 38;
-            pictureBox3.TabStop = false;
-            // 
             // CadastroPet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(250, 233, 215);
+            BackColor = Color.FromArgb(255, 225, 235);
             ClientSize = new Size(1370, 749);
             Controls.Add(pictureBox4);
             Controls.Add(groupBox2);
@@ -398,12 +401,12 @@
             ((System.ComponentModel.ISupportInitialize)pbPet).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

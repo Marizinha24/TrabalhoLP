@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agendamento_de_Serviços));
             rdbCompleto = new RadioButton();
             rdbHidratacao = new RadioButton();
             rdbUnhas = new RadioButton();
@@ -40,7 +39,6 @@
             cbHorario = new ComboBox();
             gbPacotes = new GroupBox();
             label1 = new Label();
-            pictureBox5 = new PictureBox();
             grbServicos = new GroupBox();
             rdbHigienica = new RadioButton();
             rdbSimples = new RadioButton();
@@ -50,38 +48,19 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            label11 = new Label();
-            pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
             btnCancelar = new Button();
             gbPacotes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             grbServicos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // rdbCompleto
             // 
             rdbCompleto.AutoSize = true;
-            rdbCompleto.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbCompleto.Location = new Point(6, 114);
+            rdbCompleto.Font = new Font("Cooper Black", 18F);
+            rdbCompleto.ForeColor = Color.FromArgb(89, 50, 19);
+            rdbCompleto.Location = new Point(6, 136);
             rdbCompleto.Name = "rdbCompleto";
-            rdbCompleto.Size = new Size(278, 26);
+            rdbCompleto.Size = new Size(342, 31);
             rdbCompleto.TabIndex = 1;
             rdbCompleto.TabStop = true;
             rdbCompleto.Text = "Tosa Completa -> R$ 60,00";
@@ -90,10 +69,11 @@
             // rdbHidratacao
             // 
             rdbHidratacao.AutoSize = true;
-            rdbHidratacao.Font = new Font("Snap ITC", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbHidratacao.Location = new Point(6, 81);
+            rdbHidratacao.Font = new Font("Cooper Black", 18F);
+            rdbHidratacao.ForeColor = Color.FromArgb(89, 50, 19);
+            rdbHidratacao.Location = new Point(6, 99);
             rdbHidratacao.Name = "rdbHidratacao";
-            rdbHidratacao.Size = new Size(272, 21);
+            rdbHidratacao.Size = new Size(400, 31);
             rdbHidratacao.TabIndex = 3;
             rdbHidratacao.TabStop = true;
             rdbHidratacao.Text = "Banho + Hidratação → R$ 55,00";
@@ -102,10 +82,11 @@
             // rdbUnhas
             // 
             rdbUnhas.AutoSize = true;
-            rdbUnhas.Font = new Font("Snap ITC", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbUnhas.Location = new Point(6, 178);
+            rdbUnhas.Font = new Font("Cooper Black", 18F);
+            rdbUnhas.ForeColor = Color.FromArgb(89, 50, 19);
+            rdbUnhas.Location = new Point(6, 210);
             rdbUnhas.Name = "rdbUnhas";
-            rdbUnhas.Size = new Size(261, 23);
+            rdbUnhas.Size = new Size(346, 31);
             rdbUnhas.TabIndex = 4;
             rdbUnhas.TabStop = true;
             rdbUnhas.Text = "Corte de Unhas → R$ 15,00";
@@ -114,11 +95,11 @@
             // rdbBanhoTosa
             // 
             rdbBanhoTosa.AutoSize = true;
-            rdbBanhoTosa.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbBanhoTosa.ForeColor = Color.SaddleBrown;
-            rdbBanhoTosa.Location = new Point(73, 49);
+            rdbBanhoTosa.Font = new Font("Cooper Black", 18F);
+            rdbBanhoTosa.ForeColor = Color.FromArgb(89, 50, 19);
+            rdbBanhoTosa.Location = new Point(138, 124);
             rdbBanhoTosa.Name = "rdbBanhoTosa";
-            rdbBanhoTosa.Size = new Size(268, 26);
+            rdbBanhoTosa.Size = new Size(322, 31);
             rdbBanhoTosa.TabIndex = 5;
             rdbBanhoTosa.TabStop = true;
             rdbBanhoTosa.Text = "Banho + Tosa -> R$ 80,00";
@@ -127,11 +108,11 @@
             // rdbBanhoHidratacaoUnha
             // 
             rdbBanhoHidratacaoUnha.AutoSize = true;
-            rdbBanhoHidratacaoUnha.Font = new Font("Snap ITC", 10F);
-            rdbBanhoHidratacaoUnha.ForeColor = Color.SaddleBrown;
-            rdbBanhoHidratacaoUnha.Location = new Point(6, 91);
+            rdbBanhoHidratacaoUnha.Font = new Font("Cooper Black", 18F);
+            rdbBanhoHidratacaoUnha.ForeColor = Color.FromArgb(89, 50, 19);
+            rdbBanhoHidratacaoUnha.Location = new Point(6, 76);
             rdbBanhoHidratacaoUnha.Name = "rdbBanhoHidratacaoUnha";
-            rdbBanhoHidratacaoUnha.Size = new Size(420, 22);
+            rdbBanhoHidratacaoUnha.Size = new Size(598, 31);
             rdbBanhoHidratacaoUnha.TabIndex = 6;
             rdbBanhoHidratacaoUnha.TabStop = true;
             rdbBanhoHidratacaoUnha.Text = "Banho + Hidratação + Corte de Unha -> R$75,00";
@@ -139,20 +120,20 @@
             // 
             // txtAgendamentos
             // 
-            txtAgendamentos.BackColor = Color.FromArgb(255, 130, 179);
-            txtAgendamentos.Font = new Font("Snap ITC", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAgendamentos.ForeColor = Color.SaddleBrown;
-            txtAgendamentos.Location = new Point(493, 262);
+            txtAgendamentos.BackColor = Color.FromArgb(160, 211, 241);
+            txtAgendamentos.Font = new Font("Cooper Black", 8.25F);
+            txtAgendamentos.ForeColor = Color.FromArgb(89, 50, 19);
+            txtAgendamentos.Location = new Point(667, 502);
             txtAgendamentos.Multiline = true;
             txtAgendamentos.Name = "txtAgendamentos";
             txtAgendamentos.ReadOnly = true;
-            txtAgendamentos.Size = new Size(255, 166);
+            txtAgendamentos.Size = new Size(301, 110);
             txtAgendamentos.TabIndex = 7;
             // 
             // dtDisponibilidade
             // 
             dtDisponibilidade.Format = DateTimePickerFormat.Short;
-            dtDisponibilidade.Location = new Point(109, 350);
+            dtDisponibilidade.Location = new Point(380, 449);
             dtDisponibilidade.Name = "dtDisponibilidade";
             dtDisponibilidade.Size = new Size(98, 23);
             dtDisponibilidade.TabIndex = 8;
@@ -161,7 +142,7 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(265, 392);
+            lblTotal.Location = new Point(739, 696);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(28, 15);
             lblTotal.TabIndex = 9;
@@ -170,69 +151,61 @@
             // cbHorario
             // 
             cbHorario.FormattingEnabled = true;
-            cbHorario.Location = new Point(299, 353);
+            cbHorario.Location = new Point(589, 449);
             cbHorario.Name = "cbHorario";
             cbHorario.Size = new Size(121, 23);
             cbHorario.TabIndex = 10;
             // 
             // gbPacotes
             // 
-            gbPacotes.BackColor = Color.FromArgb(255, 130, 179);
+            gbPacotes.BackColor = Color.FromArgb(160, 211, 241);
             gbPacotes.Controls.Add(label1);
             gbPacotes.Controls.Add(rdbBanhoHidratacaoUnha);
             gbPacotes.Controls.Add(rdbBanhoTosa);
-            gbPacotes.Location = new Point(358, 57);
+            gbPacotes.Font = new Font("Cooper Black", 8.25F);
+            gbPacotes.ForeColor = Color.FromArgb(89, 50, 19);
+            gbPacotes.Location = new Point(508, 128);
             gbPacotes.Name = "gbPacotes";
-            gbPacotes.Size = new Size(430, 141);
+            gbPacotes.Size = new Size(616, 188);
             gbPacotes.TabIndex = 11;
             gbPacotes.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Snap ITC", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.SaddleBrown;
-            label1.Location = new Point(159, 11);
+            label1.Font = new Font("Cooper Black", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(252, 218, 229);
+            label1.Location = new Point(229, 25);
             label1.Name = "label1";
-            label1.Size = new Size(110, 27);
+            label1.Size = new Size(134, 34);
             label1.TabIndex = 15;
             label1.Text = "Pacotes:";
             // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(607, 25);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(45, 26);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 24;
-            pictureBox5.TabStop = false;
-            // 
             // grbServicos
             // 
-            grbServicos.BackColor = Color.FromArgb(255, 130, 179);
+            grbServicos.BackColor = Color.FromArgb(160, 211, 241);
             grbServicos.Controls.Add(rdbHigienica);
             grbServicos.Controls.Add(rdbSimples);
             grbServicos.Controls.Add(lblServiços);
             grbServicos.Controls.Add(rdbCompleto);
             grbServicos.Controls.Add(rdbUnhas);
             grbServicos.Controls.Add(rdbHidratacao);
-            grbServicos.ForeColor = Color.SaddleBrown;
-            grbServicos.Location = new Point(40, 57);
+            grbServicos.Font = new Font("Cooper Black", 8.25F);
+            grbServicos.ForeColor = Color.FromArgb(89, 50, 19);
+            grbServicos.Location = new Point(23, 92);
             grbServicos.Name = "grbServicos";
-            grbServicos.Size = new Size(288, 218);
+            grbServicos.Size = new Size(428, 252);
             grbServicos.TabIndex = 12;
             grbServicos.TabStop = false;
-
             // 
             // rdbHigienica
             // 
             rdbHigienica.AutoSize = true;
-            rdbHigienica.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbHigienica.Location = new Point(6, 146);
+            rdbHigienica.Font = new Font("Cooper Black", 18F);
+            rdbHigienica.ForeColor = Color.FromArgb(89, 50, 19);
+            rdbHigienica.Location = new Point(6, 173);
             rdbHigienica.Name = "rdbHigienica";
-            rdbHigienica.Size = new Size(281, 26);
+            rdbHigienica.Size = new Size(341, 31);
             rdbHigienica.TabIndex = 8;
             rdbHigienica.TabStop = true;
             rdbHigienica.Text = "Tosa Higiênica -> R$ 35,00";
@@ -241,10 +214,11 @@
             // rdbSimples
             // 
             rdbSimples.AutoSize = true;
-            rdbSimples.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbSimples.Location = new Point(6, 49);
+            rdbSimples.Font = new Font("Cooper Black", 18F);
+            rdbSimples.ForeColor = Color.FromArgb(89, 50, 19);
+            rdbSimples.Location = new Point(6, 62);
             rdbSimples.Name = "rdbSimples";
-            rdbSimples.Size = new Size(275, 26);
+            rdbSimples.Size = new Size(342, 31);
             rdbSimples.TabIndex = 7;
             rdbSimples.TabStop = true;
             rdbSimples.Text = "Banho Simples -> R$ 30,00";
@@ -253,11 +227,11 @@
             // lblServiços
             // 
             lblServiços.AutoSize = true;
-            lblServiços.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblServiços.ForeColor = Color.SaddleBrown;
-            lblServiços.Location = new Point(30, 11);
+            lblServiços.Font = new Font("Cooper Black", 22F);
+            lblServiços.ForeColor = Color.FromArgb(252, 218, 229);
+            lblServiços.Location = new Point(56, 16);
             lblServiços.Name = "lblServiços";
-            lblServiços.Size = new Size(208, 24);
+            lblServiços.Size = new Size(308, 35);
             lblServiços.TabIndex = 6;
             lblServiços.Text = "Serviços principais";
             // 
@@ -266,7 +240,7 @@
             btnConfirmar.BackColor = Color.FromArgb(255, 130, 179);
             btnConfirmar.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfirmar.ForeColor = Color.SaddleBrown;
-            btnConfirmar.Location = new Point(109, 413);
+            btnConfirmar.Location = new Point(242, 665);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(108, 29);
             btnConfirmar.TabIndex = 13;
@@ -277,164 +251,54 @@
             // lbl
             // 
             lbl.AutoSize = true;
-            lbl.Font = new Font("Snap ITC", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl.ForeColor = Color.FromArgb(255, 130, 179);
-            lbl.Location = new Point(179, 386);
+            lbl.Font = new Font("Cooper Black", 20F);
+            lbl.ForeColor = Color.FromArgb(89, 50, 19);
+            lbl.Location = new Point(79, 581);
             lbl.Name = "lbl";
-            lbl.Size = new Size(63, 24);
+            lbl.Size = new Size(87, 31);
             lbl.TabIndex = 14;
             lbl.Text = "Total";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(255, 130, 179);
-            label2.Font = new Font("Snap ITC", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.SaddleBrown;
-            label2.Location = new Point(536, 256);
+            label2.BackColor = Color.FromArgb(160, 211, 241);
+            label2.Font = new Font("Cooper Black", 8.25F);
+            label2.ForeColor = Color.FromArgb(89, 50, 19);
+            label2.Location = new Point(749, 502);
             label2.Name = "label2";
-            label2.Size = new Size(160, 18);
+            label2.Size = new Size(112, 13);
             label2.TabIndex = 7;
             label2.Text = "Seus agendamento:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Snap ITC", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(255, 130, 179);
-            label3.Location = new Point(206, 9);
+            label3.Font = new Font("Cooper Black", 30F);
+            label3.ForeColor = Color.FromArgb(89, 50, 19);
+            label3.Location = new Point(242, 25);
             label3.Name = "label3";
-            label3.Size = new Size(421, 27);
+            label3.Size = new Size(707, 46);
             label3.TabIndex = 7;
             label3.Text = "Qual serviço gostaria de agendar ?";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Snap ITC", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(255, 130, 179);
-            label4.Location = new Point(70, 320);
+            label4.Font = new Font("Cooper Black", 20F);
+            label4.ForeColor = Color.FromArgb(89, 50, 19);
+            label4.Location = new Point(324, 368);
             label4.Name = "label4";
-            label4.Size = new Size(369, 27);
+            label4.Size = new Size(443, 31);
             label4.TabIndex = 15;
             label4.Text = "Escolha uma data e um hórario:";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-2, 25);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(82, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(40, 297);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(64, 39);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 20;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(412, 359);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(40, 51);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 21;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(735, 407);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(48, 51);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 22;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(473, 235);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(37, 40);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 23;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.Transparent;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(334, 36);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(43, 39);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 25;
-            pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.BackColor = Color.Transparent;
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(10, 428);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(37, 40);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 26;
-            pictureBox8.TabStop = false;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Snap ITC", 5F);
-            label11.ForeColor = Color.FromArgb(255, 130, 179);
-            label11.Location = new Point(759, 39);
-            label11.Name = "label11";
-            label11.Size = new Size(40, 9);
-            label11.TabIndex = 28;
-            label11.Text = "Pet Care";
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(759, 1);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(40, 35);
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.TabIndex = 27;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.BackColor = Color.Transparent;
-            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(759, 204);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(40, 40);
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox10.TabIndex = 29;
-            pictureBox10.TabStop = false;
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.FromArgb(255, 130, 179);
             btnCancelar.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = Color.SaddleBrown;
-            btnCancelar.Location = new Point(299, 413);
+            btnCancelar.Location = new Point(536, 665);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(108, 29);
             btnCancelar.TabIndex = 30;
@@ -446,12 +310,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PaleTurquoise;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(255, 225, 235);
+            ClientSize = new Size(1379, 749);
             Controls.Add(btnCancelar);
-            Controls.Add(label11);
-            Controls.Add(pictureBox9);
-            Controls.Add(pictureBox8);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -463,30 +324,12 @@
             Controls.Add(lblTotal);
             Controls.Add(dtDisponibilidade);
             Controls.Add(txtAgendamentos);
-            Controls.Add(pictureBox1);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox7);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox10);
             Name = "Agendamento_de_Serviços";
             Text = "Agendamento_de_Serviços";
             gbPacotes.ResumeLayout(false);
             gbPacotes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             grbServicos.ResumeLayout(false);
             grbServicos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -510,17 +353,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
-        private Label label11;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox10;
         private RadioButton rdbSimples;
         private RadioButton rdbHigienica;
         private Button btnCancelar;

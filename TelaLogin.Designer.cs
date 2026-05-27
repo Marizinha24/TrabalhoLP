@@ -73,7 +73,7 @@
             // 
             // txbSenha
             // 
-            txbSenha.Font = new Font("Cooper Black", 15F);
+            txbSenha.Font = new Font("Cooper Black", 18F);
             txbSenha.Location = new Point(458, 544);
             txbSenha.Multiline = true;
             txbSenha.Name = "txbSenha";
@@ -95,7 +95,7 @@
             // 
             // txbNome
             // 
-            txbNome.Font = new Font("Cooper Black", 15F);
+            txbNome.Font = new Font("Cooper Black", 18F);
             txbNome.Location = new Point(458, 372);
             txbNome.Multiline = true;
             txbNome.Name = "txbNome";
@@ -115,7 +115,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-226, 255);
+            pictureBox2.Location = new Point(-204, 255);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(500, 500);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -125,7 +125,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(-204, -251);
+            pictureBox3.Location = new Point(-214, -251);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(500, 500);
             pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -135,7 +135,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1000, 255);
+            pictureBox4.Location = new Point(1046, 255);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(500, 500);
             pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -145,7 +145,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(1025, -251);
+            pictureBox5.Location = new Point(1046, -251);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(500, 500);
             pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -157,7 +157,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(252, 218, 229);
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1385, 749);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
