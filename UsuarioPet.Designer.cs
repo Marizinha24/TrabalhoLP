@@ -37,64 +37,83 @@
             // 
             // lvUsuariosPets
             // 
-            lvUsuariosPets.Location = new Point(35, 78);
-            lvUsuariosPets.Margin = new Padding(3, 4, 3, 4);
+            lvUsuariosPets.BackColor = Color.FromArgb(250, 233, 215);
+            lvUsuariosPets.Font = new Font("Cooper Black", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lvUsuariosPets.Location = new Point(27, 70);
             lvUsuariosPets.Name = "lvUsuariosPets";
-            lvUsuariosPets.Size = new Size(1270, 617);
+            lvUsuariosPets.Size = new Size(1267, 478);
             lvUsuariosPets.TabIndex = 0;
             lvUsuariosPets.UseCompatibleStateImageBehavior = false;
             lvUsuariosPets.DoubleClick += lvUsuariosPets_DoubleClick;
             // 
             // btnHomePage
             // 
-            btnHomePage.Location = new Point(56, 12);
+            btnHomePage.Font = new Font("Cooper Black", 9F);
+            btnHomePage.ForeColor = Color.FromArgb(89, 50, 19);
+            btnHomePage.Location = new Point(56, 8);
+            btnHomePage.Margin = new Padding(3, 2, 3, 2);
             btnHomePage.Name = "btnHomePage";
-            btnHomePage.Size = new Size(97, 59);
+            btnHomePage.Size = new Size(97, 41);
             btnHomePage.TabIndex = 1;
             btnHomePage.Text = "Home page";
             btnHomePage.UseVisualStyleBackColor = true;
             // 
             // btnDeletar
             // 
-            btnDeletar.Location = new Point(1175, 12);
+            btnDeletar.BackColor = Color.FromArgb(227, 94, 101);
+            btnDeletar.Font = new Font("Cooper Black", 9F);
+            btnDeletar.ForeColor = Color.White;
+            btnDeletar.Location = new Point(1175, 8);
+            btnDeletar.Margin = new Padding(3, 2, 3, 2);
             btnDeletar.Name = "btnDeletar";
-            btnDeletar.Size = new Size(119, 59);
+            btnDeletar.Size = new Size(119, 41);
             btnDeletar.TabIndex = 6;
             btnDeletar.Text = "Deletar Usuario";
-            btnDeletar.UseVisualStyleBackColor = true;
+            btnDeletar.UseVisualStyleBackColor = false;
             btnDeletar.Click += btnDeletar_Click;
             // 
             // btnExportar
             // 
-            btnExportar.Location = new Point(1057, 716);
+            btnExportar.BackColor = Color.FromArgb(160, 211, 241);
+            btnExportar.FlatStyle = FlatStyle.Popup;
+            btnExportar.Font = new Font("Cooper Black", 18F);
+            btnExportar.ForeColor = Color.FromArgb(89, 50, 19);
+            btnExportar.Location = new Point(1203, 666);
+            btnExportar.Margin = new Padding(3, 2, 3, 2);
             btnExportar.Name = "btnExportar";
-            btnExportar.Size = new Size(94, 29);
+            btnExportar.Size = new Size(155, 32);
             btnExportar.TabIndex = 15;
             btnExportar.Text = "Exportar";
-            btnExportar.UseVisualStyleBackColor = true;
+            btnExportar.UseVisualStyleBackColor = false;
             btnExportar.Click += btnExportar_Click;
             // 
             // btnImportar
             // 
-            btnImportar.Location = new Point(888, 716);
+            btnImportar.BackColor = Color.FromArgb(166, 213, 120);
+            btnImportar.FlatStyle = FlatStyle.Popup;
+            btnImportar.Font = new Font("Cooper Black", 18F);
+            btnImportar.ForeColor = Color.FromArgb(89, 50, 19);
+            btnImportar.Location = new Point(1013, 666);
+            btnImportar.Margin = new Padding(3, 2, 3, 2);
             btnImportar.Name = "btnImportar";
-            btnImportar.Size = new Size(94, 29);
+            btnImportar.Size = new Size(160, 32);
             btnImportar.TabIndex = 14;
             btnImportar.Text = "Importar";
-            btnImportar.UseVisualStyleBackColor = true;
+            btnImportar.UseVisualStyleBackColor = false;
             btnImportar.Click += btnImportar_Click;
             // 
             // UsuarioPet
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1342, 757);
+            BackColor = Color.FromArgb(250, 233, 215);
+            ClientSize = new Size(1370, 749);
             Controls.Add(btnExportar);
             Controls.Add(btnImportar);
             Controls.Add(btnDeletar);
             Controls.Add(btnHomePage);
             Controls.Add(lvUsuariosPets);
-            Margin = new Padding(3, 4, 3, 4);
+            Font = new Font("Cooper Black", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "UsuarioPet";
             Text = "Agendamentos";
             ResumeLayout(false);

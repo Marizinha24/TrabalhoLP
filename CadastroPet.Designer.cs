@@ -54,15 +54,21 @@
             label2 = new Label();
             btnEntrar = new Button();
             pictureBox4 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbPet).BeginInit();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pbPet
             // 
-            pbPet.Location = new Point(72, 75);
+            pbPet.Location = new Point(72, 111);
             pbPet.Margin = new Padding(3, 2, 3, 2);
             pbPet.Name = "pbPet";
             pbPet.Size = new Size(270, 235);
@@ -76,6 +82,8 @@
             groupBox2.Controls.Add(pbPet);
             groupBox2.Controls.Add(txtNomeTutor);
             groupBox2.Controls.Add(blbNome);
+            groupBox2.Controls.Add(pictureBox1);
+            groupBox2.Controls.Add(pictureBox2);
             groupBox2.Font = new Font("Cooper Black", 8.25F);
             groupBox2.ForeColor = Color.FromArgb(89, 50, 19);
             groupBox2.Location = new Point(12, 85);
@@ -89,7 +97,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 25F);
             label1.ForeColor = Color.FromArgb(89, 50, 19);
-            label1.Location = new Point(122, 16);
+            label1.Location = new Point(119, 42);
             label1.Name = "label1";
             label1.Size = new Size(171, 39);
             label1.TabIndex = 35;
@@ -98,7 +106,7 @@
             // txtNomeTutor
             // 
             txtNomeTutor.Font = new Font("Cooper Black", 18F);
-            txtNomeTutor.Location = new Point(31, 411);
+            txtNomeTutor.Location = new Point(31, 441);
             txtNomeTutor.Multiline = true;
             txtNomeTutor.Name = "txtNomeTutor";
             txtNomeTutor.ReadOnly = true;
@@ -110,7 +118,7 @@
             blbNome.AutoSize = true;
             blbNome.Font = new Font("Cooper Black", 25F);
             blbNome.ForeColor = Color.FromArgb(89, 50, 19);
-            blbNome.Location = new Point(55, 347);
+            blbNome.Location = new Point(55, 390);
             blbNome.Name = "blbNome";
             blbNome.Size = new Size(287, 39);
             blbNome.TabIndex = 5;
@@ -121,7 +129,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Cooper Black", 20F);
             label4.ForeColor = Color.FromArgb(89, 50, 19);
-            label4.Location = new Point(321, 391);
+            label4.Location = new Point(321, 411);
             label4.Name = "label4";
             label4.Size = new Size(279, 31);
             label4.TabIndex = 10;
@@ -129,10 +137,10 @@
             // 
             // txtObservacao
             // 
-            txtObservacao.Location = new Point(321, 434);
+            txtObservacao.Location = new Point(321, 458);
             txtObservacao.Multiline = true;
             txtObservacao.Name = "txtObservacao";
-            txtObservacao.Size = new Size(321, 52);
+            txtObservacao.Size = new Size(321, 44);
             txtObservacao.TabIndex = 12;
             // 
             // groupBox1
@@ -154,6 +162,7 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(cmbPorte);
+            groupBox1.Controls.Add(pictureBox3);
             groupBox1.Font = new Font("Cooper Black", 8.25F);
             groupBox1.ForeColor = Color.FromArgb(89, 50, 19);
             groupBox1.Location = new Point(455, 85);
@@ -167,7 +176,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Cooper Black", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.FromArgb(89, 50, 19);
-            label12.Location = new Point(22, 271);
+            label12.Location = new Point(22, 315);
             label12.Name = "label12";
             label12.Size = new Size(100, 31);
             label12.TabIndex = 25;
@@ -177,7 +186,7 @@
             // 
             cbRacas.Font = new Font("Cooper Black", 15F);
             cbRacas.FormattingEnabled = true;
-            cbRacas.Location = new Point(22, 335);
+            cbRacas.Location = new Point(22, 367);
             cbRacas.Name = "cbRacas";
             cbRacas.Size = new Size(250, 31);
             cbRacas.TabIndex = 24;
@@ -188,7 +197,7 @@
             cbEspecie.Font = new Font("Cooper Black", 15F);
             cbEspecie.FormattingEnabled = true;
             cbEspecie.Items.AddRange(new object[] { "Gato", "Cachorro" });
-            cbEspecie.Location = new Point(22, 224);
+            cbEspecie.Location = new Point(22, 279);
             cbEspecie.Name = "cbEspecie";
             cbEspecie.Size = new Size(250, 31);
             cbEspecie.TabIndex = 23;
@@ -199,7 +208,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Cooper Black", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(89, 50, 19);
-            label10.Location = new Point(22, 391);
+            label10.Location = new Point(22, 411);
             label10.Name = "label10";
             label10.Size = new Size(229, 31);
             label10.TabIndex = 19;
@@ -210,7 +219,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Cooper Black", 20F);
             label9.ForeColor = Color.FromArgb(89, 50, 19);
-            label9.Location = new Point(321, 271);
+            label9.Location = new Point(321, 315);
             label9.Name = "label9";
             label9.Size = new Size(145, 31);
             label9.TabIndex = 20;
@@ -221,14 +230,14 @@
             cmbCastrado.Font = new Font("Cooper Black", 15F);
             cmbCastrado.FormattingEnabled = true;
             cmbCastrado.Items.AddRange(new object[] { "Sim", "Não" });
-            cmbCastrado.Location = new Point(321, 327);
+            cmbCastrado.Location = new Point(321, 367);
             cmbCastrado.Name = "cmbCastrado";
             cmbCastrado.Size = new Size(321, 31);
             cmbCastrado.TabIndex = 19;
             // 
             // txtNomePet
             // 
-            txtNomePet.Location = new Point(22, 118);
+            txtNomePet.Location = new Point(22, 193);
             txtNomePet.Multiline = true;
             txtNomePet.Name = "txtNomePet";
             txtNomePet.Size = new Size(250, 29);
@@ -239,7 +248,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Cooper Black", 20F);
             label8.ForeColor = Color.FromArgb(89, 50, 19);
-            label8.Location = new Point(321, 167);
+            label8.Location = new Point(321, 227);
             label8.Name = "label8";
             label8.Size = new Size(85, 31);
             label8.TabIndex = 18;
@@ -250,14 +259,14 @@
             cmbSexo.Font = new Font("Cooper Black", 15F);
             cmbSexo.FormattingEnabled = true;
             cmbSexo.Items.AddRange(new object[] { "Fêmea", "Macho" });
-            cmbSexo.Location = new Point(321, 224);
+            cmbSexo.Location = new Point(321, 279);
             cmbSexo.Name = "cmbSexo";
             cmbSexo.Size = new Size(321, 31);
             cmbSexo.TabIndex = 17;
             // 
             // txtTemperamento
             // 
-            txtTemperamento.Location = new Point(22, 443);
+            txtTemperamento.Location = new Point(22, 458);
             txtTemperamento.Multiline = true;
             txtTemperamento.Name = "txtTemperamento";
             txtTemperamento.Size = new Size(250, 29);
@@ -268,7 +277,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Cooper Black", 20F);
             label7.ForeColor = Color.FromArgb(89, 50, 19);
-            label7.Location = new Point(321, 55);
+            label7.Location = new Point(321, 141);
             label7.Name = "label7";
             label7.Size = new Size(97, 31);
             label7.TabIndex = 15;
@@ -279,7 +288,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Cooper Black", 20F);
             label5.ForeColor = Color.FromArgb(89, 50, 19);
-            label5.Location = new Point(22, 167);
+            label5.Location = new Point(22, 227);
             label5.Name = "label5";
             label5.Size = new Size(124, 31);
             label5.TabIndex = 11;
@@ -290,7 +299,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Cooper Black", 20F);
             label6.ForeColor = Color.FromArgb(89, 50, 19);
-            label6.Location = new Point(22, 55);
+            label6.Location = new Point(22, 141);
             label6.Name = "label6";
             label6.Size = new Size(193, 31);
             label6.TabIndex = 14;
@@ -301,7 +310,7 @@
             cmbPorte.Font = new Font("Cooper Black", 15F);
             cmbPorte.FormattingEnabled = true;
             cmbPorte.Items.AddRange(new object[] { "Pequeno", "Médio", "Grande" });
-            cmbPorte.Location = new Point(321, 116);
+            cmbPorte.Location = new Point(321, 193);
             cmbPorte.Name = "cmbPorte";
             cmbPorte.Size = new Size(321, 31);
             cmbPorte.TabIndex = 3;
@@ -324,7 +333,7 @@
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.Font = new Font("Cooper Black", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.FromArgb(89, 50, 19);
-            btnEntrar.Location = new Point(455, 619);
+            btnEntrar.Location = new Point(455, 628);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(178, 47);
             btnEntrar.TabIndex = 25;
@@ -341,6 +350,36 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 29;
             pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(312, 70);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(79, 58);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 36;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(31, 328);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(61, 49);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 37;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(167, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(299, 182);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 38;
+            pictureBox3.TabStop = false;
             // 
             // CadastroPet
             // 
@@ -362,6 +401,9 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -399,5 +441,7 @@
         private Label blbNome;
         private Label label1;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }
