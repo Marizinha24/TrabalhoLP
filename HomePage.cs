@@ -15,6 +15,10 @@ namespace TrabalhoLP
         public HomePage()
         {
             InitializeComponent();
+
+            pbGif.Image = Properties.Resources.processed;
+
+            pbGif.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
 
@@ -36,6 +40,7 @@ namespace TrabalhoLP
 
             formTela.BringToFront();
             formTela.Show();
+            pbGif.Visible = false;
         }
         public void LimparPanel()
         {
@@ -47,6 +52,7 @@ namespace TrabalhoLP
             }
 
             formPanel.Controls.Clear();
+            pbGif.Visible = true;
         }
 
         private void btnCadastroCliente_Click(object sender, EventArgs e)

@@ -42,9 +42,9 @@
             // 
             lvUsuariosPets.BackColor = Color.FromArgb(255, 225, 235);
             lvUsuariosPets.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lvUsuariosPets.Location = new Point(12, 82);
+            lvUsuariosPets.Location = new Point(33, 200);
             lvUsuariosPets.Name = "lvUsuariosPets";
-            lvUsuariosPets.Size = new Size(1145, 561);
+            lvUsuariosPets.Size = new Size(1305, 561);
             lvUsuariosPets.TabIndex = 0;
             lvUsuariosPets.UseCompatibleStateImageBehavior = false;
             lvUsuariosPets.DoubleClick += lvUsuariosPets_DoubleClick;
@@ -56,7 +56,7 @@
             btnHomePage.Font = new Font("Cooper Black", 9F);
             btnHomePage.ForeColor = Color.FromArgb(89, 50, 19);
             btnHomePage.Image = (Image)resources.GetObject("btnHomePage.Image");
-            btnHomePage.Location = new Point(27, 11);
+            btnHomePage.Location = new Point(33, 28);
             btnHomePage.Margin = new Padding(3, 2, 3, 2);
             btnHomePage.Name = "btnHomePage";
             btnHomePage.Size = new Size(41, 39);
@@ -68,9 +68,9 @@
             // 
             btnDeletar.BackColor = Color.FromArgb(227, 94, 101);
             btnDeletar.FlatStyle = FlatStyle.Popup;
-            btnDeletar.Font = new Font("Cooper Black", 12F);
+            btnDeletar.Font = new Font("Cooper Black", 18F);
             btnDeletar.ForeColor = Color.White;
-            btnDeletar.Location = new Point(27, 658);
+            btnDeletar.Location = new Point(42, 811);
             btnDeletar.Margin = new Padding(3, 2, 3, 2);
             btnDeletar.Name = "btnDeletar";
             btnDeletar.Size = new Size(154, 41);
@@ -85,10 +85,10 @@
             btnExportar.FlatStyle = FlatStyle.Popup;
             btnExportar.Font = new Font("Cooper Black", 18F);
             btnExportar.ForeColor = Color.FromArgb(89, 50, 19);
-            btnExportar.Location = new Point(981, 658);
+            btnExportar.Location = new Point(1154, 811);
             btnExportar.Margin = new Padding(3, 2, 3, 2);
             btnExportar.Name = "btnExportar";
-            btnExportar.Size = new Size(155, 32);
+            btnExportar.Size = new Size(163, 41);
             btnExportar.TabIndex = 15;
             btnExportar.Text = "Exportar";
             btnExportar.UseVisualStyleBackColor = false;
@@ -100,10 +100,10 @@
             btnImportar.FlatStyle = FlatStyle.Popup;
             btnImportar.Font = new Font("Cooper Black", 18F);
             btnImportar.ForeColor = Color.FromArgb(89, 50, 19);
-            btnImportar.Location = new Point(792, 658);
+            btnImportar.Location = new Point(818, 811);
             btnImportar.Margin = new Padding(3, 2, 3, 2);
             btnImportar.Name = "btnImportar";
-            btnImportar.Size = new Size(160, 32);
+            btnImportar.Size = new Size(168, 41);
             btnImportar.TabIndex = 14;
             btnImportar.Text = "Importar";
             btnImportar.UseVisualStyleBackColor = false;
@@ -112,7 +112,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1059, -1);
+            pictureBox1.Location = new Point(1230, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(108, 77);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -124,7 +124,7 @@
             AutoScaleDimensions = new SizeF(10F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 225, 235);
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1370, 886);
             Controls.Add(pictureBox1);
             Controls.Add(btnExportar);
             Controls.Add(btnImportar);

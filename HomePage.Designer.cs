@@ -33,7 +33,10 @@
             btnCadastroCliente = new Button();
             btnListaUsuarios = new Button();
             formPanel = new Panel();
+            pbGif = new PictureBox();
             pictureBox1 = new PictureBox();
+            formPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbGif).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +45,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 20F);
             label1.ForeColor = Color.FromArgb(89, 50, 19);
-            label1.Location = new Point(-1, 228);
+            label1.Location = new Point(-1, 203);
             label1.Name = "label1";
             label1.Size = new Size(230, 78);
             label1.TabIndex = 0;
@@ -85,10 +88,20 @@
             // 
             // formPanel
             // 
-            formPanel.Location = new Point(215, -1);
+            formPanel.Controls.Add(pbGif);
+            formPanel.Location = new Point(236, -1);
             formPanel.Name = "formPanel";
-            formPanel.Size = new Size(1436, 1000);
+            formPanel.Size = new Size(1415, 1000);
             formPanel.TabIndex = 4;
+            // 
+            // pbGif
+            // 
+            pbGif.Image = (Image)resources.GetObject("pbGif.Image");
+            pbGif.Location = new Point(270, 230);
+            pbGif.Name = "pbGif";
+            pbGif.Size = new Size(790, 468);
+            pbGif.TabIndex = 0;
+            pbGif.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -114,6 +127,8 @@
             Controls.Add(label1);
             Name = "HomePage";
             Text = "HomePage";
+            formPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbGif).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -126,5 +141,6 @@
         private Button btnListaUsuarios;
         private Panel formPanel;
         private PictureBox pictureBox1;
+        private PictureBox pbGif;
     }
 }

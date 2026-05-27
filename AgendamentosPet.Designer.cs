@@ -133,72 +133,88 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(698, 85);
+            lblUsuario.Font = new Font("Cooper Black", 20F);
+            lblUsuario.ForeColor = Color.FromArgb(89, 50, 19);
+            lblUsuario.Location = new Point(482, 60);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(50, 20);
+            lblUsuario.Size = new Size(119, 39);
             lblUsuario.TabIndex = 2;
             lblUsuario.Text = "label1";
             // 
             // lblRaca
             // 
             lblRaca.AutoSize = true;
-            lblRaca.Location = new Point(603, 147);
+            lblRaca.Font = new Font("Cooper Black", 20F);
+            lblRaca.ForeColor = Color.FromArgb(89, 50, 19);
+            lblRaca.Location = new Point(840, 60);
             lblRaca.Name = "lblRaca";
-            lblRaca.Size = new Size(50, 20);
+            lblRaca.Size = new Size(119, 39);
             lblRaca.TabIndex = 3;
             lblRaca.Text = "label2";
             // 
             // lblNomePet
             // 
             lblNomePet.AutoSize = true;
-            lblNomePet.Location = new Point(357, 55);
+            lblNomePet.Font = new Font("Cooper Black", 20F);
+            lblNomePet.ForeColor = Color.FromArgb(89, 50, 19);
+            lblNomePet.Location = new Point(332, 60);
             lblNomePet.Name = "lblNomePet";
-            lblNomePet.Size = new Size(50, 20);
+            lblNomePet.Size = new Size(119, 39);
             lblNomePet.TabIndex = 4;
             lblNomePet.Text = "label3";
             // 
             // lblEspecie
             // 
             lblEspecie.AutoSize = true;
-            lblEspecie.Location = new Point(458, 147);
+            lblEspecie.Font = new Font("Cooper Black", 20F);
+            lblEspecie.ForeColor = Color.FromArgb(89, 50, 19);
+            lblEspecie.Location = new Point(657, 60);
             lblEspecie.Name = "lblEspecie";
-            lblEspecie.Size = new Size(50, 20);
+            lblEspecie.Size = new Size(119, 39);
             lblEspecie.TabIndex = 5;
             lblEspecie.Text = "label4";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(502, 21);
+            label5.Font = new Font("Cooper Black", 20F);
+            label5.ForeColor = Color.FromArgb(89, 50, 19);
+            label5.Location = new Point(483, 16);
             label5.Name = "label5";
-            label5.Size = new Size(44, 20);
+            label5.Size = new Size(118, 39);
             label5.TabIndex = 6;
             label5.Text = "Tutor";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(357, 21);
+            label6.Font = new Font("Cooper Black", 20F);
+            label6.ForeColor = Color.FromArgb(89, 50, 19);
+            label6.Location = new Point(357, 16);
             label6.Name = "label6";
-            label6.Size = new Size(29, 20);
+            label6.Size = new Size(74, 39);
             label6.TabIndex = 7;
             label6.Text = "Pet";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(458, 111);
+            label7.Font = new Font("Cooper Black", 20F);
+            label7.ForeColor = Color.FromArgb(89, 50, 19);
+            label7.Location = new Point(657, 16);
             label7.Name = "label7";
-            label7.Size = new Size(59, 20);
+            label7.Size = new Size(145, 39);
             label7.TabIndex = 8;
             label7.Text = "Especie";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(603, 111);
+            label8.Font = new Font("Cooper Black", 20F);
+            label8.ForeColor = Color.FromArgb(89, 50, 19);
+            label8.Location = new Point(893, 16);
             label8.Name = "label8";
-            label8.Size = new Size(41, 20);
+            label8.Size = new Size(99, 39);
             label8.TabIndex = 9;
             label8.Text = "Raça";
             // 

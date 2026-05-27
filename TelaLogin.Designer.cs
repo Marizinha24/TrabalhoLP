@@ -119,7 +119,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-233, 340);
+            pictureBox2.Location = new Point(-201, 505);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(500, 500);
@@ -130,7 +130,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(-245, -335);
+            pictureBox3.Location = new Point(-168, -3);
             pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(500, 500);
@@ -141,7 +141,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1195, 340);
+            pictureBox4.Location = new Point(1186, 505);
             pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(500, 500);
@@ -152,7 +152,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(1195, -335);
+            pictureBox5.Location = new Point(1186, -3);
             pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(500, 500);
