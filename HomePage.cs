@@ -26,6 +26,8 @@ namespace TrabalhoLP
         {
             if (formAtivo != null)
             {
+                formPanel.Controls.Remove(formAtivo);
+
                 formAtivo.Close();
             }
             formAtivo = formTela;
@@ -34,7 +36,7 @@ namespace TrabalhoLP
             formTela.Dock = DockStyle.Fill;
             formTela.FormBorderStyle = FormBorderStyle.None;
 
-            formPanel.Controls.Clear();
+        
             formPanel.Controls.Add(formTela);
             formPanel.Tag = formTela;
 
@@ -46,13 +48,16 @@ namespace TrabalhoLP
         {
             if (formAtivo != null)
             {
+                formPanel.Controls.Remove(formAtivo);
+
                 formAtivo.Close();
 
                 formAtivo = null;
             }
 
-            formPanel.Controls.Clear();
+            
             pbGif.Visible = true;
+            pbGif.BringToFront();
         }
 
         private void btnCadastroCliente_Click(object sender, EventArgs e)

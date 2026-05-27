@@ -106,6 +106,7 @@ namespace TrabalhoLP
                 else if (resposta == DialogResult.No)
                 {
                     home.LimparPanel();
+
                 }
             }
 
