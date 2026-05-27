@@ -64,10 +64,11 @@
             // txtNomeTutor
             // 
             txtNomeTutor.Font = new Font("Cooper Black", 12F);
-            txtNomeTutor.Location = new Point(33, 176);
+            txtNomeTutor.Location = new Point(38, 235);
+            txtNomeTutor.Margin = new Padding(3, 4, 3, 4);
             txtNomeTutor.Multiline = true;
             txtNomeTutor.Name = "txtNomeTutor";
-            txtNomeTutor.Size = new Size(275, 35);
+            txtNomeTutor.Size = new Size(314, 45);
             txtNomeTutor.TabIndex = 0;
             // 
             // btnEntrar
@@ -76,9 +77,10 @@
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.Font = new Font("Cooper Black", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.FromArgb(89, 50, 19);
-            btnEntrar.Location = new Point(456, 622);
+            btnEntrar.Location = new Point(521, 829);
+            btnEntrar.Margin = new Padding(3, 4, 3, 4);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(159, 38);
+            btnEntrar.Size = new Size(182, 51);
             btnEntrar.TabIndex = 4;
             btnEntrar.Text = "Cadastrar";
             btnEntrar.UseVisualStyleBackColor = false;
@@ -89,9 +91,9 @@
             blbNome.AutoSize = true;
             blbNome.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             blbNome.ForeColor = Color.FromArgb(89, 50, 19);
-            blbNome.Location = new Point(33, 137);
+            blbNome.Location = new Point(38, 183);
             blbNome.Name = "blbNome";
-            blbNome.Size = new Size(202, 27);
+            blbNome.Size = new Size(255, 35);
             blbNome.TabIndex = 5;
             blbNome.Text = "Nome do Tutor:";
             // 
@@ -100,9 +102,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(89, 50, 19);
-            label1.Location = new Point(33, 223);
+            label1.Location = new Point(38, 297);
             label1.Name = "label1";
-            label1.Size = new Size(68, 27);
+            label1.Size = new Size(87, 35);
             label1.TabIndex = 6;
             label1.Text = "CPF:";
             // 
@@ -111,19 +113,20 @@
             label2.AutoSize = true;
             label2.Font = new Font("Cooper Black", 30F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(89, 50, 19);
-            label2.Location = new Point(347, 35);
+            label2.Location = new Point(397, 47);
             label2.Name = "label2";
-            label2.Size = new Size(441, 46);
+            label2.Size = new Size(553, 57);
             label2.TabIndex = 7;
             label2.Text = "Realize seu cadastro:";
             // 
             // txtCPF
             // 
             txtCPF.Font = new Font("Cooper Black", 12F);
-            txtCPF.Location = new Point(33, 260);
+            txtCPF.Location = new Point(38, 347);
+            txtCPF.Margin = new Padding(3, 4, 3, 4);
             txtCPF.Multiline = true;
             txtCPF.Name = "txtCPF";
-            txtCPF.Size = new Size(275, 35);
+            txtCPF.Size = new Size(314, 45);
             txtCPF.TabIndex = 8;
             // 
             // label3
@@ -131,9 +134,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(89, 50, 19);
-            label3.Location = new Point(33, 298);
+            label3.Location = new Point(38, 397);
             label3.Name = "label3";
-            label3.Size = new Size(124, 27);
+            label3.Size = new Size(155, 35);
             label3.TabIndex = 9;
             label3.Text = "Telefone:";
             // 
@@ -142,9 +145,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Cooper Black", 20F);
             label4.ForeColor = Color.FromArgb(89, 50, 19);
-            label4.Location = new Point(15, 176);
+            label4.Location = new Point(17, 235);
             label4.Name = "label4";
-            label4.Size = new Size(78, 31);
+            label4.Size = new Size(97, 39);
             label4.TabIndex = 10;
             label4.Text = "CEP:";
             // 
@@ -153,20 +156,21 @@
             label5.AutoSize = true;
             label5.Font = new Font("Cooper Black", 20F);
             label5.ForeColor = Color.FromArgb(89, 50, 19);
-            label5.Location = new Point(284, 176);
+            label5.Location = new Point(325, 235);
             label5.Name = "label5";
-            label5.Size = new Size(132, 31);
+            label5.Size = new Size(167, 39);
             label5.TabIndex = 11;
             label5.Text = "Número:";
             // 
             // txtEndereco
             // 
             txtEndereco.Font = new Font("Cooper Black", 12F);
-            txtEndereco.Location = new Point(284, 324);
+            txtEndereco.Location = new Point(325, 432);
+            txtEndereco.Margin = new Padding(3, 4, 3, 4);
             txtEndereco.Multiline = true;
             txtEndereco.Name = "txtEndereco";
             txtEndereco.ReadOnly = true;
-            txtEndereco.Size = new Size(292, 49);
+            txtEndereco.Size = new Size(333, 64);
             txtEndereco.TabIndex = 12;
             // 
             // label6
@@ -174,9 +178,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Cooper Black", 20F);
             label6.ForeColor = Color.FromArgb(89, 50, 19);
-            label6.Location = new Point(284, 283);
+            label6.Location = new Point(325, 377);
             label6.Name = "label6";
-            label6.Size = new Size(141, 31);
+            label6.Size = new Size(177, 39);
             label6.TabIndex = 14;
             label6.Text = "Endereço";
             // 
@@ -194,18 +198,21 @@
             groupBox1.Controls.Add(txtEndereco);
             groupBox1.Controls.Add(label6);
             groupBox1.ForeColor = Color.FromArgb(255, 130, 179);
-            groupBox1.Location = new Point(522, 113);
+            groupBox1.Location = new Point(597, 151);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(608, 471);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(695, 628);
             groupBox1.TabIndex = 15;
             groupBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(192, 5);
+            pictureBox2.Location = new Point(219, 7);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(205, 168);
+            pictureBox2.Size = new Size(234, 224);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 34;
             pictureBox2.TabStop = false;
@@ -216,9 +223,10 @@
             btnEndereco.FlatStyle = FlatStyle.Popup;
             btnEndereco.Font = new Font("Cooper Black", 15F);
             btnEndereco.ForeColor = Color.FromArgb(89, 50, 19);
-            btnEndereco.Location = new Point(224, 396);
+            btnEndereco.Location = new Point(256, 528);
+            btnEndereco.Margin = new Padding(3, 4, 3, 4);
             btnEndereco.Name = "btnEndereco";
-            btnEndereco.Size = new Size(134, 54);
+            btnEndereco.Size = new Size(153, 72);
             btnEndereco.TabIndex = 33;
             btnEndereco.Text = "Buscar Endereço";
             btnEndereco.UseVisualStyleBackColor = false;
@@ -228,29 +236,32 @@
             // 
             tbxNumero.Font = new Font("Cooper Black", 12F);
             tbxNumero.ForeColor = Color.FromArgb(89, 50, 19);
-            tbxNumero.Location = new Point(15, 223);
+            tbxNumero.Location = new Point(325, 294);
+            tbxNumero.Margin = new Padding(3, 4, 3, 4);
             tbxNumero.Multiline = true;
             tbxNumero.Name = "tbxNumero";
-            tbxNumero.Size = new Size(233, 34);
+            tbxNumero.Size = new Size(333, 44);
             tbxNumero.TabIndex = 32;
             // 
             // tbxComplemento
             // 
             tbxComplemento.Font = new Font("Cooper Black", 12F);
-            tbxComplemento.Location = new Point(15, 339);
+            tbxComplemento.Location = new Point(17, 452);
+            tbxComplemento.Margin = new Padding(3, 4, 3, 4);
             tbxComplemento.Multiline = true;
             tbxComplemento.Name = "tbxComplemento";
-            tbxComplemento.Size = new Size(233, 34);
+            tbxComplemento.Size = new Size(266, 44);
             tbxComplemento.TabIndex = 30;
             // 
             // tbxCEP
             // 
             tbxCEP.Font = new Font("Cooper Black", 12F);
             tbxCEP.ForeColor = Color.FromArgb(89, 50, 19);
-            tbxCEP.Location = new Point(284, 222);
+            tbxCEP.Location = new Point(17, 293);
+            tbxCEP.Margin = new Padding(3, 4, 3, 4);
             tbxCEP.Multiline = true;
             tbxCEP.Name = "tbxCEP";
-            tbxCEP.Size = new Size(292, 35);
+            tbxCEP.Size = new Size(266, 45);
             tbxCEP.TabIndex = 31;
             // 
             // label7
@@ -258,9 +269,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Cooper Black", 20F);
             label7.ForeColor = Color.FromArgb(89, 50, 19);
-            label7.Location = new Point(15, 283);
+            label7.Location = new Point(17, 377);
             label7.Name = "label7";
-            label7.Size = new Size(212, 31);
+            label7.Size = new Size(267, 39);
             label7.TabIndex = 15;
             label7.Text = "Complemento:";
             // 
@@ -276,18 +287,21 @@
             groupBox2.Controls.Add(txtCPF);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label1);
-            groupBox2.Location = new Point(59, 118);
+            groupBox2.Location = new Point(67, 157);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(357, 471);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(408, 628);
             groupBox2.TabIndex = 16;
             groupBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(66, 0);
+            pictureBox1.Location = new Point(75, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(201, 135);
+            pictureBox1.Size = new Size(230, 180);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 30;
             pictureBox1.TabStop = false;
@@ -295,10 +309,11 @@
             // txtEmail
             // 
             txtEmail.Font = new Font("Cooper Black", 12F);
-            txtEmail.Location = new Point(33, 415);
+            txtEmail.Location = new Point(38, 553);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(275, 35);
+            txtEmail.Size = new Size(314, 45);
             txtEmail.TabIndex = 29;
             // 
             // label8
@@ -306,19 +321,20 @@
             label8.AutoSize = true;
             label8.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(89, 50, 19);
-            label8.Location = new Point(33, 377);
+            label8.Location = new Point(38, 503);
             label8.Name = "label8";
-            label8.Size = new Size(91, 27);
+            label8.Size = new Size(113, 35);
             label8.TabIndex = 28;
             label8.Text = "Email:";
             // 
             // txtTelefone
             // 
             txtTelefone.Font = new Font("Cooper Black", 12F);
-            txtTelefone.Location = new Point(33, 339);
+            txtTelefone.Location = new Point(38, 452);
+            txtTelefone.Margin = new Padding(3, 4, 3, 4);
             txtTelefone.Multiline = true;
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(275, 35);
+            txtTelefone.Size = new Size(314, 45);
             txtTelefone.TabIndex = 11;
             // 
             // btnVoltar
@@ -327,9 +343,10 @@
             btnVoltar.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVoltar.ForeColor = Color.SaddleBrown;
             btnVoltar.Image = (Image)resources.GetObject("btnVoltar.Image");
-            btnVoltar.Location = new Point(-3, 2);
+            btnVoltar.Location = new Point(-3, 3);
+            btnVoltar.Margin = new Padding(3, 4, 3, 4);
             btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(41, 34);
+            btnVoltar.Size = new Size(47, 45);
             btnVoltar.TabIndex = 30;
             btnVoltar.UseVisualStyleBackColor = false;
             btnVoltar.Click += btnVoltar_Click_1;
@@ -337,25 +354,27 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1037, 2);
+            pictureBox4.Location = new Point(1185, 3);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(115, 69);
+            pictureBox4.Size = new Size(131, 92);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 31;
             pictureBox4.TabStop = false;
             // 
             // CadastroUsuario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 225, 235);
-            ClientSize = new Size(1379, 749);
+            ClientSize = new Size(1576, 999);
             Controls.Add(pictureBox4);
             Controls.Add(btnVoltar);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(btnEntrar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroUsuario";
             Text = "PetCare";
             groupBox1.ResumeLayout(false);

@@ -165,34 +165,54 @@ namespace TrabalhoLP
         // BOTÃO CANCELAR
         // =========================
 
-        private void btnCancelar_Click( object sender,EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
+
+
             // VERIFICA SE TEM ITEM
-            if (lvHistorico.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Selecione um agendamento.");
+                // VERIFICA SE TEM ITEM
+                if (lvHistorico.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show(
+                        "Selecione um agendamento.");
 
-                return;
+                    return;
+                }
+
+                // PEGA ITEM
+                ListViewItem item =
+                    lvHistorico.SelectedItems[0];
+
+                // PEGA AGENDAMENTO
+                Agendamento agendamento =
+                    (Agendamento)item.Tag;
+
+
+                // CONFIRMAÇÃO
+                DialogResult resposta =
+                    MessageBox.Show( "Deseja cancelar este agendamento?\n\n"+ agendamento.GerarResumo(), "Confirmar Cancelamento", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+
+                // SE CLICAR NÃO
+                if (resposta != DialogResult.Yes)
+                {
+                    return;
+                }
+
+
+                // ALTERA STATUS
+                agendamento.Status =
+                    Agendamento.StatusAgendamento.Cancelado;
+
+                // ATUALIZA BANCO
+                agendamento.UpdateAgendamento( agendamento);
+
+                // RECARREGA LISTA
+                CarregarLista();
+
+                MessageBox.Show(  "Agendamento cancelado!");
             }
-
-
-
-            // PEGA ITEM
-            ListViewItem item = lvHistorico.SelectedItems[0];
-
-            // PEGA AGENDAMENTO
-            Agendamento agendamento =(Agendamento)item.Tag;
-
-            // ALTERA STATUS
-            agendamento.Status = Agendamento.StatusAgendamento.Cancelado;
-
-            // ATUALIZA BANCO
-            agendamento.UpdateAgendamento(agendamento);
-
-            // RECARREGA LISTA
-            CarregarLista();
-
-            MessageBox.Show("Agendamento cancelado!");
         }
 
 
@@ -203,29 +223,46 @@ namespace TrabalhoLP
         private void btnConcluido_Click( object sender, EventArgs e)
         {
             // VERIFICA SE TEM ITEM
+            // VERIFICA SE TEM ITEM
             if (lvHistorico.SelectedItems.Count == 0)
             {
-                MessageBox.Show( "Selecione um agendamento.");
+                MessageBox.Show(
+                    "Selecione um agendamento.");
 
                 return;
             }
 
             // PEGA ITEM
-            ListViewItem item =lvHistorico.SelectedItems[0];
+            ListViewItem item =
+                lvHistorico.SelectedItems[0];
 
             // PEGA AGENDAMENTO
-            Agendamento agendamento = (Agendamento)item.Tag;
+            Agendamento agendamento =
+                (Agendamento)item.Tag;
+
+
+            // CONFIRMAÇÃO
+            DialogResult resposta =
+                MessageBox.Show( "Deseja concluir este agendamento?\n\n" + agendamento.GerarResumo(),"Confirmar Conclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            // SE CLICAR NÃO
+            if (resposta != DialogResult.Yes)
+            {
+                return;
+            }
+
 
             // ALTERA STATUS
-            agendamento.Status =  Agendamento.StatusAgendamento.Concluido;
+            agendamento.Status = Agendamento.StatusAgendamento.Concluido;
 
             // ATUALIZA BANCO
-            agendamento.UpdateAgendamento( agendamento);
+            agendamento.UpdateAgendamento(agendamento);
 
             // RECARREGA LISTA
             CarregarLista();
 
-            MessageBox.Show( "Agendamento concluído!");
+            MessageBox.Show("Agendamento concluído!");
         }
 
 

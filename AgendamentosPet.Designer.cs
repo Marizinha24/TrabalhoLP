@@ -52,10 +52,9 @@
             // 
             // pbPet
             // 
-            pbPet.Location = new Point(87, 28);
-            pbPet.Margin = new Padding(3, 2, 3, 2);
+            pbPet.Location = new Point(99, 37);
             pbPet.Name = "pbPet";
-            pbPet.Size = new Size(157, 116);
+            pbPet.Size = new Size(179, 155);
             pbPet.TabIndex = 0;
             pbPet.TabStop = false;
             // 
@@ -63,10 +62,9 @@
             // 
             lvHistorico.BackColor = Color.FromArgb(255, 225, 235);
             lvHistorico.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lvHistorico.Location = new Point(12, 173);
-            lvHistorico.Margin = new Padding(3, 2, 3, 2);
+            lvHistorico.Location = new Point(14, 231);
             lvHistorico.Name = "lvHistorico";
-            lvHistorico.Size = new Size(1160, 565);
+            lvHistorico.Size = new Size(1325, 752);
             lvHistorico.TabIndex = 1;
             lvHistorico.UseCompatibleStateImageBehavior = false;
             lvHistorico.SelectedIndexChanged += lvHistorico_SelectedIndexChanged;
@@ -77,10 +75,9 @@
             btnConcluido.FlatStyle = FlatStyle.Popup;
             btnConcluido.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConcluido.ForeColor = Color.White;
-            btnConcluido.Location = new Point(876, 137);
-            btnConcluido.Margin = new Padding(3, 2, 3, 2);
+            btnConcluido.Location = new Point(982, 183);
             btnConcluido.Name = "btnConcluido";
-            btnConcluido.Size = new Size(126, 32);
+            btnConcluido.Size = new Size(163, 43);
             btnConcluido.TabIndex = 11;
             btnConcluido.Text = "Concluido";
             btnConcluido.UseVisualStyleBackColor = false;
@@ -92,10 +89,9 @@
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(1018, 137);
-            btnCancelar.Margin = new Padding(3, 2, 3, 2);
+            btnCancelar.Location = new Point(1163, 183);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(115, 32);
+            btnCancelar.Size = new Size(142, 43);
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -104,9 +100,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1038, 1);
+            pictureBox4.Location = new Point(1186, 1);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(134, 97);
+            pictureBox4.Size = new Size(153, 129);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 32;
             pictureBox4.TabStop = false;
@@ -114,9 +111,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(228, 125);
+            pictureBox1.Location = new Point(261, 167);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(61, 43);
+            pictureBox1.Size = new Size(70, 57);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 33;
             pictureBox1.TabStop = false;
@@ -124,9 +122,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(52, 1);
+            pictureBox2.Location = new Point(59, 1);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(61, 43);
+            pictureBox2.Size = new Size(70, 57);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 34;
             pictureBox2.TabStop = false;
@@ -134,81 +133,81 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(611, 64);
+            lblUsuario.Location = new Point(698, 85);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(38, 15);
+            lblUsuario.Size = new Size(50, 20);
             lblUsuario.TabIndex = 2;
             lblUsuario.Text = "label1";
             // 
             // lblRaca
             // 
             lblRaca.AutoSize = true;
-            lblRaca.Location = new Point(528, 110);
+            lblRaca.Location = new Point(603, 147);
             lblRaca.Name = "lblRaca";
-            lblRaca.Size = new Size(38, 15);
+            lblRaca.Size = new Size(50, 20);
             lblRaca.TabIndex = 3;
             lblRaca.Text = "label2";
             // 
             // lblNomePet
             // 
             lblNomePet.AutoSize = true;
-            lblNomePet.Location = new Point(312, 41);
+            lblNomePet.Location = new Point(357, 55);
             lblNomePet.Name = "lblNomePet";
-            lblNomePet.Size = new Size(38, 15);
+            lblNomePet.Size = new Size(50, 20);
             lblNomePet.TabIndex = 4;
             lblNomePet.Text = "label3";
             // 
             // lblEspecie
             // 
             lblEspecie.AutoSize = true;
-            lblEspecie.Location = new Point(401, 110);
+            lblEspecie.Location = new Point(458, 147);
             lblEspecie.Name = "lblEspecie";
-            lblEspecie.Size = new Size(38, 15);
+            lblEspecie.Size = new Size(50, 20);
             lblEspecie.TabIndex = 5;
             lblEspecie.Text = "label4";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(439, 16);
+            label5.Location = new Point(502, 21);
             label5.Name = "label5";
-            label5.Size = new Size(36, 15);
+            label5.Size = new Size(44, 20);
             label5.TabIndex = 6;
             label5.Text = "Tutor";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(312, 16);
+            label6.Location = new Point(357, 21);
             label6.Name = "label6";
-            label6.Size = new Size(24, 15);
+            label6.Size = new Size(29, 20);
             label6.TabIndex = 7;
             label6.Text = "Pet";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(401, 83);
+            label7.Location = new Point(458, 111);
             label7.Name = "label7";
-            label7.Size = new Size(46, 15);
+            label7.Size = new Size(59, 20);
             label7.TabIndex = 8;
             label7.Text = "Especie";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(528, 83);
+            label8.Location = new Point(603, 111);
             label8.Name = "label8";
-            label8.Size = new Size(32, 15);
+            label8.Size = new Size(41, 20);
             label8.TabIndex = 9;
             label8.Text = "Raça";
             // 
             // AgendamentosPet
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 225, 235);
-            ClientSize = new Size(1379, 749);
+            ClientSize = new Size(1576, 999);
             Controls.Add(pictureBox4);
             Controls.Add(btnCancelar);
             Controls.Add(btnConcluido);
@@ -224,7 +223,6 @@
             Controls.Add(pbPet);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "AgendamentosPet";
             Text = "AgendamentosPet";
             ((System.ComponentModel.ISupportInitialize)pbPet).EndInit();

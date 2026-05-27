@@ -49,29 +49,37 @@ namespace TrabalhoLP.Properties.Model
 
         public List<Agendamento> GetAgendamentos()
         {
+
             SqlDataAdapter dataAdapter =new ConnectionSQL().MountQueryDataTable("SELECT * FROM Agendamentos");
 
-            DataSet oDataSet =new DataSet();
+            DataSet oDataSet = new DataSet();
 
             dataAdapter.Fill(oDataSet);
 
-            DataTable oDataTable =oDataSet.Tables[0];
+            DataTable oDataTable = oDataSet.Tables[0];
 
-            List<Agendamento> lista =oDataTable.AsEnumerable().Select(row => new Agendamento
+            // PEGA TODOS OS PETS
+            List<Pet> pets = new Pet().GetPets();
+
+            List<Agendamento> lista = oDataTable.AsEnumerable().Select(row =>
                 {
-                    Agendamento_ID = row.Field<int>("Id"),
+                    int petId =  row.Field<int>("PetId");
 
-                    Pet_ID =row.Field<int>("PetId"),
+                    return new Agendamento
+                    {
+                        Agendamento_ID = row.Field<int>("Id"),
 
-                    Data =row.Field<DateTime?>("Data"),
+                        Pet_ID = petId,
 
-                    Horario = row.Field<string>("Horario"),
-
-                    Servicos = row.Field<string>("Servicos"),
-
-                    Total = Convert.ToDouble(row["Total"]),
-
-                    Status =(StatusAgendamento)Enum.Parse(typeof(StatusAgendamento),row["Status"].ToString())
+                        // AQUI PREENCHE O PET
+                        Pet = pets.FirstOrDefault( p => p.Pet_ID == petId),
+                        Data = row.Field<DateTime?>("Data"),
+                        Horario = row.Field<string>("Horario"),
+                        Servicos =row.Field<string>("Servicos"),
+                        Total =Convert.ToDouble(row["Total"]),
+                        Status =
+                            (StatusAgendamento)Enum.Parse( typeof(StatusAgendamento), row["Status"].ToString())
+                    };
                 })
                 .ToList();
 

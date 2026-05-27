@@ -37,6 +37,17 @@ namespace TrabalhoLP
             formTela.BringToFront();
             formTela.Show();
         }
+        public void LimparPanel()
+        {
+            if (formAtivo != null)
+            {
+                formAtivo.Close();
+
+                formAtivo = null;
+            }
+
+            formPanel.Controls.Clear();
+        }
 
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {

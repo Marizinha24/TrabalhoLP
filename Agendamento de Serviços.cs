@@ -48,22 +48,22 @@ namespace TrabalhoLP
         private (string nomes, double total)
             ObterServicoSelecionado()
         {
-            var selecionados = this.Controls.OfType<GroupBox>().SelectMany(g =>g.Controls.OfType<RadioButton>()).Where(rb => rb.Checked).ToList();
+            var selecionados = this.Controls.OfType<GroupBox>().SelectMany(g => g.Controls.OfType<RadioButton>()).Where(rb => rb.Checked).ToList();
 
             if (!selecionados.Any())
             {
                 throw new InvalidOperationException("Nenhum serviço selecionado");
             }
 
-            string nomes =string.Join(", ",selecionados.Select(rb => rb.Text));
+            string nomes = string.Join(", ", selecionados.Select(rb => rb.Text));
 
-            double total =selecionados.Sum(rb =>Convert.ToDouble(rb.Tag));
+            double total = selecionados.Sum(rb => Convert.ToDouble(rb.Tag));
 
             return (nomes, total);
         }
 
 
-        private void btnConfirmar_Click_1(object sender,EventArgs e)
+        private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace TrabalhoLP
 
                 if (string.IsNullOrEmpty(itemSelecionado))
                 {
-                    MessageBox.Show( "Selecione um horário!");
+                    MessageBox.Show("Selecione um horário!");
 
                     return;
                 }
@@ -84,7 +84,7 @@ namespace TrabalhoLP
 
                 agendamento.Pet = petAtual;
 
-                agendamento.Data =  dtDisponibilidade.Value;
+                agendamento.Data = dtDisponibilidade.Value;
 
                 agendamento.Horario = cbHorario.Text;
 
@@ -92,7 +92,7 @@ namespace TrabalhoLP
 
                 agendamento.Total = servico.total;
 
-                agendamento.Status =StatusAgendamento.Pendente;
+                agendamento.Status = StatusAgendamento.Pendente;
 
                 if (petAtual == null)
                 {
@@ -101,7 +101,7 @@ namespace TrabalhoLP
                 }
 
 
-                DialogResult resposta = MessageBox.Show( agendamento.GerarResumo(),"Confirmar Agendamento",  MessageBoxButtons.YesNo,MessageBoxIcon.Question  );
+                DialogResult resposta = MessageBox.Show(agendamento.GerarResumo(), "Confirmar Agendamento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resposta != DialogResult.Yes)
                 {
@@ -116,6 +116,7 @@ namespace TrabalhoLP
 
 
                 MessageBox.Show("Agendamento realizado!");
+                home.LimparPanel();
             }
             catch (InvalidOperationException ex)
             {
@@ -124,15 +125,14 @@ namespace TrabalhoLP
         }
 
 
-        private void dtDisponibilidade_ValueChanged_1(object sender,EventArgs e)
+        private void dtDisponibilidade_ValueChanged_1(object sender, EventArgs e)
         {
             cbHorario.Items.Clear();
 
             if (dtDisponibilidade.Value.Date
                 < DateTime.Now.Date)
             {
-                MessageBox.Show(
-                    "Escolha uma data valida!");
+                MessageBox.Show("Escolha uma data valida!");
 
                 return;
             }
@@ -203,7 +203,7 @@ namespace TrabalhoLP
         }
 
 
-        private void btnCancelar_Click_1(object sender,EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             foreach (var group in this.Controls.OfType<GroupBox>())
             {
@@ -215,9 +215,14 @@ namespace TrabalhoLP
 
             cbHorario.SelectedIndex = -1;
 
-            dtDisponibilidade.Value =DateTime.Now;
+            dtDisponibilidade.Value = DateTime.Now;
 
-            lblTotal.Text = "Total: R$ 0,00";
+            lblTotal.Text = " R$ 0,00";
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

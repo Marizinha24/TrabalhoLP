@@ -105,11 +105,7 @@ namespace TrabalhoLP
                 // HOME
                 else if (resposta == DialogResult.No)
                 {
-                    HomePage tela =  new HomePage();
-
-                    tela.ShowDialog();
-
-                    this.Close();
+                    home.LimparPanel();
                 }
             }
 
