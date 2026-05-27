@@ -116,7 +116,7 @@ namespace TrabalhoLP
             endereco.UF;
         }
 
-       
+
 
         private void btnVoltar_Click_1(object sender, EventArgs e)
         {
@@ -125,7 +125,6 @@ namespace TrabalhoLP
             hp.Show();
             this.Close();
         }
-
     }
-    
+
 }

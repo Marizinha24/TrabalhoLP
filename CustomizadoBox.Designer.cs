@@ -36,9 +36,10 @@
             // 
             // btnAddPet
             // 
-            btnAddPet.Location = new Point(52, 117);
+            btnAddPet.Location = new Point(193, 147);
+            btnAddPet.Margin = new Padding(3, 2, 3, 2);
             btnAddPet.Name = "btnAddPet";
-            btnAddPet.Size = new Size(124, 66);
+            btnAddPet.Size = new Size(108, 50);
             btnAddPet.TabIndex = 0;
             btnAddPet.Text = "Adicionar novo Pet?";
             btnAddPet.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // btnNovoAgendamento
             // 
-            btnNovoAgendamento.Location = new Point(287, 88);
+            btnNovoAgendamento.Location = new Point(12, 82);
+            btnNovoAgendamento.Margin = new Padding(3, 2, 3, 2);
             btnNovoAgendamento.Name = "btnNovoAgendamento";
-            btnNovoAgendamento.Size = new Size(217, 53);
+            btnNovoAgendamento.Size = new Size(190, 40);
             btnNovoAgendamento.TabIndex = 1;
             btnNovoAgendamento.Text = "Novo Agendamento?";
             btnNovoAgendamento.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // btnVerAgendamentos
             // 
-            btnVerAgendamentos.Location = new Point(287, 168);
+            btnVerAgendamentos.Location = new Point(291, 82);
+            btnVerAgendamentos.Margin = new Padding(3, 2, 3, 2);
             btnVerAgendamentos.Name = "btnVerAgendamentos";
-            btnVerAgendamentos.Size = new Size(227, 60);
+            btnVerAgendamentos.Size = new Size(199, 40);
             btnVerAgendamentos.TabIndex = 2;
             btnVerAgendamentos.Text = "Ver agendamentos?";
             btnVerAgendamentos.UseVisualStyleBackColor = true;
@@ -67,23 +70,25 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Snap ITC", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.SaddleBrown;
-            label4.Location = new Point(130, 34);
+            label4.Font = new Font("Cooper Black", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(89, 50, 19);
+            label4.Location = new Point(121, 24);
             label4.Name = "label4";
-            label4.Size = new Size(232, 25);
+            label4.Size = new Size(271, 31);
             label4.TabIndex = 11;
             label4.Text = "O que deseja fazer?";
             // 
             // CustomizadoBox
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(553, 247);
+            BackColor = Color.FromArgb(250, 233, 215);
+            ClientSize = new Size(514, 208);
             Controls.Add(label4);
             Controls.Add(btnVerAgendamentos);
             Controls.Add(btnNovoAgendamento);
             Controls.Add(btnAddPet);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CustomizadoBox";
             Text = "CustomizadoBox";
             ResumeLayout(false);
