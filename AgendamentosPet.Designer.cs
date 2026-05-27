@@ -38,7 +38,8 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            btnHome = new Button();
+            btnConcluido = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pbPet).BeginInit();
             SuspendLayout();
             // 
@@ -131,22 +132,33 @@
             label8.TabIndex = 9;
             label8.Text = "Raça";
             // 
-            // btnHome
+            // btnConcluido
             // 
-            btnHome.Location = new Point(887, 21);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(130, 67);
-            btnHome.TabIndex = 10;
-            btnHome.Text = "Home Page";
-            btnHome.UseVisualStyleBackColor = true;
-            btnHome.Click += btnHome_Click;
+            btnConcluido.Location = new Point(771, 175);
+            btnConcluido.Name = "btnConcluido";
+            btnConcluido.Size = new Size(94, 29);
+            btnConcluido.TabIndex = 11;
+            btnConcluido.Text = "Concluido";
+            btnConcluido.UseVisualStyleBackColor = true;
+            btnConcluido.Click += btnConcluido_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(927, 179);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(94, 29);
+            btnCancelar.TabIndex = 12;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // AgendamentosPet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1051, 639);
-            Controls.Add(btnHome);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnConcluido);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -176,6 +188,7 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private Button btnHome;
+        private Button btnConcluido;
+        private Button btnCancelar;
     }
 }

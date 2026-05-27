@@ -9,6 +9,8 @@ namespace TrabalhoLP.Properties.Model
 {
      public class Agendamento
     {
+        public int Agendamento_ID { get; set; }
+
         public Pet Pet { get; set; }
 
         public DateTime? Data { get; set; }
@@ -57,6 +59,8 @@ namespace TrabalhoLP.Properties.Model
 
             List<Agendamento> lista =oDataTable.AsEnumerable().Select(row => new Agendamento
                 {
+                    Agendamento_ID = row.Field<int>("Id"),
+
                     Pet_ID =row.Field<int>("PetId"),
 
                     Data =row.Field<DateTime?>("Data"),
@@ -103,6 +107,26 @@ namespace TrabalhoLP.Properties.Model
             conn.conn.Close();
 
             return "Agendamento cadastrado";
+        }
+
+        public string UpdateAgendamento( Agendamento agendamento)
+        {
+            ConnectionSQL conn = new ConnectionSQL();
+
+            SqlCommand cmd = conn.MountQuery(
+                @"UPDATE Agendamentos SET Status = @P1 WHERE Id = @P2");
+
+            cmd.Parameters.AddWithValue("@P1", agendamento.Status.ToString());
+
+            cmd.Parameters.AddWithValue( "@P2",agendamento.Agendamento_ID);
+
+            conn.conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            conn.conn.Close();
+
+            return "Status atualizado";
         }
     }
 }
