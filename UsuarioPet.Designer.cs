@@ -42,9 +42,9 @@
             // 
             lvUsuariosPets.BackColor = Color.FromArgb(255, 225, 235);
             lvUsuariosPets.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lvUsuariosPets.Location = new Point(33, 200);
+            lvUsuariosPets.Location = new Point(33, 183);
             lvUsuariosPets.Name = "lvUsuariosPets";
-            lvUsuariosPets.Size = new Size(1305, 561);
+            lvUsuariosPets.Size = new Size(1305, 554);
             lvUsuariosPets.TabIndex = 0;
             lvUsuariosPets.UseCompatibleStateImageBehavior = false;
             lvUsuariosPets.DoubleClick += lvUsuariosPets_DoubleClick;
@@ -56,10 +56,10 @@
             btnHomePage.Font = new Font("Cooper Black", 9F);
             btnHomePage.ForeColor = Color.FromArgb(89, 50, 19);
             btnHomePage.Image = (Image)resources.GetObject("btnHomePage.Image");
-            btnHomePage.Location = new Point(33, 28);
+            btnHomePage.Location = new Point(33, 11);
             btnHomePage.Margin = new Padding(3, 2, 3, 2);
             btnHomePage.Name = "btnHomePage";
-            btnHomePage.Size = new Size(41, 39);
+            btnHomePage.Size = new Size(71, 62);
             btnHomePage.TabIndex = 1;
             btnHomePage.UseVisualStyleBackColor = false;
             btnHomePage.Click += btnHomePage_Click_1;
@@ -112,19 +112,19 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1230, 28);
+            pictureBox1.Location = new Point(1168, 28);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(108, 77);
+            pictureBox1.Size = new Size(170, 132);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
             // UsuarioPet
             // 
-            AutoScaleDimensions = new SizeF(10F, 17F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 225, 235);
-            ClientSize = new Size(1370, 886);
+            ClientSize = new Size(1370, 749);
             Controls.Add(pictureBox1);
             Controls.Add(btnExportar);
             Controls.Add(btnImportar);
