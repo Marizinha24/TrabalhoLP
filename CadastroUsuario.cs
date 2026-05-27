@@ -118,13 +118,7 @@ namespace TrabalhoLP
 
 
 
-        private void btnVoltar_Click_1(object sender, EventArgs e)
-        {
 
-            HomePage hp = new HomePage();
-            hp.Show();
-            this.Close();
-        }
     }
 
 }

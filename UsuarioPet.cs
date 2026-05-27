@@ -48,7 +48,7 @@ namespace TrabalhoLP
             lvUsuariosPets.Columns.Add("Data", 120);
 
             CarregarPetsBanco();
-            
+
         }
 
 
@@ -156,7 +156,7 @@ namespace TrabalhoLP
                 return;
             }
 
-            var dados =(Tuple<Usuario, Pet>)lvUsuariosPets.SelectedItems[0].Tag;
+            var dados = (Tuple<Usuario, Pet>)lvUsuariosPets.SelectedItems[0].Tag;
 
             Pet pet = dados.Item2;
 
@@ -293,12 +293,12 @@ namespace TrabalhoLP
                 return;
             }
 
-            var dados =(Tuple<Usuario, Pet>)lvUsuariosPets.SelectedItems[0].Tag;
+            var dados = (Tuple<Usuario, Pet>)lvUsuariosPets.SelectedItems[0].Tag;
 
             Usuario usuario = dados.Item1;
 
             DialogResult resposta =
-                MessageBox.Show($"Deseja deletar {usuario.Nome}?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                MessageBox.Show($"Deseja deletar {usuario.Nome}?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (resposta != DialogResult.Yes)
                 return;
@@ -308,7 +308,12 @@ namespace TrabalhoLP
             MessageBox.Show("Usuário removido!");
 
             CarregarPetsBanco();
-        
+
+        }
+
+        private void btnHomePage_Click_1(object sender, EventArgs e)
+        {
+            home.LimparPanel();
         }
     }
 }

@@ -52,7 +52,6 @@
             txtEmail = new TextBox();
             label8 = new Label();
             txtTelefone = new TextBox();
-            btnVoltar = new Button();
             pictureBox4 = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -77,10 +76,10 @@
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.Font = new Font("Cooper Black", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.FromArgb(89, 50, 19);
-            btnEntrar.Location = new Point(521, 829);
+            btnEntrar.Location = new Point(504, 832);
             btnEntrar.Margin = new Padding(3, 4, 3, 4);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(182, 51);
+            btnEntrar.Size = new Size(207, 51);
             btnEntrar.TabIndex = 4;
             btnEntrar.Text = "Cadastrar";
             btnEntrar.UseVisualStyleBackColor = false;
@@ -337,20 +336,6 @@
             txtTelefone.Size = new Size(314, 45);
             txtTelefone.TabIndex = 11;
             // 
-            // btnVoltar
-            // 
-            btnVoltar.BackColor = Color.FromArgb(255, 130, 179);
-            btnVoltar.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVoltar.ForeColor = Color.SaddleBrown;
-            btnVoltar.Image = (Image)resources.GetObject("btnVoltar.Image");
-            btnVoltar.Location = new Point(-3, 3);
-            btnVoltar.Margin = new Padding(3, 4, 3, 4);
-            btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(47, 45);
-            btnVoltar.TabIndex = 30;
-            btnVoltar.UseVisualStyleBackColor = false;
-            btnVoltar.Click += btnVoltar_Click_1;
-            // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
@@ -369,7 +354,6 @@
             BackColor = Color.FromArgb(255, 225, 235);
             ClientSize = new Size(1576, 999);
             Controls.Add(pictureBox4);
-            Controls.Add(btnVoltar);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label2);
@@ -417,7 +401,6 @@
         private PictureBox pbPet;
         private TextBox txtEmail;
         private Label label8;
-        private Button btnVoltar;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox4;

@@ -62,6 +62,7 @@
             btnHomePage.Size = new Size(41, 39);
             btnHomePage.TabIndex = 1;
             btnHomePage.UseVisualStyleBackColor = false;
+            btnHomePage.Click += btnHomePage_Click_1;
             // 
             // btnDeletar
             // 
@@ -120,7 +121,7 @@
             // 
             // UsuarioPet
             // 
-            AutoScaleDimensions = new SizeF(8F, 14F);
+            AutoScaleDimensions = new SizeF(10F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 225, 235);
             ClientSize = new Size(1370, 749);
